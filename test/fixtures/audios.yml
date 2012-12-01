@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  date: 2012-11-30
+  description: MyString
+  license: MyString
+  format: MyString
+  duration: 1
+  language: MyString
+  person_id: 1
+
+two:
+  title: MyString
+  date: 2012-11-30
+  description: MyString
+  license: MyString
+  format: MyString
+  duration: 1
+  language: MyString
+  person_id: 1

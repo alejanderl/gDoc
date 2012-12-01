@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  date: 2012-11-30
+  time: 2012-11-30 20:37:13
+  description: MyString
+  person_id: 1
+  cycle_id: 1
+
+two:
+  title: MyString
+  date: 2012-11-30
+  time: 2012-11-30 20:37:13
+  description: MyString
+  person_id: 1
+  cycle_id: 1

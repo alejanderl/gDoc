@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @audio.title %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @audio.date %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @audio.description %>
+</p>
+
+<p>
+  <b>License:</b>
+  <%= @audio.license %>
+</p>
+
+<p>
+  <b>Format:</b>
+  <%= @audio.format %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @audio.duration %>
+</p>
+
+<p>
+  <b>Language:</b>
+  <%= @audio.language %>
+</p>
+
+<p>
+  <b>Person:</b>
+  <%= @audio.person_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_audio_path(@audio) %> |
+<%= link_to 'Back', audios_path %>

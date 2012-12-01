@@ -1,4 +1,20 @@
 Gdoc::Application.routes.draw do
+  resources :participants
+
+  resources :documents
+
+  resources :people
+
+  resources :photos
+
+  resources :videos
+
+  resources :audios
+
+  resources :cycles
+
+  resources :events
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
