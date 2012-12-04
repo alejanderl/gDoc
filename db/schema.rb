@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20121204003030) do
   end
 
   create_table "participates", :force => true do |t|
-    t.integer  "paricipant_id"
+    t.integer  "participant_id"
     t.integer  "participable_id"
     t.string   "participable_type"
     t.datetime "created_at",        :null => false
