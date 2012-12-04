@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  paricipant_id: 1
+  participable_id: 1
+  participable_type: MyString
+
+two:
+  paricipant_id: 1
+  participable_id: 1
+  participable_type: MyString
