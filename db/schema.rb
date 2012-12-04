@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201101525) do
+ActiveRecord::Schema.define(:version => 20121204003030) do
 
   create_table "audios", :force => true do |t|
     t.string   "title"
@@ -21,9 +21,8 @@ ActiveRecord::Schema.define(:version => 20121201101525) do
     t.string   "format"
     t.integer  "duration"
     t.string   "language"
-    t.integer  "participant_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "cycles", :force => true do |t|
@@ -43,9 +42,8 @@ ActiveRecord::Schema.define(:version => 20121201101525) do
     t.string   "license"
     t.string   "format"
     t.string   "language"
-    t.integer  "participant_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "events", :force => true do |t|
@@ -53,10 +51,9 @@ ActiveRecord::Schema.define(:version => 20121201101525) do
     t.date     "date"
     t.time     "time"
     t.string   "description"
-    t.integer  "participant_id"
     t.integer  "cycle_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.integer  "audio_id"
     t.integer  "document_id"
     t.integer  "video_id"
@@ -67,10 +64,16 @@ ActiveRecord::Schema.define(:version => 20121201101525) do
     t.string   "name"
     t.string   "bio"
     t.boolean  "creator"
-    t.datetime "created_at",           :null => false
-    t.datetime "updated_at",           :null => false
-    t.string   "participantable_type"
-    t.integer  "participantable_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "participates", :force => true do |t|
+    t.integer  "paricipant_id"
+    t.integer  "participable_id"
+    t.string   "participable_type"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "photos", :force => true do |t|
@@ -79,9 +82,8 @@ ActiveRecord::Schema.define(:version => 20121201101525) do
     t.string   "description"
     t.string   "license"
     t.string   "format"
-    t.integer  "participant_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "videos", :force => true do |t|
@@ -92,9 +94,8 @@ ActiveRecord::Schema.define(:version => 20121201101525) do
     t.string   "format"
     t.integer  "duration"
     t.string   "language"
-    t.integer  "participant_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

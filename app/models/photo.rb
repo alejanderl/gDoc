@@ -1,7 +1,10 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :participant_attributes, :date, :description, :format, :license, :participant_id, :title
+  attr_accessible :date, :description, :format, :license,  :title
   belongs_to :event
-  has_many :participant, :as => :participantable, :dependent =>:destroy 
-  accepts_nested_attributes_for :participant
+  
+  has_many :participates, :as => :participable
+  
+  has_many :participants, :through => :participates
+ 
 
 end
