@@ -25,7 +25,8 @@
   <%= @photo.format %>
 </p>
 
-
+<div class="image">
+      <%= image_tag @photo.image_url(:thumb_150) if @photo.image? %>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>

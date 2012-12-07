@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :date, :description, :participant_id, :time, :title
+  attr_accessible :cycle_id, :date, :description, :participant_id, :time, :title
   belongs_to :cycle
   has_many :audios
   has_many :videos

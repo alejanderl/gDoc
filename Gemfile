@@ -39,3 +39,13 @@ gem 'jquery-rails'
 
 # To use debugger
 gem 'debugger'
+
+# File uploader
+
+gem "carrierwave", "~> 0.6.2"
+gem 'rmagick'
+gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp/all' # both FTP/SFTP
+
+
+# User system 
+gem 'devise'
