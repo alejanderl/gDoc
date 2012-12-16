@@ -40,6 +40,7 @@ gem 'jquery-rails'
 # To use debugger
 gem 'debugger'
 
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
@@ -47,3 +48,14 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
 end
+
+# File uploader
+
+gem "carrierwave", "~> 0.6.2"
+gem 'rmagick'
+gem 'carrierwave-ftp', :require => 'carrierwave/storage/ftp/all' # both FTP/SFTP
+
+
+
+gem 'devise'
+
