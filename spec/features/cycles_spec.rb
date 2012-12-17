@@ -17,9 +17,7 @@ require 'spec_helper'
       page.should have_content("Cycle was successfully created.")
 
     end
- end
 
-  describe "POST /cycles/1" do
     it "update cycles" do
       cycle = FactoryGirl.create(:cycle)
       visit "/cycles/1"
@@ -33,8 +31,7 @@ require 'spec_helper'
       page.should have_content("Cycle was successfully updated")
 
     end
- end
-  describe "POST /cycles/1" do
+
     it "destroy cycles" do
       cycle = FactoryGirl.create(:cycle)
       visit "/cycles"
