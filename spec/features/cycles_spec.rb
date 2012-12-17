@@ -2,12 +2,9 @@ require 'spec_helper'
 
   describe "GET /cycles" do
     it "display cycles" do
-      # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
-       cycle = FactoryGirl.create(:cycle)
-#      cycles = Factory(:cycle)
-#      Cycle.create!(:title => "Geek-art")
+      cycle = FactoryGirl.create(:cycle)
       visit cycles_path
-      page.should have_content("Geek-art")
+      page.should have_content("Cycle 1")
     end
 
   describe "POST /cycles" do
@@ -27,8 +24,7 @@ require 'spec_helper'
       cycle = FactoryGirl.create(:cycle)
       visit "/cycles/1"
       click_link "Edit"
-
-      save_and_open_page
+#      save_and_open_page
 
       fill_in "cycle_title", :with  => "Geek-art 2"
       click_button "Update Cycle"
@@ -36,6 +32,13 @@ require 'spec_helper'
       page.should have_content("Geek-art 2")
       page.should have_content("Cycle was successfully updated")
 
+    end
+ end
+  describe "POST /cycles/1" do
+    it "destroy cycles" do
+      cycle = FactoryGirl.create(:cycle)
+      visit "/cycles"
+      click_link "Destroy"
     end
  end
 

@@ -32,6 +32,22 @@ RSpec.configure do |config|
 #  config.use_transactional_fixtures = true
   DatabaseCleaner.strategy = :truncation
 
+  # ...
+  config.use_transactional_fixtures = false
+  
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
+
+
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
