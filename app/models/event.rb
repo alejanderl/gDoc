@@ -7,4 +7,5 @@ class Event < ActiveRecord::Base
   has_many :documents
   has_many :participates, :as => :participable  
   has_many :participants, :through => :participates
+  validates_presence_of :title
 end

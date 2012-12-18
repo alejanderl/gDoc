@@ -1,4 +1,6 @@
 Gdoc::Application.routes.draw do
+  devise_for :users
+
   resources :participants
 
   resources :documents
