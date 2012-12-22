@@ -1,4 +1,5 @@
 require 'spec_helper'
+include Warden::Test::Helpers
 
   describe "GET /events" do
     it "display events index" do
@@ -10,6 +11,11 @@ require 'spec_helper'
 #      save_and_open_page
     end
   describe "POST /events" do
+    before(:each) do
+      @user = FactoryGirl.create(:user)
+      login_as @user, :scope => :user
+   end
+
     it "Create an event" do
       FactoryGirl.create(:event)
       visit events_path
