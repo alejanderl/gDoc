@@ -1,4 +1,5 @@
 require 'spec_helper'
+include Warden::Test::Helpers
 
   describe "GET /cycles" do
     it "display cycles" do
@@ -8,15 +9,17 @@ require 'spec_helper'
     end
 
   describe "POST /cycles" do
-
-    it "signs me in" do
-      user = FactoryGirl.create(:user)
-      visit new_user_session_path
-      fill_in 'user_email', :with => "user@example.com"
-      fill_in 'user_password', :with => "lalala"
-      click_link_or_button 'Sign in'
-
-  end
+    before(:each) do
+      @user = FactoryGirl.create(:user)
+      login_as @user, :scope => :user
+   end
+#    it "signs me in" do
+#      user = FactoryGirl.create(:user)
+#      visit new_user_session_path
+#      fill_in 'user_email', :with => "user@example.com"
+#      fill_in 'user_password', :with => "lalala"
+#      click_link_or_button 'Sign in'
+#  end
 
 
     it "Create cycles" do
