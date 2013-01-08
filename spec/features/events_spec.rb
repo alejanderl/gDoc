@@ -35,7 +35,7 @@ require 'spec_helper'
       select '2', :from => "event_date_3i" 
       click_button "Update Event"
       page.should have_content("Event was successfully updated.")
-      save_and_open_page
+      #save_and_open_page
     end
 
   end

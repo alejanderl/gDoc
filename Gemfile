@@ -42,11 +42,13 @@ gem 'debugger'
 
 
 group :development, :test do
+  gem 'turn'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'guard-rspec'
 end
 
 # File uploader
