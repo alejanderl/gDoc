@@ -53,8 +53,12 @@ group :development, :test do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+<<<<<<< HEAD
   gem 'guard-rspec'
   gem "minitest"
+=======
+
+>>>>>>> continue with cycles tests
 end
 
 # File uploader

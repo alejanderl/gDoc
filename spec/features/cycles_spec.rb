@@ -16,6 +16,18 @@ describe "GET /cycles" do
     page.should have_content("Cycle 1")
   end
 
+    it "Each cycle shows events associated to it" do
+      cycle = FactoryGirl.create(:cycle)
+      event = FactoryGirl.create(:event)
+      visit "/cycles/1"
+      save_and_open_page
+      visit cycles_path
+      save_and_open_page
+      page.should have_content("Event")
+
+    end
+
+
   describe "POST /cycles" do
     before do
       cycle = FactoryGirl.create_list(:cycle, 8)
@@ -24,6 +36,10 @@ describe "GET /cycles" do
  
    it "Create cycles" do
       visit cycles_path
+<<<<<<< HEAD
+=======
+#      save_and_open_page
+>>>>>>> continue with cycles tests
       click_link "New Cycle"
       #save_and_open_page
       fill_in "cycle_title", :with  => "Geek-art"
@@ -52,6 +68,7 @@ describe "GET /cycles" do
       visit "/cycles"
       click_link "Destroy"
     end
+<<<<<<< HEAD
     it "Select date from calender / datepicker" do
       visit "/cycles/1"
       click_link "Edit"
@@ -67,5 +84,8 @@ describe "GET /cycles" do
 
  end
 
+=======
+  end
+>>>>>>> continue with cycles tests
 
 end

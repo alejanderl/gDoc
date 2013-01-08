@@ -1,6 +1,7 @@
 require 'spec_helper'
 
   describe "GET /events" do
+
   before do
     user = FactoryGirl.create(:user)  
     visit new_user_session_path  
@@ -10,6 +11,12 @@ require 'spec_helper'
     FactoryGirl.create_list(:event,8)
   end
     
+   after(:each) do
+       FactoryGirl.factories.clear
+       FactoryGirl.reload
+    end
+
+
     it "display events index" do
       visit events_path
       page.should have_content("Event 1")
@@ -19,10 +26,16 @@ require 'spec_helper'
       page.should have_content("Cycle")
       save_and_open_page
     end
+  
   describe "POST /events" do
+
+    before(:each) do
+       @user = FactoryGirl.create(:user)
+      login_as @user, :scope => :user
+   end
+
+
     it "Create an event" do
-     FactoryGirl.create_list(:cycle, 3) 
-#      FactoryGirl.create(:event)
       visit events_path
       click_link "New Event"
       save_and_open_page
@@ -39,6 +52,7 @@ require 'spec_helper'
     end
     
     it "Update an event" do
+  #    FactoryGirl.create_list(:cycle, 3) 
       FactoryGirl.create(:event)
       visit "/events/1"
       click_link "Edit"
