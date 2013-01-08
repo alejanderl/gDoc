@@ -8,6 +8,18 @@ include Warden::Test::Helpers
       page.should have_content("Cycle 1")
     end
 
+    it "Each cycle shows events associated to it" do
+      cycle = FactoryGirl.create(:cycle)
+      event = FactoryGirl.create(:event)
+      visit "/cycles/1"
+      save_and_open_page
+      visit cycles_path
+      save_and_open_page
+      page.should have_content("Event")
+
+    end
+
+
   describe "POST /cycles" do
     before(:each) do
       @user = FactoryGirl.create(:user)
@@ -24,7 +36,7 @@ include Warden::Test::Helpers
 
     it "Create cycles" do
       visit cycles_path
-      save_and_open_page
+#      save_and_open_page
       click_link "New Cycle"
       fill_in "cycle_title", :with  => "Cycle 1"
       click_button "Create Cycle"
@@ -52,7 +64,6 @@ include Warden::Test::Helpers
       visit "/cycles"
       click_link "Destroy"
     end
- end
-
+  end
 
 end

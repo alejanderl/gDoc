@@ -1,7 +1,10 @@
 FactoryGirl.define do
+  sequence(:cycleTitle) {|n| "Cycle #{n}" }
+  sequence(:cycleDescription) {|n| "Cycle description #{n}" }
+
   factory :cycle do
-    sequence(:title) {|n| "Cycle #{n}" }
-    sequence(:description) {|n| "Description of Cycle #{n}" }
+    title {FactoryGirl.generate(:cycleTitle)}
+    description {generate :cycleDescription }
   end
 end
 

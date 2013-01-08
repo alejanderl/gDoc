@@ -2,9 +2,15 @@ require 'spec_helper'
 include Warden::Test::Helpers
 
   describe "GET /events" do
+
     before(:each) do
-     FactoryGirl.create_list(:event,8)
+      FactoryGirl.create_list(:event,8)
     end
+    after(:each) do
+       FactoryGirl.factories.clear
+       FactoryGirl.reload
+    end
+
 
     it "display events index" do
       visit events_path
@@ -15,15 +21,14 @@ include Warden::Test::Helpers
       page.should have_content("Cycle")
       save_and_open_page
     end
+  
   describe "POST /events" do
     before(:each) do
-      @user = FactoryGirl.create(:user)
+       @user = FactoryGirl.create(:user)
       login_as @user, :scope => :user
    end
 
     it "Create an event" do
-     FactoryGirl.create_list(:cycle, 3) 
-#      FactoryGirl.create(:event)
       visit events_path
       click_link "New Event"
       save_and_open_page
@@ -39,6 +44,7 @@ include Warden::Test::Helpers
 
     end
     it "Update an event" do
+  #    FactoryGirl.create_list(:cycle, 3) 
       FactoryGirl.create(:event)
       visit "/events/1"
       click_link "Edit"

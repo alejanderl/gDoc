@@ -30,7 +30,7 @@
   
   <div class="field">
     <%= f.label :cycle_id %><br />
-    <%= f.number_field :cycle_id %>
+    <%= f.select(:cycle_id, Cycle.all.collect {|c| [c.title, c.id]}) %>
   </div>
   <div class="actions">
     <%= f.submit %>
