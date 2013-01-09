@@ -2,6 +2,15 @@ require 'spec_helper'
 include Warden::Test::Helpers
 
   describe "GET /events" do
+  
+  before do
+    user = FactoryGirl.create(:user)  
+    visit new_user_session_path  
+    fill_in "user_email", :with => user.email
+    fill_in "user_password", :with => "secret"
+    click_button "Sign in"
+  end
+    
     it "display events index" do
       FactoryGirl.create(:event)
       visit events_path
@@ -41,7 +50,7 @@ include Warden::Test::Helpers
       select '2', :from => "event_date_3i" 
       click_button "Update Event"
       page.should have_content("Event was successfully updated.")
-      save_and_open_page
+      #save_and_open_page
     end
 
   end

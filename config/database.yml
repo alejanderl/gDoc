@@ -36,8 +36,8 @@ test:
   encoding: utf8
   database: gdd_test
   pool: 5
-  username: gdd
-  password: railsapp
+  username: postgres
+  password: password
 
 
 

@@ -42,11 +42,15 @@ gem 'debugger'
 
 
 group :development, :test do
+  gem 'rb-inotify', '~> 0.8.8'
+  gem 'turn'
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'guard-rspec'
+  gem "minitest"
 end
 
 # File uploader
