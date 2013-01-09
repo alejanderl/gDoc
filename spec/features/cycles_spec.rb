@@ -1,34 +1,31 @@
 require 'spec_helper'
-include Warden::Test::Helpers
 
-  describe "GET /cycles" do
-    it "display cycles" do
-      cycle = FactoryGirl.create(:cycle)
-      visit cycles_path
-      page.should have_content("Cycle 1")
-    end
+ 
+  
+describe "GET /cycles" do
+  
+  before do
+    user = FactoryGirl.create(:user)  
+    visit new_user_session_path  
+    fill_in "user_email", :with => user.email
+    fill_in "user_password", :with => "secret"
+    click_button "Sign in"
+  end
+
+  it "display cycles" do
+    cycle = FactoryGirl.create(:cycle)
+    visit cycles_path
+    page.should have_content("Cycle 1")
+  end
 
   describe "POST /cycles" do
-    before(:each) do
-      @user = FactoryGirl.create(:user)
-      login_as @user, :scope => :user
-   end
-#    it "signs me in" do
-#      user = FactoryGirl.create(:user)
-#      visit new_user_session_path
-#      fill_in 'user_email', :with => "user@example.com"
-#      fill_in 'user_password', :with => "lalala"
-#      click_link_or_button 'Sign in'
-#  end
-
-
     it "Create cycles" do
       visit cycles_path
-      save_and_open_page
       click_link "New Cycle"
-      fill_in "cycle_title", :with  => "Cycle 1"
+      #save_and_open_page
+      fill_in "cycle_title", :with  => "Geek-art"
       click_button "Create Cycle"
-      page.should have_content("Cycle 1")
+      page.should have_content("Geek-art")
       page.should have_content("Cycle was successfully created.")
 
     end
@@ -37,8 +34,7 @@ include Warden::Test::Helpers
       cycle = FactoryGirl.create(:cycle)
       visit "/cycles/1"
       click_link "Edit"
-#      save_and_open_page
-
+      # save_and_open_page
       fill_in "cycle_title", :with  => "Geek-art 2"
       click_button "Update Cycle"
 
