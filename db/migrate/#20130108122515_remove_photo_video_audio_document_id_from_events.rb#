@@ -1,4 +1,7 @@
-class RemovePhotoVideoAudioDocumentIdFromEvents < ActiveRecord::Migration
+
+
+
+class RemovePhotoVideoAudioDocumentIdfromEvents < ActiveRecord::Migration
   def up
 
 

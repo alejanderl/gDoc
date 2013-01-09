@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130108123029) do
+ActiveRecord::Schema.define(:version => 20130109005732) do
 
   create_table "audios", :force => true do |t|
     t.string   "title"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(:version => 20130108123029) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "audios_events", :id => false, :force => true do |t|
+    t.integer "audio_id"
+    t.integer "event_id"
+  end
+
   create_table "cycles", :force => true do |t|
     t.string   "title"
     t.date     "start_date"
@@ -32,6 +37,11 @@ ActiveRecord::Schema.define(:version => 20130108123029) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "cycles_events", :id => false, :force => true do |t|
+    t.integer "cycle_id"
+    t.integer "event_id"
   end
 
   create_table "documents", :force => true do |t|
@@ -45,6 +55,11 @@ ActiveRecord::Schema.define(:version => 20130108123029) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "documents_events", :id => false, :force => true do |t|
+    t.integer "document_id"
+    t.integer "event_id"
+  end
+
   create_table "events", :force => true do |t|
     t.string   "title"
     t.date     "date"
@@ -52,6 +67,16 @@ ActiveRecord::Schema.define(:version => 20130108123029) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "events_photos", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "photo_id"
+  end
+
+  create_table "events_videos", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "video_id"
   end
 
   create_table "participants", :force => true do |t|
