@@ -1,6 +1,15 @@
 require 'spec_helper'
 
   describe "GET /events" do
+  
+  before do
+    user = FactoryGirl.create(:user)  
+    visit new_user_session_path  
+    fill_in "user_email", :with => user.email
+    fill_in "user_password", :with => "secret"
+    click_button "Sign in"
+  end
+    
     it "display events index" do
       FactoryGirl.create(:event)
       visit events_path
