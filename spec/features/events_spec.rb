@@ -1,5 +1,4 @@
 require 'spec_helper'
-include Warden::Test::Helpers
 
   describe "GET /events" do
   
@@ -20,11 +19,6 @@ include Warden::Test::Helpers
 #      save_and_open_page
     end
   describe "POST /events" do
-    before(:each) do
-      @user = FactoryGirl.create(:user)
-      login_as @user, :scope => :user
-   end
-
     it "Create an event" do
       FactoryGirl.create(:event)
       visit events_path
@@ -37,7 +31,6 @@ include Warden::Test::Helpers
       click_button "Create Event"
       page.should have_content("Event was successfully created.")
 #      save_and_open_page
-
     end
     it "Update an event" do
       FactoryGirl.create(:event)

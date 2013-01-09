@@ -9,7 +9,7 @@ describe "Photos" do
       fill_in "user_email", :with => user.email
       fill_in "user_password", :with => "secret"
       click_button "Sign in"
-      photo = FactoryGirl.create(:photo, 8)
+      photo = FactoryGirl.create(:photo)
     end
     
     it "works! (now write some real specs)" do
@@ -20,9 +20,11 @@ describe "Photos" do
   
     describe "POST /photos" do
       it "Create photo" do
+        FactoryGirl.create(:photo)
         visit photos_path
+        save_and_open_page  
         click_link "New Photo"
-        #save_and_open_page
+        
         fill_in "photo_title", :with  => "Nonsense photo"
         click_button "Create Photo"
         page.should have_content("Nonsense photo")
