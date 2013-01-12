@@ -1,32 +1,26 @@
+<div  id="single-asset" class="span7 ofsset1">
+  
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b>Name:</b>
   <%= @photo.title %>
 </p>
-
-<p>
-  <b>Date:</b>
-  <%= @photo.date %>
-</p>
-
+<div class="image">
+      <%= image_tag @photo.image_url(:thumb) if @photo.image? %>
+    </div>
 <p>
   <b>Description:</b>
   <%= @photo.description %>
 </p>
 
 <p>
-  <b>License:</b>
-  <%= @photo.license %>
+  <b>Content related:</b>
+  <% # @photo.content_related
+  %>
 </p>
 
-<p>
-  <b>Format:</b>
-  <%= @photo.format %>
-</p>
-
-<div class="image">
-      <%= image_tag @photo.image_url(:thumb_150) if @photo.image? %>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
-<%= link_to 'Back', photos_path %>
+<%= link_to 'Back', :back %>
+</div>

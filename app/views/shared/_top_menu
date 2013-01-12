@@ -1,9 +1,31 @@
-<div id="menu">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Want to leave?
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-  <% end %>
-
-</div>
+<header>
+    <div id="nav-no" class=" navbar navbar-fixed-top  nav- navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="centered row">
+            <div id="logo" class=" span1">
+                <%= link_to image_tag("rails.png"), "/"%>
+            </div>
+            <button type="button" class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse2">
+             <i class="icon-user"></i>
+            </button>
+            <button type="button" class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-th-list"></i> 
+            </button>
+            <div id="user-nav" class="span3 nav-collapse ">
+              <%= render "shared/sign_in" %>
+            </div>
+            <ul class="nav nav-tabs span8 nav-collapse">
+                    <li class="span1"><%= link_to "Cycles",cycles_url,:class => "#{'active' if current_page?(cycles_url)}" %></li>
+                    <li class="span1"><%= link_to "Events",events_url,:class => "#{'active' if current_page?(events_url)}"  %></li>
+                    <li class="span1"><%= link_to "Photos",photos_url ,:class => "#{'active' if current_page?(photos_url)}" %></li>
+                    <li class="span1"><%= link_to "Videos",videos_url,:class => "#{'active' if current_page?(videos_url)}"  %></li>
+                    <li class="span1"><%= link_to "Audios",audios_url,:class => "#{'active' if current_page?(audios_url)}"  %></li>
+                    <li class="span1"><%= link_to "Documents",documents_url,:class => "#{'active' if current_page?(documents_url)}"  %></li>
+                    <li class="span1"><%= link_to "Participants",participants_url,:class => "#{'active' if current_page?(participants_url)}"  %></li>
+            </ul>
+            
+        </div>
+      </div>
+   </div>
+</header>
+<div id="separator" class="centered"></div>

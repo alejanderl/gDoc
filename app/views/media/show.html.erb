@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p >
+  <b>Theater:</b>  <h2><%= @theater.name %></h2>
+</p>
+<b>Address:</b>
+  <%= @theater.address.line1 %>
+  <%= @theater.address.city %>
+
+<p>
+   <%= @theater.description %>
+</p>
+    <div class="image">
+      <%= image_tag @theater.image.file_url(:thumb) if @theater.image.file? %>
+    </div>
+
+<p>
+  
+  
+</p>
+<%= render "list_rooms" %>
+
+<%= link_to 'Edit', edit_theater_path(@theater) %> |
+<%= link_to 'Back', theaters_path %>

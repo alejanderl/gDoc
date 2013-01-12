@@ -1,0 +1,19 @@
+
+
+
+  <ul class="nav">
+   <% if user_signed_in? %>
+         
+          <%= link_to current_user.email,edit_user_registration_path %> 
+       
+    <% else %>
+      <li class="span1">
+        <%= link_to "Sign up", new_user_registration_path %>
+     </li>
+
+      <li class="span1">
+        <%= link_to "Sign in", new_user_session_path %>
+      </li>
+    <% end %>
+  </ul>
+ 
