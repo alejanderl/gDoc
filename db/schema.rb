@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109210103) do
+ActiveRecord::Schema.define(:version => 20130113192240) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130109210103) do
     t.string   "language"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "uid"
   end
 
   create_table "audios_events", :id => false, :force => true do |t|
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20130109210103) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "uid"
   end
 
   create_table "cycles_events", :id => false, :force => true do |t|
@@ -64,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20130109210103) do
     t.string   "language"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "uid"
   end
 
   create_table "documents_events", :id => false, :force => true do |t|
@@ -78,6 +81,7 @@ ActiveRecord::Schema.define(:version => 20130109210103) do
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "uid"
   end
 
   create_table "events_photos", :id => false, :force => true do |t|
@@ -96,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20130109210103) do
     t.boolean  "creator"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "uid"
   end
 
   create_table "participates", :force => true do |t|
@@ -115,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20130109210103) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "image"
+    t.string   "uid"
   end
 
   create_table "users", :force => true do |t|
@@ -145,6 +151,7 @@ ActiveRecord::Schema.define(:version => 20130109210103) do
     t.string   "language"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "uid"
   end
 
 end
