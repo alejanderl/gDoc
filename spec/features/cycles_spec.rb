@@ -1,6 +1,4 @@
 require 'spec_helper'
-
- 
   
 describe "GET /cycles" do
   
@@ -19,7 +17,12 @@ describe "GET /cycles" do
   end
 
   describe "POST /cycles" do
-    it "Create cycles" do
+    before do
+      cycle = FactoryGirl.create_list(:cycle, 8)
+      
+    end
+ 
+   it "Create cycles" do
       visit cycles_path
       click_link "New Cycle"
       #save_and_open_page
@@ -44,10 +47,24 @@ describe "GET /cycles" do
     end
 
     it "destroy cycles" do
+       save_and_open_page
       cycle = FactoryGirl.create(:cycle)
       visit "/cycles"
       click_link "Destroy"
     end
+    it "Select date from calender / datepicker" do
+      visit "/cycles/1"
+      click_link "Edit"
+#      click_field "date"
+
+    end
+
+    pending "check taxonomy fiedl" do 
+      page.should have_content "taxonomy"
+#      fill_in 
+
+    end
+
  end
 
 
