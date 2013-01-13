@@ -36,10 +36,6 @@ describe "GET /cycles" do
  
    it "Create cycles" do
       visit cycles_path
-<<<<<<< HEAD
-=======
-#      save_and_open_page
->>>>>>> continue with cycles tests
       click_link "New Cycle"
       #save_and_open_page
       fill_in "cycle_title", :with  => "Geek-art"
@@ -68,7 +64,7 @@ describe "GET /cycles" do
       visit "/cycles"
       click_link "Destroy"
     end
-<<<<<<< HEAD
+
     it "Select date from calender / datepicker" do
       visit "/cycles/1"
       click_link "Edit"
@@ -84,8 +80,8 @@ describe "GET /cycles" do
 
  end
 
-=======
+
   end
->>>>>>> continue with cycles tests
+
 
 end
