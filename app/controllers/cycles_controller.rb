@@ -4,7 +4,12 @@ class CyclesController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
-    @cycles = Cycle.all
+    if params[:tag]
+      @cycles = Cycle.tagged_with(params[:tag])
+    else
+      @cycles = Cycle.all
+   end
+
 
     respond_to do |format|
       format.html # index.html.erb
