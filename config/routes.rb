@@ -2,6 +2,8 @@ Gdoc::Application.routes.draw do
   
   root :to => 'Cycles#index'
 
+  resources :tags
+
   devise_for :users
 
   resources :participants
