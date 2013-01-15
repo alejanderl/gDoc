@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109005732) do
+ActiveRecord::Schema.define(:version => 20130115125229) do
 
   create_table "audios", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.string   "description"
+    t.text     "description"
     t.string   "license"
     t.string   "format"
     t.integer  "duration"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20130109005732) do
     t.string   "title"
     t.date     "start_date"
     t.date     "end_date"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(:version => 20130109005732) do
   create_table "documents", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.string   "description"
+    t.text     "description"
     t.string   "license"
     t.string   "format"
     t.string   "language"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20130109005732) do
     t.string   "title"
     t.date     "date"
     t.time     "time"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -81,10 +81,11 @@ ActiveRecord::Schema.define(:version => 20130109005732) do
 
   create_table "participants", :force => true do |t|
     t.string   "name"
-    t.string   "bio"
+    t.text     "bio"
     t.boolean  "creator"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "image"
   end
 
   create_table "participates", :force => true do |t|
@@ -98,7 +99,7 @@ ActiveRecord::Schema.define(:version => 20130109005732) do
   create_table "photos", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.string   "description"
+    t.text     "description"
     t.string   "license"
     t.string   "format"
     t.datetime "created_at",  :null => false
@@ -127,7 +128,7 @@ ActiveRecord::Schema.define(:version => 20130109005732) do
   create_table "videos", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.string   "description"
+    t.text     "description"
     t.string   "license"
     t.string   "format"
     t.integer  "duration"

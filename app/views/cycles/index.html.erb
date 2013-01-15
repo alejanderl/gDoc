@@ -1,29 +1,28 @@
-<h1>Listing cycles</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Start date</th>
-    <th>End date</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @cycles.each do |cycle| %>
-  <tr>
-    <td><%= cycle.title %></td>
-    <td><%= cycle.start_date %></td>
-    <td><%= cycle.end_date %></td>
-    <td><%= cycle.description %></td>
-    <td><%= link_to 'Show', cycle %></td>
-    <td><%= link_to 'Edit', edit_cycle_path(cycle) %></td>
-    <td><%= link_to 'Destroy', cycle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
+<h1 class="background-title">Listing cycles</h1>
 <%= link_to 'New Cycle', new_cycle_path %>
+
+<% @cycles.each do |t|%>
+
+  <div class="box_container full-width span7">
+    <div class="favourites">
+      <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
+      <%#= favourite_button(t) if current_user.present? %>
+    </div>
+    <div class="name">
+      <%= link_to t.title,cycle_url(t.id) %>
+    </div>   
+    <div class="description">
+      <%= t.description  %>
+    </div>
+    <div class="start-end-date">
+      <%= t.start_date %>
+    </div>
+  </div>
+  
+  
+<% end %>
+
+
+<br/>
+
+

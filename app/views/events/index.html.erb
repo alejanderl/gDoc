@@ -1,33 +1,31 @@
-<h1>Listing events</h1>
+<h1>Listing events</h1><%= link_to 'New Event', new_event_path if current_user.present?%>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Time</th>
-    <th>Description</th>
 
-    
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @events.each do |event| %>
-  <tr>
-    <td><%= event.title %></td>
-    <td><%= event.date %></td>
-    <td><%= event.time %></td>
-    <td><%= event.description %></td>
-   
-    
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+
+
+<% @events.each do |t|%>
+
+  <div class="box_container full-width span7">
+    <div class="favourites">
+      <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
+      <%#= favourite_button(t) if current_user.present? %>
+    </div>
+    <div class="name">
+      <%= link_to t.title,events_url(t.id) %>
+    </div>   
+    <div class="description">
+      <%= t.description  %>
+    </div>
+    <div class="start-end-date">
+      <%= t.date %><%= t.time %>
+    </div>
+  </div>
+  
+  
 <% end %>
-</table>
+
+
 
 <br />
 
-<%= link_to 'New Event', new_event_path %>
