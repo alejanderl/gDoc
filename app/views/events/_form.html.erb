@@ -29,8 +29,10 @@
   </div>
   
   <div class="field">
-    <%= f.label :cycle_id %><br />
-    <%= f.select(:cycle_id, Cycle.all.collect {|c| [c.title, c.id]}) %>
+     <% if !@cycles.empty? %>  
+    <%= f.label :cycle_ids %><br />
+    <%= f.select(:cycle_ids, @cycles.collect {|c| [c.title, c.id]}) %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

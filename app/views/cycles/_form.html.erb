@@ -17,14 +17,12 @@
   </div>
   <div class="field">
     <%= f.label :start_date %><br />
-
     <%= f.datepicker :start_date, :dateFormat => "yy-mm-dd" %>
   </div>
 
 
   <div class="field">
     <%= f.label :end_date %><br />
-
     <%= f.datepicker :end_date, :minDate => @cycle.start_date, :dateFormat => "yy-mm-dd" %>
   </div>
   <div class="field">

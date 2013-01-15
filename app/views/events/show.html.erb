@@ -24,7 +24,12 @@
 
 <p>
   <b>Cycle:</b>
-  <%= @event.cycle_id %>
+     <% if !@event.cycles.nil? %>  
+       <%=  @event.cycles.each do |c|  %>
+          <td><%= link_to c.title, c.title %></td>
+       <% end %>
+    <% end %>
+
 </p>
 
 
