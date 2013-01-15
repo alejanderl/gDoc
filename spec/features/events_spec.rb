@@ -47,6 +47,10 @@ require 'spec_helper'
       select 'Cycle 2', :from => "event_cycle_id"
       click_button "Create Event"
       page.should have_content("Event was successfully created.")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7a7cf915ce84d010cae8e6137bd6d149d2634da2
 
 #      save_and_open_page
     end
@@ -63,7 +67,11 @@ require 'spec_helper'
       select '2', :from => "event_date_3i" 
       click_button "Update Event"
       page.should have_content("Event was successfully updated.")
+<<<<<<< HEAD
 
+=======
+ #     save_and_open_page
+>>>>>>> 7a7cf915ce84d010cae8e6137bd6d149d2634da2
     end
 
   end

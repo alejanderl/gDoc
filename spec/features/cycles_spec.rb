@@ -1,14 +1,9 @@
 require 'spec_helper'
-<<<<<<< HEAD
-  
-=======
 
- 
-   
->>>>>>> alx
 describe "GET /cycles" do
-  user = FactoryGirl.create(:user)  
+
   before do
+  user = FactoryGirl.create(:user)  
     visit new_user_session_path  
     fill_in "user_email", :with => user.email
     fill_in "user_password", :with => "secret"
@@ -36,6 +31,16 @@ describe "GET /cycles" do
 
     end
 
+    it "Each cycle shows events associated to it" do
+      cycle = FactoryGirl.create(:cycle)
+      event = FactoryGirl.create(:event)
+      visit "/cycles/1"
+      save_and_open_page
+      visit cycles_path
+      save_and_open_page
+      page.should have_content("Event")
+
+    end
 
   describe "POST /cycles" do
     before do
@@ -88,9 +93,6 @@ describe "GET /cycles" do
     end
 
  end
-
-
-  end
 
 
 end

@@ -57,8 +57,11 @@ group :development, :test do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+<<<<<<< HEAD
   gem 'guard-rspec'
   gem "minitest"
+=======
+>>>>>>> 7a7cf915ce84d010cae8e6137bd6d149d2634da2
 
 end
 
