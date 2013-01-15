@@ -12,12 +12,15 @@
  <div >
    <%= render "shared/top_menu" %>
   </div>
-
+<div class="centered">
 <%= yield %>
+</div>
 
   <p class="notice"><%= notice %></p>
+       <% if alert.present?%>
        <p class="alert"><%= alert %></p>
+       <% end %>
 
-
+<div class="clearfix"></div>
 </body>
 </html>

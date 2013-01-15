@@ -1,33 +1,22 @@
 <h1>Listing photos</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>License</th>
-    <th>Format</th>
-    <th>Person</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<% @photos.each do |t|%>
 
-<% @photos.each do |photo| %>
-  <tr>
-    <td><%= image_tag photo.image_url(:nano_thumb_50) if photo.image? %><%= photo.title %></td>
-    <td><%= photo.date %></td>
-    <td><%= photo.description %></td>
-    <td><%= photo.license %></td>
-    <td><%= photo.format %></td>
+  <div class="box_container">
+    <div class="name">
+      <%= link_to t.title,photo_url(t.id) %>
+    </div>
+    <div class="favourites">
+    <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
+   <%= favourite_button(t) if current_user.present? %>
     
-    <td><%= link_to 'Show', photo %></td>
-    <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-    <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    </div>
+    <div class="image">
+      <%= link_to image_tag t.image if t.image.present? %>
+    </div>
+  </div>
+  
+  
 <% end %>
-</table>
-
-<br />
 
 <%= link_to 'New Photo', new_photo_path %>

@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+<<<<<<< HEAD
 //= require jquery-ui
+=======
+//= require twitter/bootstrap
+>>>>>>> alx
 //= require_tree .
 

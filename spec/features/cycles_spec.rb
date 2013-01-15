@@ -1,15 +1,24 @@
 require 'spec_helper'
+<<<<<<< HEAD
   
+=======
+
+ 
+   
+>>>>>>> alx
 describe "GET /cycles" do
-  
+  user = FactoryGirl.create(:user)  
   before do
-    user = FactoryGirl.create(:user)  
     visit new_user_session_path  
     fill_in "user_email", :with => user.email
     fill_in "user_password", :with => "secret"
+   
     click_button "Sign in"
-  end
+    save_and_open_page
 
+   
+  end
+  
   it "display cycles" do
     cycle = FactoryGirl.create(:cycle)
     visit cycles_path
@@ -46,7 +55,7 @@ describe "GET /cycles" do
     end
 
     it "update cycles" do
-      cycle = FactoryGirl.create(:cycle)
+      cycle = FactoryGirl.create_list(:cycle,8)
       visit "/cycles/1"
       click_link "Edit"
       # save_and_open_page
