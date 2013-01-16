@@ -9,7 +9,7 @@
     <th>Format</th>
     <th>Duration</th>
     <th>Language</th>
-    <th>Person</th>
+    <th>Participant</th>
     <th></th>
     <th></th>
     <th></th>
@@ -24,7 +24,7 @@
     <td><%= video.format %></td>
     <td><%= video.duration %></td>
     <td><%= video.language %></td>
-    <td><%= video.person_id %></td>
+    <td><%= video.participants.name %></td>
     <td><%= link_to 'Show', video %></td>
     <td><%= link_to 'Edit', edit_video_path(video) %></td>
     <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
