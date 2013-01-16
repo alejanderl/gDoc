@@ -3,12 +3,19 @@ require 'spec_helper'
   describe "GET /events" do
 
   before do
+<<<<<<< HEAD
     user = FactoryGirl.create(:user)  
     visit new_user_session_path  
     fill_in "user_email", :with => user.email
     fill_in "user_password", :with => "secret"
     click_button "Sign in"
     FactoryGirl.create_list(:event,8)
+=======
+    create_sample_cycles
+    create_sample_users
+    create_sample_events
+
+>>>>>>> master
   end
     
    after(:each) do
@@ -19,12 +26,20 @@ require 'spec_helper'
 
     it "display events index" do
       visit events_path
+<<<<<<< HEAD
       page.should have_content("Event 1")
       page.should have_content("Date")
       page.should have_content("Time")
       page.should have_content("Description")
       page.should have_content("Cycle")
       save_and_open_page
+=======
+      save_and_open_page
+      page.should have_content("Cool event ever")
+      page.should have_content("Come and see")
+#      page.should have_content("Cycle")
+
+>>>>>>> master
     end
   
   describe "POST /events" do
@@ -38,13 +53,21 @@ require 'spec_helper'
     it "Create an event" do
       visit events_path
       click_link "New Event"
+<<<<<<< HEAD
       save_and_open_page
+=======
+      user_login("admin@example.com", "admin123")
+>>>>>>> master
       fill_in "event_title", :with  => "Conference"
       fill_in "event_description", :with  => "Conference about"
       select '2013', :from => "event_date_1i" 
       select 'May', :from => "event_date_2i" 
       select '21', :from => "event_date_3i" 
+<<<<<<< HEAD
       select 'Cycle 2', :from => "event_cycle_id"
+=======
+      save_and_open_page
+>>>>>>> master
       click_button "Create Event"
       page.should have_content("Event was successfully created.")
 <<<<<<< HEAD
@@ -54,12 +77,21 @@ require 'spec_helper'
 
 #      save_and_open_page
     end
+<<<<<<< HEAD
     
     it "Update an event" do
   #    FactoryGirl.create_list(:cycle, 3) 
       FactoryGirl.create(:event)
+=======
+    pending it "Associate a cycle to an event" do
+
+    end
+
+    it "Update an event" do
+>>>>>>> master
       visit "/events/1"
       click_link "Edit"
+      user_login("admin@example.com", "admin123")
       fill_in "event_title", :with  => "Show"
       fill_in "event_description", :with  => "A coooool show"
       select '2013', :from => "event_date_1i" 
