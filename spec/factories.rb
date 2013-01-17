@@ -36,3 +36,9 @@ def create_sample_events
   Event.create(:title => "Comic-thon", :description => "48h for creating collective comics", :date => "2013-03-02", :time =>"12:00")
 end
 
+def create_sample_tags
+  cycle = Cycle.first
+  cycle.tag_list = "e-textile, art"
+  cycle.save
+
+end

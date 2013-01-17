@@ -18,7 +18,13 @@ class CyclesController < ApplicationController
   # GET /cycles/1
   # GET /cycles/1.json
   def show
-    @cycle = Cycle.find(params[:id])
+
+    if params[:tag]
+      @cycles = Cycle.tagged_with(params[:tag])
+    else
+      @cycle = Cycle.find(params[:id])
+  #    @cycles = Cycle.all
+   end
 
     respond_to do |format|
       format.html # show.html.erb

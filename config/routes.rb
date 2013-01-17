@@ -1,9 +1,6 @@
 Gdoc::Application.routes.draw do
-  
+  get 'tags/:tag', to: 'cycles#index', as: :tag  
   root :to => 'Cycles#index'
-
-  get 'cycles/:tag' => 'cycles#index'
-#  resources :tags
   devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
   devise_for :users
 

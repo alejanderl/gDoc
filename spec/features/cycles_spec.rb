@@ -25,7 +25,8 @@ describe "GET /cycles" do
    before do
     create_sample_cycles
     create_sample_users
-   end
+    create_sample_tags
+  end
 
  
    it "Create cycles" do
@@ -34,6 +35,7 @@ describe "GET /cycles" do
 #     save_and_open_page
       click_link "New Cycle"
       fill_in "cycle_title", :with  => "Geek-art"
+      fill_in "cycle_tag_list", :with => "art"
       click_button "Create Cycle"
       page.should have_content("Geek-art")
       page.should have_content("Cycle was successfully created.")
@@ -78,7 +80,18 @@ describe "GET /cycles" do
 #      fill_in 
     end
 
+    it "click on a tag a get a filtered list of cycles with that tag" do
+        visit cycles_path
+        save_and_open_page
+        page.should have_content "e-textile"
+        click_link "e-textile"
+        visit "/tags/e-textile"
+        page.should_not have_content "Cycle 2"
+    end
+
  end
+
+
 
 
 end
