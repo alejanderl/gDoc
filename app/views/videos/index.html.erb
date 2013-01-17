@@ -1,37 +1,26 @@
-<h1>Listing videos</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>License</th>
-    <th>Format</th>
-    <th>Duration</th>
-    <th>Language</th>
-    <th>Person</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1 class="background-title span7">Listing videos</h1>
+<%= link_to 'New Video', new_video_path if current_user.present? %>
 
-<% @videos.each do |video| %>
-  <tr>
-    <td><%= video.title %></td>
-    <td><%= video.date %></td>
-    <td><%= video.description %></td>
-    <td><%= video.license %></td>
-    <td><%= video.format %></td>
-    <td><%= video.duration %></td>
-    <td><%= video.language %></td>
 
-    <td><%= link_to 'Show', video %></td>
-    <td><%= link_to 'Edit', edit_video_path(video) %></td>
-    <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% @videos.each do |t|%>
+
+  <div class="box_container">
+    <div class="name">
+      <%= link_to t.title,video_url(t.id) %>
+    </div>
+    <div class="favourites">
+    <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
+   <%#= favourite_button(t) if current_user.present? %>
+    
+    </div>
+    <div class="image">
+      *Pending: Lightbox con player de video
+      <%= link_to(image_tag(t.image),video_url(t.id))  if t.image.present? %>
+    </div>
+  </div>
+  
+  
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Video', new_video_path %>

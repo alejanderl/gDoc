@@ -2,15 +2,14 @@ FactoryGirl.define do
   
 
 
- factory :participant do
-    name "Nombre 1"
-    bio  "Bio de prueba"
- end
- 
- 
-  factory :photo do
-    sequence(:title) {|n| " Photo title #{n}" }
-    sequence(:description) {|n| "Description of photo #{n}" }
-  end
 
+
+end
+
+
+ def create_photo(attrs = {})
+  attrs = attrs.dup
+  attrs[:title] ||= "Photo title  #{String.random(10)}"
+  attrs[:description] ||= String.random(10)
+  Photo.create!(attrs)
 end

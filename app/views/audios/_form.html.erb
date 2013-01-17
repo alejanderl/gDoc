@@ -1,4 +1,6 @@
-<%= form_for(@audio) do |f| %>
+
+<div  id="single-asset" class="span7 ofsset1">
+  <%= form_for(@audio) do |f| %>
   <% if @audio.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@audio.errors.count, "error") %> prohibited this audio from being saved:</h2>
@@ -39,11 +41,9 @@
     <%= f.label :language %><br />
     <%= f.text_field :language %>
   </div>
-  <div class="field">
-    <%= f.label :person_id %><br />
-    <%= f.number_field :person_id %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
