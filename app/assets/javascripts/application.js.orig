@@ -12,10 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-<<<<<<< .merge_file_LnHf6V
+<<<<<<< HEAD
+<<<<<<< .merge_file_qh4m3J
+
 //= require twitter/bootstrap
+
 =======
->>>>>>> .merge_file_EszEQX
+>>>>>>> .merge_file_qwRY2L
+=======
+>>>>>>> master
 //= require jquery-ui
 //= require_tree .
 
