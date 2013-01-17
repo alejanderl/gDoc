@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115125229) do
+ActiveRecord::Schema.define(:version => 20130117111650) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(:version => 20130115125229) do
     t.string   "city"
     t.string   "country"
     t.integer  "addressable_id"
-    t.string   "addresable_type"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "addressable_type"
   end
 
   create_table "audios", :force => true do |t|
