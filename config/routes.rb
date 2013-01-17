@@ -4,7 +4,7 @@ Gdoc::Application.routes.draw do
 
   get 'cycles/:tag' => 'cycles#index'
 #  resources :tags
-
+  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
   devise_for :users
 
   resources :participants
