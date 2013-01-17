@@ -9,7 +9,7 @@ end
 
  # Logout as user
 def user_logout
-  visit "sign_out"
+  visit "/users/sign_out"
   page.should have_content "Signed out successfully."
   
 end

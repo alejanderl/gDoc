@@ -7,43 +7,32 @@ describe "GET /cycles" do
     create_sample_users
  end
 
-
-   
-  end
   
   it "display cycles" do
     visit cycles_path
     page.should have_content("Cycle 1")
   end
 
-    it "Each cycle shows events associated to it" do
-      cycle = FactoryGirl.create(:cycle)
-      event = FactoryGirl.create(:event)
+   pending  it "Each cycle shows events associated to it" do
       visit "/cycles/1"
-      save_and_open_page
+#      save_and_open_page
       visit cycles_path
-      save_and_open_page
-      page.should have_content("Event")
-
-    end
-
-    it "Each cycle shows events associated to it" do
-      cycle = FactoryGirl.create(:cycle)
-      event = FactoryGirl.create(:event)
-      visit "/cycles/1"
-      save_and_open_page
-      visit cycles_path
-      save_and_open_page
       page.should have_content("Event")
 
     end
 
   describe "POST /cycles" do
+   before do
+    create_sample_cycles
+    create_sample_users
+   end
+
  
    it "Create cycles" do
-      visit cycles_path
-      click_link "New Cycle"
       user_login("admin@example.com", "admin123")
+      visit cycles_path
+#     save_and_open_page
+      click_link "New Cycle"
       fill_in "cycle_title", :with  => "Geek-art"
       click_button "Create Cycle"
       page.should have_content("Geek-art")
@@ -53,10 +42,11 @@ describe "GET /cycles" do
 
 
   it "Update cycles" do
-      user_login("admin@example.com", "admin123")
+      user_login("admin@example.com", "admin123")  
       visit "/cycles/1"
       click_link "Edit"
      # save_and_open_page
+      page.should have_content("Cycle 1")
       fill_in "cycle_title", :with  => "Geek-art 2"
       click_button "Update Cycle"
       page.should have_content("Geek-art 2")
@@ -72,7 +62,7 @@ describe "GET /cycles" do
 #        alert = page.driver.browser.switch_to.alert
 #        expect { alert.accept }.to change(Cycle, :count).by(-1)}
         expect { click_link('Destroy') }.to change(Cycle, :count).by(-1)}
-      save_and_open_page
+#      save_and_open_page
     end
 
 
