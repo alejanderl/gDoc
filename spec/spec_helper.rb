@@ -5,7 +5,7 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require 'rspec/autorun'
 require 'database_cleaner'
-require 'factory_girl'
+#require 'factory_girl'
 
 #require File.dirname(__FILE__) + "/factories"  
 

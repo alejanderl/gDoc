@@ -11,6 +11,10 @@ gem 'pg'
 #Draws diagram  from schema.rb
 gem 'rails-erd' 
 
+#To select date from a calender
+
+gem 'jquery_datepicker'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

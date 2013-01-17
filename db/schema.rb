@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115125229) do
+ActiveRecord::Schema.define(:version => 20130109210103) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "address"
+    t.string   "postcode"
+    t.string   "city"
+    t.string   "country"
+    t.integer  "addressable_id"
+    t.string   "addresable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "audios", :force => true do |t|
     t.string   "title"
@@ -47,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20130115125229) do
   create_table "documents", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.text     "description"
+    t.string   "description"
     t.string   "license"
     t.string   "format"
     t.string   "language"
@@ -81,11 +92,10 @@ ActiveRecord::Schema.define(:version => 20130115125229) do
 
   create_table "participants", :force => true do |t|
     t.string   "name"
-    t.text     "bio"
+    t.string   "bio"
     t.boolean  "creator"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "image"
   end
 
   create_table "participates", :force => true do |t|
@@ -99,7 +109,7 @@ ActiveRecord::Schema.define(:version => 20130115125229) do
   create_table "photos", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.text     "description"
+    t.string   "description"
     t.string   "license"
     t.string   "format"
     t.datetime "created_at",  :null => false
