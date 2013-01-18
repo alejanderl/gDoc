@@ -49,7 +49,7 @@ describe "GET /cycles" do
 #        alert = page.driver.browser.switch_to.alert
 #        expect { alert.accept }.to change(Cycle, :count).by(-1)}
         expect { click_link('Destroy') }.to change(Cycle, :count).by(-1)}
-      save_and_open_page
+#      save_and_open_page
     end
 
     pending it "Select date from calender / datepicker" do
