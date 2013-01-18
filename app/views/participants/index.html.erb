@@ -1,27 +1,20 @@
-<h1>Listing participants</h1>
+<h1 class="background-title">Listing participants</h1>
+<%= link_to 'New Participant', new_participant_path if current_user.present? %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Bio</th>
-    <th>Creator</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @participants.each do |participant| %>
-  <tr>
-    <td><%= participant.name %></td>
-    <td><%= participant.bio %></td>
-    <td><%= participant.creator %></td>
-    <td><%= link_to 'Show', participant %></td>
-    <td><%= link_to 'Edit', edit_participant_path(participant) %></td>
-    <td><%= link_to 'Destroy', participant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% @participants.each do |t|%>
+
+  <div class="box_container">
+    <div class="name">
+      <%= link_to t.name,participant_url(t.id) %>
+    </div>
+    <div class="favourites">
+    <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
+    <%#= favourite_button(t) if current_user.present? %>
+    </div>
+    <div class="image">
+      <%= link_to(image_tag(t.image),participant_url(t.id))  if t.image.present? %>
+    </div>
+  </div>
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Participant', new_participant_path %>

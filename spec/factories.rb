@@ -35,7 +35,12 @@ def create_sample_events
   Event.create(:title => "3D printing", :description => "Latest news on 3D printing", :date => "2013-02-10", :time =>"11:00")
   
   event = Event.create(:title => "Comic-thon", :description => "48h for creating collective comics", :date => "2013-03-02", :time =>"12:00")
-  event.addresses.build(:address => "PLanufer 90", :postcode => "10967", :city => "Berlin" , :country =>"Germany" )
+  event.addresses.build(:address => "Planufer 90", :postcode => "10967", :city => "Berlin" , :country =>"Germany" )
   event.save
 end
 
+def create_sample_audios
+  Audio.create(:title => "Cool audio", :description => "Come and see", :date => "2013-02-11", :license => "Creative commons", :format => "mp3", :duration => "1hour", :language => "English")
+  Audio.create(:title => "Cool audio ever2 ", :description => "Come and see", :date => "2013-02-11", :license => "Creative commons", :format => "mp3", :duration => "1hour", :language => "English")
+  
+end

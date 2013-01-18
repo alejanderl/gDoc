@@ -1,37 +1,29 @@
-<h1>Listing audios</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>License</th>
-    <th>Format</th>
-    <th>Duration</th>
-    <th>Language</th>
-    <th>Person</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @audios.each do |audio| %>
-  <tr>
-    <td><%= audio.title %></td>
-    <td><%= audio.date %></td>
-    <td><%= audio.description %></td>
-    <td><%= audio.license %></td>
-    <td><%= audio.format %></td>
-    <td><%= audio.duration %></td>
-    <td><%= audio.language %></td>
-    <td><%= audio.person_id %></td>
-    <td><%= link_to 'Show', audio %></td>
-    <td><%= link_to 'Edit', edit_audio_path(audio) %></td>
-    <td><%= link_to 'Destroy', audio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
+<h1 class="background-title">Listing audios</h1>
 <%= link_to 'New Audio', new_audio_path %>
+
+<% @audios.each do |t|%>
+
+  <div class="box_container full-width span7">
+    <div class="favourites">
+      <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
+      <%#= favourite_button(t) if current_user.present? %>
+    </div>
+    <div class="name">
+      <%= link_to t.title,audio_url(t.id) %>
+    </div>   
+    <div class="description">
+      <%= t.description  %>
+    </div>
+    <div class="start-end-date">
+      <%= t.date %>
+    </div>
+  </div>
+  
+  
+<% end %>
+
+
+<br/>
+
+
+
