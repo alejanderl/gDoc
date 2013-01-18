@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :audios
   has_and_belongs_to_many :photos
   has_and_belongs_to_many :documents
-  has_many :events, :as => :addressable
+  has_many :addresses, :as => :addressable
   has_many :participates, :as => :participable  
   has_many :participants, :through => :participates
   validates_presence_of :title 
