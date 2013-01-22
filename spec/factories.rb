@@ -29,6 +29,16 @@ def create_sample_cycles
   Cycle.create(:title => "Cycle 3", :description => "Cycle 3 description", :start_date => "2013-03-1", :end_date =>"2013-03-15 ")
 end
 
+
+
+
+ def create_sample_documents(attrs = {})
+    attrs2 = attrs.dup
+    attrs2[:title] ||= "Document random#{rand(1000)}"
+    attrs2[:description] ||= "Description random#{rand(1000)}"
+    Document.create!(attrs2)
+end
+
 def create_sample_events
   Event.create(:title => "Cool event ever", :description => "Come and see", :date => "2013-02-11", :time =>"21:00")
   Event.create(:title => "Year Conf", :description => "One more year we are back!!", :date => "2013-03-12", :time =>"10:00")
