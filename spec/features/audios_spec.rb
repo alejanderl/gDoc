@@ -8,8 +8,9 @@ describe "GET /audios" do
  end
 
   it "display cycles" do
-    visit audios_path
+    visit audios_path    
     page.should have_content("Cool audio")
+    page.should_not have_content("New Audio")
   end
 
   describe "POST /cycles" do
