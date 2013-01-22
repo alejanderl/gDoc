@@ -23,7 +23,7 @@ require 'spec_helper'
       
       user_login("admin@example.com", "admin123")
       visit events_path
-      save_and_open_page
+#      save_and_open_page
       click_link "New Event"
       save_and_open_page
       user_login("admin@example.com", "admin123")

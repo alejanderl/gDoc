@@ -9,6 +9,7 @@ describe "GET /cycles" do
 
   it "display cycles" do
     visit cycles_path
+    page.should_not have_content("New Cycle")
     page.should have_content("Cycle 1")
   end
 
