@@ -1,35 +1,22 @@
-<h1>Listing documents</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>License</th>
-    <th>Format</th>
-    <th>Language</th>
-    <th>Person</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Listing Documents</h1><%= link_to 'New Document', new_document_path if current_user.present?%>
 
-<% @documents.each do |document| %>
-  <tr>
-    <td><%= document.title %></td>
-    <td><%= document.date %></td>
-    <td><%= document.description %></td>
-    <td><%= document.license %></td>
-    <td><%= document.format %></td>
-    <td><%= document.language %></td>
-    <td><%= document.person_id %></td>
-    <td><%= link_to 'Show', document %></td>
-    <td><%= link_to 'Edit', edit_document_path(document) %></td>
-    <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+
+
+
+
+<% @documents.each do |t|%>
+
+  <div class="box_container full-width span7">
+    <div class="favourites">
+      <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
+      <%#= favourite_button(t) if current_user.present? %>
+    </div>
+    <div class="name">
+      <%= link_to t.title,document_url(t.id) %>
+    </div>   
+  </div>
+  
+  
 <% end %>
-</table>
 
-<br />
-
-<%= link_to 'New Document', new_document_path %>

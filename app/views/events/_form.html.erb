@@ -1,3 +1,4 @@
+<div  id="single-asset" class="span7 ofsset1">
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -34,7 +35,9 @@
     <%= f.select(:cycle_ids, @cycles.collect {|c| [c.title, c.id]}) %>
     <% end %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>

@@ -13,14 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 <<<<<<< HEAD
-<<<<<<< HEAD
-//= require jquery-ui
-=======
+<<<<<<< .merge_file_qh4m3J
+
 //= require twitter/bootstrap
->>>>>>> alx
+
 =======
-//= require jquery-ui
-//= require twitter/bootstrap
+>>>>>>> .merge_file_qwRY2L
+=======
 >>>>>>> master
+//= require jquery-ui
 //= require_tree .
 

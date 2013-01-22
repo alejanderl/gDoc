@@ -7,7 +7,6 @@ describe "GET /cycles" do
     create_sample_users
  end
 
-  
   it "display cycles" do
     visit cycles_path
     page.should have_content("Cycle 1")
@@ -42,9 +41,8 @@ describe "GET /cycles" do
 
     end
 
-
   it "Update cycles" do
-      user_login("admin@example.com", "admin123")  
+      user_login("admin@example.com", "admin123")
       visit "/cycles/1"
       click_link "Edit"
      # save_and_open_page

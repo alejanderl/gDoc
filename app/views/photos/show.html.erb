@@ -3,8 +3,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @photo.title %>
+  
+  <h1><%= @photo.title %></h1>
 </p>
 <div class="image">
       <%= image_tag @photo.image_url(:thumb) if @photo.image? %>
@@ -21,6 +21,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Edit', edit_photo_path(@photo) if current_user.present? %> |
 <%= link_to 'Back', :back %>
 </div>

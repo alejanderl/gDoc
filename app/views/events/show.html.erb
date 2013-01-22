@@ -1,37 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @event.title %>
-</p>
 
-<p>
-  <b>Date:</b>
-  <%= @event.date %>
-</p>
+<div  id="single-asset" class="span7 ofsset1">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <b>Title:</b>
+    <%= @event.title %>
+  </p>
+  
+  <p>
+    <b>Date:</b>
+    <%= @event.date %>
+  </p>
+  
+  <p>
+    <b>Time:</b>
+    <%= @event.time %>
+  </p>
+  
+  <p>
+    <b>Description:</b>
+    <%= @event.description %>
+  </p>
 
-<p>
-  <b>Time:</b>
-  <%= @event.time %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @event.description %>
-</p>
-
-
-
-<p>
-  <b>Cycle:</b>
-     <% if !@event.cycles.nil? %>  
-       <%=  @event.cycles.each do |c|  %>
+  <p>
+   <b>Cycle:</b>
+     <% if @event.cycles.present? %>  
+       <%  @event.cycles.each do |c|  %>
           <td><%= link_to c.title, c.title %></td>
        <% end %>
     <% end %>
+  </p>
+  
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>  
+</div>
 
-</p>
-
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>

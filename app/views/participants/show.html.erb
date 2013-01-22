@@ -1,20 +1,29 @@
+
+
+
+<div  id="single-asset" class="span7 ofsset1">
+  
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @participant.name %>
+  
+  <h1><%= @participant.name %></h1>
 </p>
-
+<div class="image">
+      <%= image_tag @participant.image_url(:thumb) if @participant.image? %>
+    </div>
 <p>
-  <b>Bio:</b>
+  <b>Short description:</b>
   <%= @participant.bio %>
 </p>
 
 <p>
-  <b>Creator:</b>
-  <%= @participant.creator %>
+  <b>Content related:</b>
+  <% #= @photo.content_related %>
 </p>
 
 
 <%= link_to 'Edit', edit_participant_path(@participant) %> |
 <%= link_to 'Back', participants_path %>
+<div class="clearfix"></div>
+</div>

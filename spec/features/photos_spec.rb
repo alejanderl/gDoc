@@ -15,7 +15,11 @@ describe "Photos" do
   
     describe "POST /photos" do
       it "Create photo" do
+        
+#        save_and_open_page
+        user_login("admin@example.com", "admin123")
         visit photos_path
+#        save_and_open_page
         click_link "New Photo"
         save_and_open_page  
 #        user_login("admin@example.com", "admin123")
