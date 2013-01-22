@@ -39,7 +39,7 @@ require 'spec_helper'
       user_login("admin@example.com", "admin123")
       visit documents_path
       page.all(".name")[1].first("a").click
-      save_and_open_page
+#      save_and_open_page
       click_link "Edit"
       fill_in "document_title", :with  => "Modify"
       fill_in "document_description", :with  => "Modified description"

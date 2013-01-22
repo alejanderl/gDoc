@@ -1,5 +1,5 @@
 <h1 class="background-title">Listing cycles</h1>
-<%= link_to 'New Cycle', new_cycle_path %>
+<%= link_to 'New Cycle', new_cycle_path if current_user.present? %>
 
 <% @cycles.each do |t|%>
 

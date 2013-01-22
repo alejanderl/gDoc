@@ -9,6 +9,7 @@ describe "GET /cycles" do
 
   it "display cycles" do
     visit cycles_path
+    page.should_not have_content("New Cycle")
     page.should have_content("Cycle 1")
   end
 
@@ -20,8 +21,8 @@ describe "GET /cycles" do
  
    it "Create cycles" do
       visit cycles_path
-      click_link "New Cycle"
       user_login("admin@example.com", "admin123")
+      click_link "New Cycle"      
       fill_in "cycle_title", :with  => "Geek-art"
       click_button "Create Cycle"
       page.should have_content("Geek-art")
