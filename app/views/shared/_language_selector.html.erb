@@ -1,0 +1,8 @@
+
+<ul class=" language-selector span4">
+  <li><%= link_to_unless_current (t"language_name", :locale => "en"), locale: "en" %></li>
+
+  <li><%= link_to_unless_current (I18n.t(:language_name , :locale => "es") ), locale: "es" %> <li>
+
+  
+</ul>

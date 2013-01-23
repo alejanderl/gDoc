@@ -14,15 +14,19 @@
             <div id="user-nav" class="span3 nav-collapse ">
               <%= render "shared/sign_in" %>
             </div>
+            <div  class="span4 nav-collapse ">
+              <%= render "shared/language_selector" %>
+            </div>
             <ul class="nav nav-tabs span8 nav-collapse">
-                    <li class="span1"><%= link_to "Cycles",cycles_url,:class => "#{'active' if current_page?(cycles_url)}" %></li>
-                    <li class="span1"><%= link_to "Events",events_url,:class => "#{'active' if current_page?(events_url)}"  %></li>
-                    <li class="span1"><%= link_to "Photos",photos_url ,:class => "#{'active' if current_page?(photos_url)}" %></li>
-                    <li class="span1"><%= link_to "Videos",videos_url,:class => "#{'active' if current_page?(videos_url)}"  %></li>
-                    <li class="span1"><%= link_to "Audios",audios_url,:class => "#{'active' if current_page?(audios_url)}"  %></li>
-                    <li class="span1"><%= link_to "Documents",documents_url,:class => "#{'active' if current_page?(documents_url)}"  %></li>
-                    <li class="span1"><%= link_to "Participants",participants_url,:class => "#{'active' if current_page?(participants_url)}"  %></li>
-            </ul>
+                    <li class="span1"><%= link_to (t"main-menu.cycles"),cycles_url,:class => "#{'active' if current_page?(cycles_url)}" %></li>
+                    <li class="span1"><%= link_to (t"main-menu.events"),events_url,:class => "#{'active' if current_page?(events_url)}"  %></li>
+                    <li class="span1"><%= link_to (t"main-menu.photos"),photos_url ,:class => "#{'active' if current_page?(photos_url)}" %></li>
+                    <li class="span1"><%= link_to (t"main-menu.videos"),videos_url,:class => "#{'active' if current_page?(videos_url)}"  %></li>
+                    <li class="span1"><%= link_to (t"main-menu.audios"),audios_url,:class => "#{'active' if current_page?(audios_url)}"  %></li>
+                    <li class="span1"><%= link_to (t"main-menu.documents"),documents_url,:class => "#{'active' if current_page?(documents_url)}"  %></li>
+                    <li class="span1"><%= link_to (t"main-menu.participants"),participants_url,:class => "#{'active' if current_page?(participants_url)}"  %></li>
+            
+                    </ul>
             
         </div>
       </div>
