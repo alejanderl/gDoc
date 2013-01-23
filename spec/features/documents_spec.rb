@@ -5,6 +5,7 @@ require 'spec_helper'
   before do
     create_sample_cycles
     create_sample_users
+    I18n.default_locale = :en
     create_sample_documents({:title => "Document number 1",:description => "Description document number 1"})
 
     100.times do
