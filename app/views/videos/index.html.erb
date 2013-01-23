@@ -16,6 +16,10 @@
     <div class="image">
       <%#= link_to(image_tag(video.image),photo_url(t.id))  if t.image.present? %>
     </div>
+   <div style="background-color: #E89BB6">
+    <%= raw t.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+   </div>
+
   </div>
   
   

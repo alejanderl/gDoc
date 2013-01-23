@@ -1,9 +1,15 @@
 class ParticipantsController < ApplicationController
   # GET /participants
   # GET /participants.json
-  def index
-    @participants = Participant.all
 
+  before_filter :authenticate_user!, :except => [:show, :index]
+
+  def index
+    if params[:tag]
+      @participants = Participant.tagged_with(params[:tag])
+    else
+      @participants = Participant.all
+   end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @participants }

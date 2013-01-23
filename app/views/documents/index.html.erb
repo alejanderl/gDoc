@@ -2,10 +2,6 @@
 <h1>Listing Documents</h1>
 <%= link_to 'New Document', new_document_path if current_user.present?%>
 
-
-
-
-
 <% @documents.each do |t|%>
 
   <div class="box_container full-width span7">
@@ -16,6 +12,10 @@
     <div class="name">
       <%= link_to t.title,document_url(t.id) %>
     </div>   
+   <div style="background-color: #E89BB6">
+    <%= raw t.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+   </div>
+
   </div>
   
   

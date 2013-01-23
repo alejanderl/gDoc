@@ -1,9 +1,15 @@
 class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
-  def index
-    @photos = Photo.all
+  before_filter :authenticate_user!, :except => [:show, :index]
 
+  def index
+    if params[:tag]
+      @photos = Photo.tagged_with(params[:tag])
+    else
+      @photos = Photo.all
+  
+   end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @photos }

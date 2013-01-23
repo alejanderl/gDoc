@@ -44,6 +44,11 @@
     <%= f.label :person_id %><br />
     <%= f.number_field :person_id %>
   </div>
+  <div class="field" style="background-color: #E89BB6">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

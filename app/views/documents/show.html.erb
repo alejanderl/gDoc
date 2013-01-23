@@ -31,6 +31,12 @@
   <%= @document.language %>
 </p>
 
+<p>
+  <b>Tags:</b>
+  <div style="background-color: #E89BB6">
+      <%= raw @document.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+  </div>
+</p>
 
 
 

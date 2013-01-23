@@ -37,6 +37,14 @@
 </p>
 
 <p>
+  <b>Tags:</b>
+  <div style="background-color: #E89BB6">
+      <%= raw @participant.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+  </div>
+</p>
+
+
+<p>
   
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>

@@ -28,6 +28,11 @@
     <%= f.label :image %><br />
     <%= f.file_field :image %>
   </div>
+  <div class="field" style="background-color: #E89BB6">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

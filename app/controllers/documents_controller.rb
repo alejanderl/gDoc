@@ -1,10 +1,16 @@
 class DocumentsController < ApplicationController
   # GET /documents
   # GET /documents.json
-  def index
-    @documents = Document.all
+  before_filter :authenticate_user!, :except => [:show, :index]
 
-    respond_to do |format|
+  def index
+    if params[:tag]
+      @documents = Document.tagged_with(params[:tag])
+    else
+      @documents = Document.all  
+   end
+
+   respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @documents }
     end

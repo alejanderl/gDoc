@@ -22,6 +22,12 @@
     <b>Description:</b>
     <%= @event.description %>
   </p>
+<p>
+  <b>Tags:</b>
+  <div style="background-color: #E89BB6">
+      <%= raw @event.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+  </div>
+</p>
 
   <p>
    <b>Cycle:</b>
