@@ -4,6 +4,6 @@ class Photo < ActiveRecord::Base
   has_many :participates, :as => :participable  
   has_many :participants, :through => :participates
   mount_uploader :image, ImageUploader
-  acts_as_taggable 
+  acts_as_taggable
 
 end

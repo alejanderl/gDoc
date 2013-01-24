@@ -1,5 +1,5 @@
 Gdoc::Application.routes.draw do
-  get 'tags/:tag', to: 'cycles#index', as: :tag  
+  get 'tags/:tag', to: 'tags#index', as: :tag  
   root :to => 'Cycles#index'
   devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
   devise_for :users

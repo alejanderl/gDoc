@@ -8,7 +8,6 @@ class PhotosController < ApplicationController
       @photos = Photo.tagged_with(params[:tag])
     else
       @photos = Photo.all
-  
    end
     respond_to do |format|
       format.html # index.html.erb
