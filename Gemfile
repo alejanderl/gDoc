@@ -12,8 +12,11 @@ gem 'pg'
 gem 'rails-erd' 
 
 #To select date from a calender
-
 gem 'jquery_datepicker'
+
+#To translate the routes when using internationalitation
+#gem 'rails-translate-routes'
+
 
 # Gems used only for assets and not required
 # in production environments by default.
