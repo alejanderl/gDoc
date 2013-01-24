@@ -1,4 +1,5 @@
-<h1>Listing events</h1><%= link_to 'New Event', new_event_path if current_user.present?%>
+<h1>Listing events</h1>
+<%= link_to 'New Event', new_event_path if current_user.present?%>
 
 
 
@@ -12,7 +13,7 @@
       <%#= favourite_button(t) if current_user.present? %>
     </div>
     <div class="name">
-      <%= link_to t.title,events_url(t.id) %>
+      <%= link_to t.title,event_url(t.id) %>
     </div>   
     <div class="description">
       <%= t.description  %>
