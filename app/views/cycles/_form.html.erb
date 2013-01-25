@@ -13,22 +13,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label t("metadata.title") %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :start_date %><br />
+    <%= f.label t("metadata.start_date") %><br />
     <%= f.datepicker :start_date, :dateFormat => "yy-mm-dd" %>
   </div>
 
 
   <div class="field">
-    <%= f.label :end_date %><br />
-
+    <%= f.label t("metadata.end_date") %><br />
     <%= f.datepicker :end_date, :minDate => @cycle.start_date, :dateFormat => "yy-mm-dd" %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label t("metadata.description") %><br />
     <%= f.text_field :description %>
   </div>
   <div class="field">

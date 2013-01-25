@@ -13,28 +13,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label t("metadata.title") %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label t("metadata.start_date") %><br />
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label t("metadata.description") %><br />
     <%= f.text_field :description %>
   </div>
   <div class="field">
-    <%= f.label :license %><br />
+    <%= f.label t("metadata.license") %><br />
     <%= f.text_field :license %>
   </div>
   <div class="field">
-    <%= f.label :format %><br />
+    <%= f.label t("metadata.format") %><br />
     <%= f.text_field :format %>
   </div>
     <div class="field">
       hola
-    <%= f.label :image %><br />
+    <%= f.label t("metadata.image") %><br />
     <%= f.file_field :image %>
   </div>
   <div class="actions">

@@ -3,26 +3,27 @@
   <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b><%=f.label t("metadata.title") %>:</b>
   <%= @cycle.title %>
 </p>
 
 <p>
-  <b>Start date:</b>
+  <b><%= f.label t("metadata.start_date") %>:</b>
   <%= @cycle.start_date %>
 </p>
 
 <p>
-  <b>End date:</b>
+  <b><%= f.label t("metadata.end_date") %>:</b>
   <%= @cycle.end_date %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= f.label t("metadata.description") %>:</b>
+
   <%= @cycle.description %>
 </p>
 
 
-<%= link_to 'Edit', edit_cycle_path(@cycle) %> |
-<%= link_to 'Back', cycles_path %>
+<%= link_to t("link.edit"), edit_cycle_path(@cycle) %> |
+<%= link_to t("link.back"), cycles_path %>
 </div>

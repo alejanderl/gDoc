@@ -13,4 +13,53 @@ en:
     documents: "documents"
     audios: "audios"
     participants: "participants"
-    
+
+  link:
+    edit: "Edit"
+    back: "Back"
+    show: "Show"
+    destroy: "Destroy"
+
+  button:
+
+  title:
+   new_cycle: "New cycle"
+   new_event: "New event"
+   new_photo: "New photo"
+   new_audio: "New audio"
+   new_video: "New video"
+   new_document: "New document"
+   new_participant: "New participant"
+   edit_cycle: "Edit cycle"
+   edit_event: "Edit event"
+   edit_photo: "Edit photo"
+   edit_video: "Edit video"
+   edit_video: "Edit audio"
+   edit_document: "Edit document"
+   edit_participant: "Edit participant"
+
+  listing: 
+    cycles: "Listing cycles"
+    events: "Listing events"
+    photos: "Listing photos"
+    videos: "Listing videos"
+    audios: "Listing audios"
+    documents: "Listing documents"  
+    participants: "Listing participants"
+
+  metadata:
+    title: "Title"
+    start_date: "Start date"
+    end_date: "End date"
+    description: "Description"
+    license: "License"
+    format: "Format"
+    image: "Image"
+    duration: "Duration"
+    language: "Language"
+
+
+  misc:
+    content_related: "Content related"	
+    bio: "Biography" 
+    name: "Name"

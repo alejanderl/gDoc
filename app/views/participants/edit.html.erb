@@ -1,6 +1,6 @@
-<h1>Editing participant</h1>
+<h1><%=t("title.edit_participant") %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @participant %> |
-<%= link_to 'Back', participants_path %>
+<%= link_to t("link.edit"), @participant %> |
+<%= link_to t("link.back"), participants_path %>

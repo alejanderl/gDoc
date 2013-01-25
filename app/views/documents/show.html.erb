@@ -2,38 +2,36 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b><%= f.label t("metadata.title") %>:</b>  
   <%= @document.title %>
 </p>
 
 <p>
-  <b>Date:</b>
+  <b><%= f.label t("metadata.start_date") %>:</b> 
   <%= @document.date %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= f.label t("metadata.description") %>:</b>
   <%= @document.description %>
 </p>
 
 <p>
-  <b>License:</b>
+  <b><%= f.label t("metadata.license") %>:</b>
   <%= @document.license %>
 </p>
 
 <p>
-  <b>Format:</b>
+  <b><%= f.label t("metadata.format") %>:</b>
   <%= @document.format %>
 </p>
 
 <p>
-  <b>Language:</b>
+  <b><%= f.label t("metadata.duration") %>:</b>
   <%= @document.language %>
 </p>
 
 
-
-
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
+<%= link_to t("link.edit"), edit_document_path(@document) %> |
+<%= link_to t("link.back"), documents_path %>
 </div>

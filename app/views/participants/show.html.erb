@@ -1,6 +1,4 @@
 
-
-
 <div  id="single-asset" class="span7 ofsset1">
   
 <p id="notice"><%= notice %></p>
@@ -13,17 +11,17 @@
       <%= image_tag @participant.image_url(:thumb) if @participant.image? %>
     </div>
 <p>
-  <b>Short description:</b>
+  <b><%= f.label t("misc.bio") %></b>
   <%= @participant.bio %>
 </p>
 
 <p>
-  <b>Content related:</b>
+  <b><%= f.label t("misc.content_related") %></b>
   <% #= @photo.content_related %>
 </p>
 
 
-<%= link_to 'Edit', edit_participant_path(@participant) %> |
-<%= link_to 'Back', participants_path %>
+<%= link_to t("link.edit"), edit_participant_path(@participant) %> |
+<%= link_to t("link.back"), participants_path %>
 <div class="clearfix"></div>
 </div>

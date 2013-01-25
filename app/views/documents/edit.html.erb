@@ -1,6 +1,6 @@
-<h1>Editing document</h1>
+<h1><%= t("title.edit_document") %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @document %> |
-<%= link_to 'Back', documents_path %>
+<%= link_to t("link.edit"), @document %> |
+<%= link_to t("link.back"), documents_path %>

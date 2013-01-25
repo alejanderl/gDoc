@@ -1,12 +1,12 @@
 <div  id="single-asset" class="span7 ofsset1">
   <p id="notice"><%= notice %></p>
   <p>
-    <b>Title:</b>
+    <b><%= f.label t("form.title") %>:</b>
     <%= @event.title %>
   </p>
   
   <p>
-    <b>Date:</b>
+    <b><%= f.label t("form.start_date") %></b>
     <%= @event.date %>
   </p>
   
@@ -16,10 +16,10 @@
   </p>
   
   <p>
-    <b>Description:</b>
+    <b><%= f.label t("form.description") %>:</b>
     <%= @event.description %>
   </p>
   
-  <%= link_to 'Edit', edit_event_path(@event) %> |
-  <%= link_to 'Back', events_path %>  
+  <%= link_to t("link.edit"), edit_event_path(@event) %> |
+  <%= link_to t("link.back"), events_path %>  
 </div>

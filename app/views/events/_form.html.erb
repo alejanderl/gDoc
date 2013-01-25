@@ -13,11 +13,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label t("metadata.title") %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label t("metadata.start_date") %><br />
     <%= f.date_select :date %>
   </div>
   <div class="field">
@@ -25,7 +25,7 @@
     <%= f.time_select :time %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label t("metadata.description") %><br />
     <%= f.text_field :description %>
   </div>
   
