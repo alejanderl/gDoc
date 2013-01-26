@@ -1,8 +1,9 @@
 <div  id="single-asset" class="span7 ofsset1">
   <p id="notice"><%= notice %></p>
   <p>
-    <b>Title:</b>
-    <%= @event.title %>
+    
+    <h1><%= @event.title %></h1>
+    
   </p>
   
   <p>
@@ -12,7 +13,7 @@
   
   <p>
     <b>Time:</b>
-    <%= @event.time %>
+    <%= @event.time.strftime('%H:%M') if !@event.time.nil? %>
   </p>
   
   <p>

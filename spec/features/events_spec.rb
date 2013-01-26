@@ -27,6 +27,7 @@ require 'spec_helper'
       
       fill_in "event_title", :with  => "Conference"
       fill_in "event_description", :with  => "Conference about"
+      
 
 #      save_and_open_page
       click_button "Create Event"
