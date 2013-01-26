@@ -1,8 +1,15 @@
 Gdoc::Application.routes.draw do
   
-  root :to => 'Cycles#index'
 
+  
+
+scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
+  
   devise_for :users
+  
+  root :to => 'Cycles#index'
+  
+
 
   resources :participants
 
@@ -19,6 +26,12 @@ Gdoc::Application.routes.draw do
   resources :cycles
 
   resources :events
+
+end
+
+match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+
+match '', to: redirect("/#{I18n.default_locale}")
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
