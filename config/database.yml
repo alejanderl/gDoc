@@ -40,7 +40,14 @@ test:
   password: password
 
 
+production:
 
+  adapter: postgresql
+  encoding: utf8
+  database: gdd_development
+  pool: 5
+  username: gdd
+  password: railsapp
 #production:
 #  adapter: sqlite3
 #  database: db/production.sqlite3

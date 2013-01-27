@@ -18,7 +18,8 @@
   </div>
   <div class="field">
     <%= f.label :date %><br />
-    <%= f.date_select :date %>
+    <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %>
+
   </div>
   <div class="field">
     <%= f.label :description %><br />

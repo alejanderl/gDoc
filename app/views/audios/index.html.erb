@@ -1,3 +1,4 @@
+
 <h1 class="background-title">Listing audios</h1>
 <%= link_to 'New Audio', new_audio_path if current_user.present? %>
 
@@ -9,8 +10,13 @@
       <%#= favourite_button(t) if current_user.present? %>
     </div>
     <div class="name">
-      <%= link_to t.title,audio_url(t.id) %>
-    </div>   
+
+      <h2> <%= link_to t.title,audio_url(t.id) %></h2>
+    </div>
+    <div id="audio-player">
+      *Pending: This is for the audio player preview
+    </div>
+
     <div class="description">
       <%= t.description  %>
     </div>
@@ -24,6 +30,5 @@
 
 
 <br/>
-
 
 

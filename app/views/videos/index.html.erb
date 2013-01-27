@@ -1,8 +1,16 @@
-<h1 class="background-title span7">Listing video</h1>
-<%= link_to "New Video", new_video_path if current_user.present? %>
+
+
+<h1 class="background-title span7">Listing videos</h1>
+<%= link_to 'New Video', new_video_path if current_user.present? %>
+
+
+
+
+
 
 
 <% @videos.each do |t|%>
+
 
   <div class="box_container">
     <div class="name">
@@ -14,12 +22,16 @@
     
     </div>
     <div class="image">
+
+      *Pending: Lightbox con player de video
+     
+
       <%#= link_to(image_tag(video.image),photo_url(t.id))  if t.image.present? %>
+
     </div>
   </div>
   
   
 <% end %>
-
 
 

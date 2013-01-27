@@ -49,7 +49,8 @@ group :development, :test do
   gem 'rb-inotify', '~> 0.8.8'
   gem 'turn'
   gem 'rspec-rails'
-  gem 'capybara'
+  gem 'capybara', '~> 2.0.1'
+
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'database_cleaner'

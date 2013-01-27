@@ -1,5 +1,8 @@
+
+
 <div  id="single-asset" class="span7 ofsset1">
-<%= form_for(@audio) do |f| %>
+  <%= form_for(@audio) do |f| %>
+
   <% if @audio.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@audio.errors.count, "error") %> prohibited this audio from being saved:</h2>
@@ -18,7 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :date %><br />
-    <%= f.date_select :date %>
+    <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %>
+
   </div>
   <div class="field">
     <%= f.label :description %><br />
@@ -40,7 +44,7 @@
     <%= f.label :language %><br />
     <%= f.text_field :language %>
   </div>
-  
+
   <div class="actions">
     <%= f.submit %>
   </div>
