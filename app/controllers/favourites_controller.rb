@@ -1,12 +1,9 @@
 class FavouritesController < ApplicationController
   
   def create
-     
-    
-    
-     @object = params[:favouritable_type].classify.constantize.find(params[:favouritable_id])
-      @favourite = @object.favourites.build
-      @favourite.user = current_user
+    @object = params[:favouritable_type].classify.constantize.find(params[:favouritable_id])
+    @favourite = @object.favourites.build
+    @favourite.user = current_user
     
     respond_to do |format|
       if @favourite.save
