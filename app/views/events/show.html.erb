@@ -5,6 +5,8 @@
     <%= @event.title %>
   </p>
   
+  <%= favourite_button(@event) if current_user.present? %>
+  
   <p>
     <b><%=  t("form.start_date") %></b>
     <%= @event.date %>

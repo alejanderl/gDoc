@@ -5,7 +5,8 @@
   <b><%=  t("metadata.title") %>:</b>  
   <%= @document.title %>
 </p>
-
+ <%= favourite_button(@document) if current_user.present? %>
+ 
 <p>
   <b><%=  t("metadata.date") %>:</b> 
   <%= @document.date %>

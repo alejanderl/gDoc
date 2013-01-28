@@ -3,5 +3,6 @@ class Cycle < ActiveRecord::Base
   has_and_belongs_to_many :events 
   has_many :cycles, :as => :addressable
   validates_presence_of :title
+  has_many :favourites, :as => :favouritable, :dependent => :destroy
 
 end

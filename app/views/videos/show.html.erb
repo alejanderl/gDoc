@@ -2,10 +2,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b><%= t("metadata.title") %>:</b>
-  <b>Title:</b>
-  <%= @video.title %>
+
+
+  <b><%= t"global.video" %></b>
+  <h1><%= @video.title %></h1>
+
 </p>
+ <%= favourite_button(@video) if current_user.present? %>
 
 <p>
   <b><%=  t("metadata.start_date") %>:</b>

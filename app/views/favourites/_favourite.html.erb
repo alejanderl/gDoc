@@ -1,0 +1,3 @@
+<div id="<%="#{t.class}-#{t.id}"%>">
+ <%= button_to (t'global.add_to_favourites'), add_favourite_path(favouritable_id: t.id,favouritable_type: t.class), :method => :get,remote: true %>
+</div>

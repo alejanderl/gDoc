@@ -1,6 +1,13 @@
 Gdoc::Application.routes.draw do
   
-  scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do  
+ 
+
+  match "favourites/" => "favourites#create", :as => :add_favourite , :via => :get
+  match "favourites/" => "favourites#destroy", :as => :remove_favourite,  :via => :delete
+  
+
+
+scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do   
 
   devise_for :users
   
@@ -26,9 +33,9 @@ end
 
 
 
-#match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
 
-#match '', to: redirect("/#{I18n.default_locale}")
+match '', to: redirect("/#{I18n.default_locale}")
 
 
   # The priority is based upon order of creation:
