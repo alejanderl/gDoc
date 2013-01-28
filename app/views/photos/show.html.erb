@@ -10,12 +10,12 @@
       <%= image_tag @photo.image_url(:thumb) if @photo.image? %>
     </div>
 <p>
-  <b><%= f.label t("metadata.description") %>:</b>
+  <b><%=  t("metadata.description") %>:</b>
   <%= @photo.description %>
 </p>
 
 <p>
-  <b><%= f.label t("misc.content_related") %>:</b>
+  <b><%= t("misc.content_related") %>:</b>
   <% # @photo.content_related
   %>
 </p>

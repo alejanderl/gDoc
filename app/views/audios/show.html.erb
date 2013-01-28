@@ -3,37 +3,37 @@
 
 <p>
 
-  <b><%= f.label t("metadata.title") %>:</b>  
+  <b><%= t("metadata.title") %>:</b>  
    <%= @audio.title %>
 </p>
 
 <p>
-  <b><%= f.label t("metadata.start_date") %>:</b> 
+  <b><%=  t("metadata.start_date") %>:</b> 
   <%= @audio.date %>
 </p>
 
 <p>
-  <b><%= f.label t("metadata.description") %>:</b>
+  <b><%=  t("metadata.description") %>:</b>
   <%= @audio.description %>
 </p>
 
 <p>
-  <b><%= f.label t("metadata.license") %>:</b>
+  <b><%= t("metadata.license") %>:</b>
   <%= @audio.license %>
 </p>
 
 <p>
-  <b><%= f.label t("metadata.format") %>:</b>
+  <b><%= t("metadata.format") %>:</b>
   <%= @audio.format %>
 </p>
 
 <p>
-  <b><%= f.label t("metadata.duration") %>:</b>
+  <b><%=  t("metadata.duration") %>:</b>
   <%= @audio.duration %>
 </p>
 
 <p>
-  <b><%= f.label t("metadata.language") %>:</b>
+  <b><%= t("metadata.language") %>:</b>
   <%= @audio.language %>
 </p>
 
@@ -42,5 +42,5 @@
 
 <%= link_to t("link.edit"), edit_audio_path(@audio) %> |
 <%= link_to t("link.back"), audios_path %>
-<%= link_to  t("link.destroy", @audio, :method => :delete , :data => {:confirm => "Are you sure?" }%>
+<%= link_to  t("link.destroy"), @audio, :method => :delete , :data => {:confirm => "Are you sure?" }%>
 </div>

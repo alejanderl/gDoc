@@ -1,51 +1,49 @@
 <div  id="single-asset" class="span7 ofsset1">
-<%= form_for(@video) do |f| %>
-  <% if @video.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>
 
-      <ul>
-      <% @video.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+  <%= form_for(@video) do |f| %>
+    <% if @video.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@video.errors.count, "error") %> prohibited this video from being saved:</h2>  
+        <ul>
+        <% @video.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= t("metadata.title") %>:<br />
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+     <%= t("metadata.date") %>  <br />
+      <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %>
+    </div>
+    <div class="field">
+      <%= t("metadata.description") %>  <br />
+      <%= f.text_area :description %>
+    </div>
+    <div class="field">
+      <%= t("metadata.license") %><br />
+      <%= f.text_field :license %>
+    </div>
+    <div class="field">
+      <%= t("metadata.format") %> <br />
+      <%= f.text_field :format %>
+    </div>
+    <div class="field">
+      <%= t("metadata.duration") %><br />
+      <%= f.number_field :duration %>
+    </div>
+    <div class="field">
+      <%= t("metadata.language") %><br />
+      <%= f.text_field :language %>
+    </div>
+   
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= t("metadata.title") %>:<br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= t("metadata.start_date") %>  <br />
-    <%= f.date_select :date %>
-  </div>
-  <div class="field">
-    <%= t("metadata.description") %>  <br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= t("metadata.license") %><br />
-    <%= f.text_field :license %>
-  </div>
-  <div class="field">
-    <%= t("metadata.format") %> <br />
-    <%= f.text_field :format %>
-  </div>
-  <div class="field">
-    <%= t("metadata.duration") %><br />
-    <%= f.number_field :duration %>
-  </div>
-  <div class="field">
-    <%= t("metadata.language") %><br />
-    <%= f.text_field :language %>
-  </div>
-  <div class="field">
-    <%= f.label :person_id %><br />
-    <%= f.number_field :person_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+
 </div>

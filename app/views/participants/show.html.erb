@@ -11,12 +11,12 @@
       <%= image_tag @participant.image_url(:thumb) if @participant.image? %>
     </div>
 <p>
-  <b><%= f.label t("misc.bio") %></b>
+  <b><%=  t("misc.bio") %></b>
   <%= @participant.bio %>
 </p>
 
 <p>
-  <b><%= f.label t("misc.content_related") %></b>
+  <b><%=  t("misc.content_related") %></b>
   <% #= @photo.content_related %>
 </p>
 

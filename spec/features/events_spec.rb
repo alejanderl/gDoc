@@ -27,9 +27,8 @@ require 'spec_helper'
       
       fill_in "event_title", :with  => "Conference"
       fill_in "event_description", :with  => "Conference about"
-      select '2013', :from => "event_date_1i" 
-      select 'May', :from => "event_date_2i" 
-      select '21', :from => "event_date_3i" 
+      
+
 #      save_and_open_page
       click_button "Create Event"
       page.should have_content("Event was successfully created.")
@@ -39,16 +38,26 @@ require 'spec_helper'
 
     end
 
-    it "Update an event" do
+    it "Update an event", :js => true do
       user_login("admin@example.com", "admin123")
       visit "/events/1"      
       click_link "Edit"
       fill_in "event_title", :with  => "Show"
       fill_in "event_description", :with  => "A coooool show"
-      select '2013', :from => "event_date_1i" 
-      select 'January', :from => "event_date_2i" 
-      select '2', :from => "event_date_3i" 
-      click_button "Update Event"
+      
+ 
+      page.execute_script("$('.hasDatepicker').trigger('focus')") # activate datetime picker
+      page.execute_script "$('a.ui-datepicker-next').trigger('click') " # move one month forward
+      page.execute_script %q{$('a.ui-state-default:contains("15")').trigger('click')}#click on day 15
+      
+      page.execute_script("$('.time-picker').trigger('focus')") # activate datetime picker
+#      find('.ui_tpicker_hour button.ui-icon-plus').native.drag_by(30, 0)
+      10.times do
+        page.execute_script %q{$('.ui_tpicker_hour button.ui-corner-right').trigger('click')}
+        page.execute_script %q{$('.ui_tpicker_minute button.ui-corner-right').trigger('click')}
+      end
+      click_button "Update Event" 
+      
       page.should have_content("Event was successfully updated.")
 #     save_and_open_page
     end

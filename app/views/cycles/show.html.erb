@@ -3,22 +3,22 @@
   <p id="notice"><%= notice %></p>
 
 <p>
-  <b><%=f.label t("metadata.title") %>:</b>
+  <b><%= t("metadata.title") %>:</b>
   <%= @cycle.title %>
 </p>
 
 <p>
-  <b><%= f.label t("metadata.start_date") %>:</b>
+  <b><%=  t("metadata.start_date") %>:</b>
   <%= @cycle.start_date %>
 </p>
 
 <p>
-  <b><%= f.label t("metadata.end_date") %>:</b>
+  <b><%=  t("metadata.end_date") %>:</b>
   <%= @cycle.end_date %>
 </p>
 
 <p>
-  <b><%= f.label t("metadata.description") %>:</b>
+  <b><%=  t("metadata.description") %>:</b>
 
   <%= @cycle.description %>
 </p>

@@ -1,0 +1,78 @@
+                    root        /                                Cycles#index
+        new_user_session GET    /users/sign_in(.:format)         devise/sessions#new
+            user_session POST   /users/sign_in(.:format)         devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)        devise/sessions#destroy
+           user_password POST   /users/password(.:format)        devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)    devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)   devise/passwords#edit
+                         PUT    /users/password(.:format)        devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)          devise/registrations#cancel
+       user_registration POST   /users(.:format)                 devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)         devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)            devise/registrations#edit
+                         PUT    /users(.:format)                 devise/registrations#update
+                         DELETE /users(.:format)                 devise/registrations#destroy
+            participants GET    /participants(.:format)          participants#index
+                         POST   /participants(.:format)          participants#create
+         new_participant GET    /participants/new(.:format)      participants#new
+        edit_participant GET    /participants/:id/edit(.:format) participants#edit
+             participant GET    /participants/:id(.:format)      participants#show
+                         PUT    /participants/:id(.:format)      participants#update
+                         DELETE /participants/:id(.:format)      participants#destroy
+               documents GET    /documents(.:format)             documents#index
+                         POST   /documents(.:format)             documents#create
+            new_document GET    /documents/new(.:format)         documents#new
+           edit_document GET    /documents/:id/edit(.:format)    documents#edit
+                document GET    /documents/:id(.:format)         documents#show
+                         PUT    /documents/:id(.:format)         documents#update
+                         DELETE /documents/:id(.:format)         documents#destroy
+                  people GET    /people(.:format)                people#index
+                         POST   /people(.:format)                people#create
+              new_person GET    /people/new(.:format)            people#new
+             edit_person GET    /people/:id/edit(.:format)       people#edit
+                  person GET    /people/:id(.:format)            people#show
+                         PUT    /people/:id(.:format)            people#update
+                         DELETE /people/:id(.:format)            people#destroy
+                  photos GET    /photos(.:format)                photos#index
+                         POST   /photos(.:format)                photos#create
+               new_photo GET    /photos/new(.:format)            photos#new
+              edit_photo GET    /photos/:id/edit(.:format)       photos#edit
+                   photo GET    /photos/:id(.:format)            photos#show
+                         PUT    /photos/:id(.:format)            photos#update
+                         DELETE /photos/:id(.:format)            photos#destroy
+                  videos GET    /videos(.:format)                videos#index
+                         POST   /videos(.:format)                videos#create
+               new_video GET    /videos/new(.:format)            videos#new
+              edit_video GET    /videos/:id/edit(.:format)       videos#edit
+                   video GET    /videos/:id(.:format)            videos#show
+                         PUT    /videos/:id(.:format)            videos#update
+                         DELETE /videos/:id(.:format)            videos#destroy
+                  audios GET    /audios(.:format)                audios#index
+                         POST   /audios(.:format)                audios#create
+               new_audio GET    /audios/new(.:format)            audios#new
+              edit_audio GET    /audios/:id/edit(.:format)       audios#edit
+                   audio GET    /audios/:id(.:format)            audios#show
+                         PUT    /audios/:id(.:format)            audios#update
+                         DELETE /audios/:id(.:format)            audios#destroy
+                  cycles GET    /cycles(.:format)                cycles#index
+                         POST   /cycles(.:format)                cycles#create
+               new_cycle GET    /cycles/new(.:format)            cycles#new
+              edit_cycle GET    /cycles/:id/edit(.:format)       cycles#edit
+                   cycle GET    /cycles/:id(.:format)            cycles#show
+                         PUT    /cycles/:id(.:format)            cycles#update
+                         DELETE /cycles/:id(.:format)            cycles#destroy
+                  events GET    /events(.:format)                events#index
+                         POST   /events(.:format)                events#create
+               new_event GET    /events/new(.:format)            events#new
+              edit_event GET    /events/:id/edit(.:format)       events#edit
+                   event GET    /events/:id(.:format)            events#show
+                         PUT    /events/:id(.:format)            events#update
+                         DELETE /events/:id(.:format)            events#destroy
+Loaded Suite test,test/functional,test/performance,test/unit/helpers,test/unit,test/integration
+
+Started at 2013-01-16 11:36:33 +0100 w/ seed 19805.
+
+Finished in 0.001381 seconds.
+
+0 tests, 0 passed, 0 failures, 0 errors, 0 skips, 0 assertions
+
