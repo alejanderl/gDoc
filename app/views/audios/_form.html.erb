@@ -16,31 +16,32 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= t("metadata.title") %>:<br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
+    <%= t("metadata.start_date") %>  <br />
     <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %>
 
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
+    <%= t("metadata.description") %>  <br />
+    <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :license %><br />
+    <%= t("metadata.license") %><br />
     <%= f.text_field :license %>
   </div>
   <div class="field">
-    <%= f.label :format %><br />
+    <%= t("metadata.format") %> <br />
     <%= f.text_field :format %>
   </div>
   <div class="field">
-    <%= f.label :duration %><br />
+    <%= t("metadata.duration") %><br />
     <%= f.number_field :duration %>
   </div>
   <div class="field">
+    <%= t("metadata.language") %><br />
     <%= f.label :language %><br />
     <%= f.text_field :language %>
   </div>

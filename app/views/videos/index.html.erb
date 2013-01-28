@@ -1,15 +1,8 @@
 
+<h1 class="background-title span7"><%= t("listing.videos")  %></h1>
+<%= link_to t("title.new_video"), new_video_path if current_user.present? %>
 
-<h1 class="background-title span7">Listing videos</h1>
-<%= link_to 'New Video', new_video_path if current_user.present? %>
-
-
-
-
-
-
-
-<% @videos.each do |t|%>
+  <% @videos.each do |t|%>
 
 
   <div class="box_container">

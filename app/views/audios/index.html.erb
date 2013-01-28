@@ -1,6 +1,7 @@
+<h1 class="background-title"><%= t("listing.audios") %></h1>
+<%= link_to t("title.new_audio"), new_audio_path if current_user.present? %>
 
-<h1 class="background-title">Listing audios</h1>
-<%= link_to 'New Audio', new_audio_path if current_user.present? %>
+
 
 <% @audios.each do |t|%>
 

@@ -11,3 +11,53 @@ es:
     documents: "documentos"
     audios: "audios"
     participants: "participantes"
+
+
+  link:
+    edit: "Editar"
+    back: "Volver"
+    show: "Mostrar"
+
+
+  button:
+
+  title:
+   new_cycle: "Nuevo ciclo"
+   new_event: "Nuevo evento"
+   new_photo: "Nueva foto"
+   new_audio: "Nuevo audio"
+   new_video: "Nuevo vídeo"
+   new_document: "Nuevo documento"
+   new_participant: "Nuevo participante"
+   edit_cycle: "Editar ciclo"
+   edit_event: "Editar evento"
+   edit_photo: "Editar foto"
+   edit_video: "Editar vídeo"
+   edit_audio: "Editar audio"
+   edit_document: "Editar documento"
+   edit_participant: "Editar participante"
+
+  listing:
+    cycles: "Listado de ciclos"
+    events: "Listado de eventos"
+    photos: "Listado de fotos"
+    videos: "Listado de vídeos"
+    audios: "Listado de audios"
+    documents: "Listado de documentos"
+    participants: "Listado de participantes"
+  
+  metadata:
+    title: "Título"
+    start_date: "Día de inicio"
+    end_date: "Día de fin"
+    description: "Descripción"
+    license: "Licencia"
+    format: "Formato"
+    image: "Imagen"
+    duration: "Duración"
+    language: "Idioma"
+
+  misc:
+    content_related: "Contenido relacionado"
+    bio: "Biografía" 
+    name: "Nombre"

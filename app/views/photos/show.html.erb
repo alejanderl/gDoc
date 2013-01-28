@@ -10,17 +10,17 @@
       <%= image_tag @photo.image_url(:thumb) if @photo.image? %>
     </div>
 <p>
-  <b>Description:</b>
+  <b><%=  t("metadata.description") %>:</b>
   <%= @photo.description %>
 </p>
 
 <p>
-  <b>Content related:</b>
+  <b><%= t("misc.content_related") %>:</b>
   <% # @photo.content_related
   %>
 </p>
 
 
-<%= link_to 'Edit', edit_photo_path(@photo) if current_user.present? %> |
-<%= link_to 'Back', :back %>
+<%= link_to t("link.edit"), edit_photo_path(@photo) if current_user.present? %> |
+<%= link_to t("link.back"), :back %>
 </div>
