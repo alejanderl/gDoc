@@ -23,13 +23,13 @@ en:
   button:
 
   title:
-   new_cycle: "New cycle"
-   new_event: "New event"
-   new_photo: "New photo"
-   new_audio: "New audio"
-   new_video: "New video"
-   new_document: "New document"
-   new_participant: "New participant"
+   new_cycle: "New Cycle"
+   new_event: "New Event"
+   new_photo: "New Photo"
+   new_audio: "New Audio"
+   new_video: "New Video"
+   new_document: "New Document"
+   new_participant: "New Participant"
    edit_cycle: "Edit cycle"
    edit_event: "Edit event"
    edit_photo: "Edit photo"
