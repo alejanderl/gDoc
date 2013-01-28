@@ -1,6 +1,8 @@
 Gdoc::Application.routes.draw do
   
 
+  match "favourites/" => "favourites#create", :as => :add_favourite , :via => :get
+  match "favourites/" => "favourites#destroy", :as => :remove_favourite,  :via => :delete
   
 
 scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do

@@ -6,6 +6,8 @@
     
   </p>
   
+  <%= favourite_button(@event) if current_user.present? %>
+  
   <p>
     <b>Date:</b>
     <%= @event.date %>

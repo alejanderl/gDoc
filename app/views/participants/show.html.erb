@@ -6,9 +6,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  
+  <b><%= t"global.participant" %></b>
   <h1><%= @participant.name %></h1>
 </p>
+ <%= favourite_button(@participant) if current_user.present? %>
+
 <div class="image">
       <%= image_tag @participant.image_url(:thumb) if @participant.image? %>
     </div>

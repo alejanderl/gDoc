@@ -5,6 +5,7 @@
   <b>Title:</b>
   <%= @audio.title %>
 </p>
+ <%= favourite_button(@audio) if current_user.present? %>
 
 <p>
   <b>Date:</b>

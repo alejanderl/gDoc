@@ -5,6 +5,17 @@ en:
   language_name: "english"
   hello: "Hello world2"
   
+  global:
+    cycle: "cycle"
+    cycles: "cycles"
+    participant: "participant"
+    photo: "photo"
+    video: "video"
+    add_to_favourites: "add to favourites"
+    remove_from_favourites: "remove from favourites"
+    
+
+
   main-menu:
     cycles: "cycles"
     events: "events"
@@ -13,4 +24,3 @@ en:
     documents: "documents"
     audios: "audios"
     participants: "participants"
-    

@@ -5,7 +5,8 @@
   <b>Title:</b>
   <%= @document.title %>
 </p>
-
+ <%= favourite_button(@document) if current_user.present? %>
+ 
 <p>
   <b>Date:</b>
   <%= @document.date %>

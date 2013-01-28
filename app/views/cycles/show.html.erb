@@ -3,9 +3,10 @@
   <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @cycle.title %>
+  <b><%= t"global.cycle" %></b>
+  <h1><%= @cycle.title %></h1>
 </p>
+ <%= favourite_button(@cycle) if current_user.present? %>
 
 <p>
   <b>Start date:</b>

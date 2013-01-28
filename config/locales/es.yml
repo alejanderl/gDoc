@@ -3,6 +3,15 @@ es:
   language_name: "español"
   hello: "Hola mundo"
   
+  global:
+    cycle: "ciclo"
+    cycles: "ciclos"
+    participant: "participante"
+    photo: "foto"
+    video: "video"
+    add_to_favourites: "añadir a favoritos"
+    remove_from_favourites: "borrar de favoritos"
+
   main-menu:
     cycles: "ciclos"
     events: "eventos"

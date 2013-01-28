@@ -3,9 +3,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  
+  <b><%= t"global.photo" %></b>
   <h1><%= @photo.title %></h1>
 </p>
+ <%= favourite_button(@photo) if current_user.present? %>
+
 <div class="image">
       <%= image_tag @photo.image_url(:thumb) if @photo.image? %>
     </div>
