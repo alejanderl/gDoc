@@ -1,7 +1,7 @@
 class CyclesController < ApplicationController
   # GET /cycles
   # GET /cycles.json
-  before_filter :authenticate_user!, :except => [:show, :index]
+  
 
   def index
     @cycles = Cycle.all
