@@ -15,7 +15,7 @@ gem 'rails-erd'
 gem 'jquery_datepicker'
 
 #To translate the routes when using internationalitation
-#gem 'rails-translate-routes'
+gem 'route_translator'
 
 
 # Gems used only for assets and not required
