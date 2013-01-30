@@ -1,42 +1,20 @@
 Gdoc::Application.routes.draw do
-  
- 
-
   match "favourites/" => "favourites#create", :as => :add_favourite , :via => :get
   match "favourites/" => "favourites#destroy", :as => :remove_favourite,  :via => :delete
   
-
-
-scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do   
-
-  devise_for :users
-  
-  root :to => 'Cycles#index'
-  
-  resources :participants
-
-  resources :documents
-
-  resources :people
-
-  resources :photos
-
-  resources :videos
-
-  resources :audios
-
-  resources :cycles
-
-  resources :events
-
-end
-
-
-
-match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
-
-match '', to: redirect("/#{I18n.default_locale}")
-
+  scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do   
+    
+    devise_for :users
+    root :to => 'Cycles#index'
+    resources :participants
+    resources :documents
+    resources :people
+    resources :photos
+    resources :videos
+    resources :audios
+    resources :cycles
+    resources :events
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
