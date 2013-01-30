@@ -5,9 +5,10 @@ require 'spec_helper'
   before do
     create_sample_cycles
     create_sample_users
+    I18n.default_locale = :en
     create_sample_documents({:title => "Document number 1",:description => "Description document number 1"})
 
-    100.times do
+    50.times do
       create_sample_documents
     end   
   end
@@ -18,7 +19,7 @@ require 'spec_helper'
       page.should have_content("Document number 1")
     end
     
-  describe "POST /events" do
+  describe "POST /events" do 
     it "Create a document" do
       user_login("admin@example.com", "admin123")
       visit documents_path

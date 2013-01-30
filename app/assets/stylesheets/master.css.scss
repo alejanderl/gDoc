@@ -245,3 +245,31 @@ overflow: visible !important;
 .full-width {
     width:100%;
 }
+
+.language-selector {
+    float:right;
+    margin-top:3px;
+    li {
+	float:left;
+	text-decoration: none;
+	list-style: none;
+    }
+    li a {
+	padding:3px;
+	border-radius:3px;
+    }
+    li a:hover {
+	
+	background: none;
+	border:1px solid #666;
+    }
+    li {
+	border-left: 1px solid #ccc;
+	padding-left: 5px;
+	padding-right: 5px;
+    }
+    li:first-child {
+	border:0;
+	padding-left:0;
+    }
+}

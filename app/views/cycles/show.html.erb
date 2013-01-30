@@ -3,29 +3,34 @@
   <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @cycle.title %>
+
+  <b><%= t"global.cycle" %></b>
+  <h1><%= @cycle.title %></h1>
+
 </p>
+ <%= favourite_button(@cycle) if current_user.present? %>
 
 <p>
-  <b>Start date:</b>
+  <b><%=  t("metadata.start_date") %>:</b>
   <%= @cycle.start_date %>
 </p>
 
 <p>
-  <b>End date:</b>
+  <b><%=  t("metadata.end_date") %>:</b>
   <%= @cycle.end_date %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%=  t("metadata.description") %>:</b>
+
   <%= @cycle.description %>
 </p>
 
 <p>
   <b>Tags:</b>
   <div style="background-color: #E89BB6">
-      <%= raw @cycle.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+<!--       <%= raw @cycle.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %> -->
+      <%= @cycle.tag_list {|t| t} %>
   </div>
 </p>
 
@@ -40,6 +45,7 @@
 
 </p>
 
-<%= link_to 'Edit', edit_cycle_path(@cycle) %> |
-<%= link_to 'Back', cycles_path %>
+<%= link_to t("link.edit"), edit_cycle_path(@cycle) %> |
+<%= link_to t("link.back"), cycles_path %>
+
 </div>

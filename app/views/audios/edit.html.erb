@@ -1,6 +1,7 @@
-<h1>Editing audio</h1>
+<h1><%= t("title.edit_audio") %></h1>
+
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @audio %> |
-<%= link_to 'Back', audios_path %>
+ <%= link_to t("link.back"), audios_path %>
+

@@ -2,50 +2,57 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @video.title %>
+
+
+  <b><%= t"global.video" %></b>
+  <h1><%= @video.title %></h1>
+
 </p>
+ <%= favourite_button(@video) if current_user.present? %>
 
 <p>
-  <b>Date:</b>
+  <b><%=  t("metadata.start_date") %>:</b>
   <%= @video.date %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%=  t("metadata.description") %>:</b>
   <%= @video.description %>
 </p>
 
 <p>
-  <b>License:</b>
+  <b><%= t("metadata.license") %>:</b>
   <%= @video.license %>
 </p>
 
 <p>
-  <b>Format:</b>
+  <b><%=  t("metadata.format") %>:</b>
   <%= @video.format %>
 </p>
 
 <p>
-  <b>Duration:</b>
+  <b><%=  t("metadata.duration") %>:</b>
   <%= @video.duration %>
 </p>
 
 <p>
-  <b>Language:</b>
+  <b><%=  t("metadata.language") %>:</b>
   <%= @video.language %>
 </p>
 
 <p>
   <b>Tags:</b>
   <div style="background-color: #E89BB6">
-      <%= raw @participant.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+<!--      <%= raw @video.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %> -->
+      <%= @video.tag_list {|t| t} %>
   </div>
 </p>
 
 
 <p>
   
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<%= link_to t("link.edit"), edit_video_path(@video) %> |
+<%= link_to t("link.back"), videos_path %>
+
+</p>
 </div>

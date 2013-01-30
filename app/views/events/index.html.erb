@@ -1,5 +1,6 @@
+<h1><%= t("listing.events") %></h1>
+<%= link_to t("title.new_event"), new_event_path if current_user.present?%>
 
-<h1>Listing events</h1><%= link_to 'New Event', new_event_path if current_user.present?%>
 
 <% @events.each do |t|%>
 
@@ -17,16 +18,14 @@
     <div class="start-end-date">
       <%= t.date %><%= t.time %>
     </div>
-    <div style="background-color: #E89BB6">
-    <%= raw t.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
-    </div>
     <div>
      <% if t.cycles.nil? %>  
     <td><%= link_to t.cycle.title, t.cycle %></td>
     <% end %>
   </div>
    <div style="background-color: #E89BB6">
-    <%= raw t.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+<!--    <%= raw t.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %> -->
+    <%= t.tag_list {|t| t} %>
    </div>
 
 

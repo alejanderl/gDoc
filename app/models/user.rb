@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   acts_as_tagger
 
+  
+  has_many :favourites, :dependent => :destroy
+  default_scope  :include => [ :favourites]
+
 end

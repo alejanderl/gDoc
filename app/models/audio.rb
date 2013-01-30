@@ -4,4 +4,6 @@ class Audio < ActiveRecord::Base
   has_many :participates, :as => :participable  
   has_many :participants, :through => :participates
   acts_as_taggable
+  has_many :favourites, :as => :favouritable, :dependent => :destroy
+
 end

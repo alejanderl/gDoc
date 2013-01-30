@@ -1,5 +1,78 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en:
-  hello: "Hello world"
+en:  
+  language_name: "english"
+  hello: "Hello world2"
+  
+  global:
+    cycle: "cycle"
+    cycles: "cycles"
+    participant: "participant"
+    photo: "photo"
+    video: "video"
+    add_to_favourites: "add to favourites"
+    remove_from_favourites: "remove from favourites"
+    
+
+
+  main-menu:
+    cycles: "cycles"
+    events: "events"
+    photos: "photos"
+    videos: "videos"
+    documents: "documents"
+    audios: "audios"
+    participants: "participants"
+
+  link:
+    edit: "Edit"
+    back: "Back"
+    show: "Show"
+    destroy: "Destroy"
+
+  button:
+
+  title:
+   new_cycle: "New Cycle"
+   new_event: "New Event"
+   new_photo: "New Photo"
+   new_audio: "New Audio"
+   new_video: "New Video"
+   new_document: "New Document"
+   new_participant: "New Participant"
+   edit_cycle: "Edit cycle"
+   edit_event: "Edit event"
+   edit_photo: "Edit photo"
+   edit_video: "Edit video"
+   edit_video: "Edit audio"
+   edit_document: "Edit document"
+   edit_participant: "Edit participant"
+
+  listing: 
+    cycles: "Listing cycles"
+    events: "Listing events"
+    photos: "Listing photos"
+    videos: "Listing videos"
+    audios: "Listing audios"
+    documents: "Listing documents"  
+    participants: "Listing participants"
+
+  metadata:
+    title: "Title"
+    start_date: "Start date"
+    end_date: "End date"
+    description: "Description"
+    license: "License"
+    format: "Format"
+    image: "Image"
+    duration: "Duration"
+    language: "Language"
+    date: "Date"
+
+
+  misc:
+    content_related: "Content related"	
+    bio: "Biography" 
+    name: "Name"
+

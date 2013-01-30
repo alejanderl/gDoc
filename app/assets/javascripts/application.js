@@ -17,10 +17,16 @@
 //= require jquery-ui
 =======
 //= require twitter/bootstrap
+<<<<<<< HEAD
 >>>>>>> alx
 =======
 //= require jquery-ui
 //= require twitter/bootstrap
 >>>>>>> master
 //= require_tree .
+=======
+>>>>>>> 8ed77906ac337c6a203fd592d2116d587b5e1cd8
 
+
+
+//= require_tree .

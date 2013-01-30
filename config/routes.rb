@@ -1,9 +1,15 @@
 Gdoc::Application.routes.draw do
-  get 'tags/:tag', to: 'tags#index', as: :tag  
-  root :to => 'Cycles#index'
-  devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy' end
-  devise_for :users
+#  get 'tags/:tag', to: 'tags#index', as: :tag  
+ 
+  match "favourites/" => "favourites#create", :as => :add_favourite , :via => :get
+  match "favourites/" => "favourites#destroy", :as => :remove_favourite,  :via => :delete
+  
+scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do   
 
+  devise_for :users
+  
+  root :to => 'Cycles#index'
+  
   resources :participants
 
   resources :documents
@@ -19,6 +25,9 @@ Gdoc::Application.routes.draw do
   resources :cycles
 
   resources :events
+
+end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

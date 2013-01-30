@@ -1,5 +1,73 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-es-ES:
-  hello: "Hello world"
+es:
+  language_name: "español"
+  hello: "Hola mundo"
+  
+  global:
+    cycle: "ciclo"
+    cycles: "ciclos"
+    participant: "participante"
+    photo: "foto"
+    video: "video"
+    add_to_favourites: "añadir a favoritos"
+    remove_from_favourites: "borrar de favoritos"
+
+  main-menu:
+    cycles: "ciclos"
+    events: "eventos"
+    photos: "fotos"
+    videos: "videos"
+    documents: "documentos"
+    audios: "audios"
+    participants: "participantes"
+
+
+  link:
+    edit: "Editar"
+    back: "Volver"
+    show: "Mostrar"
+
+
+  button:
+
+  title:
+   new_cycle: "Nuevo ciclo"
+   new_event: "Nuevo evento"
+   new_photo: "Nueva foto"
+   new_audio: "Nuevo audio"
+   new_video: "Nuevo vídeo"
+   new_document: "Nuevo documento"
+   new_participant: "Nuevo participante"
+   edit_cycle: "Editar ciclo"
+   edit_event: "Editar evento"
+   edit_photo: "Editar foto"
+   edit_video: "Editar vídeo"
+   edit_audio: "Editar audio"
+   edit_document: "Editar documento"
+   edit_participant: "Editar participante"
+
+  listing:
+    cycles: "Listado de ciclos"
+    events: "Listado de eventos"
+    photos: "Listado de fotos"
+    videos: "Listado de vídeos"
+    audios: "Listado de audios"
+    documents: "Listado de documentos"
+    participants: "Listado de participantes"
+  
+  metadata:
+    title: "Título"
+    start_date: "Día de inicio"
+    end_date: "Día de fin"
+    description: "Descripción"
+    license: "Licencia"
+    format: "Formato"
+    image: "Imagen"
+    duration: "Duración"
+    language: "Idioma"
+    date: "Fecha"
+
+  misc:
+    content_related: "Contenido relacionado"
+    bio: "Biografía" 
+    name: "Nombre"

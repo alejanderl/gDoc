@@ -2,44 +2,44 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b><%=  t("metadata.title") %>:</b>  
   <%= @document.title %>
 </p>
-
+ <%= favourite_button(@document) if current_user.present? %>
+ 
 <p>
-  <b>Date:</b>
+  <b><%=  t("metadata.date") %>:</b> 
   <%= @document.date %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%=  t("metadata.description") %>:</b>
   <%= @document.description %>
 </p>
 
 <p>
-  <b>License:</b>
+  <b><%=  t("metadata.license") %>:</b>
   <%= @document.license %>
 </p>
 
 <p>
-  <b>Format:</b>
+  <b><%=  t("metadata.format") %>:</b>
   <%= @document.format %>
 </p>
 
 <p>
-  <b>Language:</b>
+  <b><%=  t("metadata.duration") %>:</b>
   <%= @document.language %>
 </p>
 
 <p>
   <b>Tags:</b>
   <div style="background-color: #E89BB6">
-      <%= raw @document.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %>
+<!--      <%= raw @document.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %> -->
+      <%= @document.tag_list {|t| t} %>
   </div>
 </p>
 
-
-
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
+<%= link_to t("link.edit"), edit_document_path(@document) %> |
+<%= link_to t("link.back"), documents_path %>
 </div>

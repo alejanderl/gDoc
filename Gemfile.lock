@@ -227,7 +227,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on
-  capybara
+  capybara (~> 2.0.1)
   carrierwave (~> 0.6.2)
   carrierwave-ftp
   coffee-rails (~> 3.2.1)

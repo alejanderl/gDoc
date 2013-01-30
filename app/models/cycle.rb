@@ -4,5 +4,7 @@ class Cycle < ActiveRecord::Base
   has_many :cycles, :as => :addressable
   validates_presence_of :title
   acts_as_taggable
+  has_many :favourites, :as => :favouritable, :dependent => :destroy
+
 
 end
