@@ -18,8 +18,8 @@ end
 #Sample data
 def create_sample_users
   User.create(:email => "admin@example.com", :password => "admin123", :password_confirmation => "admin123", :roles_mask => 1)
-  User.create(:email => "alejandro@example.com", :password => "alx123", :password_confirmation => "alx123")
-  User.create(:email => "carolina@example.com", :password => "caro123", :password_confirmation => "caro123")
+  User.create(:email => "alejandro@example.com", :password => "alx123", :password_confirmation => "alx123", :roles_mask => 2)
+  User.create(:email => "carolina@example.com", :password => "caro123", :password_confirmation => "caro123", :roles_mask => 2)
 end
 
 

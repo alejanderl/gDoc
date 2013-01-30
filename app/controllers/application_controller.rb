@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
       redirect_to root_url, alert: "Not authorized.#{params[:controller].to_s} #{params[:action
                                                                                         ].to_s},"
     end
+    
   end
 
 
