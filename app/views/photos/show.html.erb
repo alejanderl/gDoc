@@ -19,7 +19,6 @@
 <p>
   <b>Tags:</b>
   <div style="background-color: #E89BB6">
-<!--      <%= raw @photo.tag_list.map {|t| link_to t, tag_path(t)}.join(', ') %> -->
       <%= @photo.tag_list {|t| t} %>
   </div>
 </p>

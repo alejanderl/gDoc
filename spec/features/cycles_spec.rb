@@ -46,7 +46,7 @@ describe "GET /cycles" do
       user_login("admin@example.com", "admin123")
       visit "/cycles/1"
       click_link "Edit"
-     # save_and_open_page
+      save_and_open_page
       page.should have_content("Cycle 1")
       fill_in "cycle_title", :with  => "Geek-art 2"
       click_button "Update Cycle"
@@ -58,35 +58,30 @@ describe "GET /cycles" do
    it "destroy cycles" do
       user_login("admin@example.com", "admin123")
       visit "/cycles"
-#      save_and_open_page
       page.should have_content("Cycle 1") {
 #        alert = page.driver.browser.switch_to.alert
 #        expect { alert.accept }.to change(Cycle, :count).by(-1)}
         expect { click_link('Destroy') }.to change(Cycle, :count).by(-1)}
-#      save_and_open_page
     end
 
 
     pending it "Select date from calender / datepicker" do
       visit "/cycles/1"
       click_link "Edit"
-#      click_field "date"
-
     end
 
     pending "check taxonomy fiedl" do 
       page.should have_content "taxonomy"
-#      fill_in 
     end
 
-    it "click on a tag a get a filtered list of cycles with that tag" do
-        visit cycles_path
-        save_and_open_page
-        page.should have_content "e-textile"
-        click_link "e-textile"
-        visit "/tags/e-textile"
-        page.should_not have_content "Cycle 2"
-    end
+#    it "click on a tag a get a filtered list of cycles with that tag" do
+#        visit cycles_path
+#        save_and_open_page
+#        page.should have_content "e-textile"
+#        click_link "e-textile"
+#        visit "/tags/e-textile"
+#        page.should_not have_content "Cycle 2"
+#    end
 
  end
 

@@ -69,7 +69,7 @@ en:
     duration: "Duration"
     language: "Language"
     date: "Date"
-
+    time: "Time"
 
   misc:
     content_related: "Content related"	
