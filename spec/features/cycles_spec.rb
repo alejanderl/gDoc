@@ -46,7 +46,7 @@ describe "GET /cycles" do
       user_login("admin@example.com", "admin123")
       visit "/cycles/1"
       click_link "Edit"
-      save_and_open_page
+#      save_and_open_page
       find_field('cycle_title').value
       fill_in "cycle_title", :with  => "Geek-art 2"
       click_button "Update Cycle"

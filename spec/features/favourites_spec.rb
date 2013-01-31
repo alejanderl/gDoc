@@ -20,7 +20,7 @@ require 'spec_helper'
         page.should have_button("add to favourites")
         click_button ("add to favourites")
 #        current_path.should == "/photos/1"
-        save_and_open_page
+#        save_and_open_page
         page.should have_button("remove from favourites")
 
     end
