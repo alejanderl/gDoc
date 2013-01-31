@@ -47,7 +47,7 @@ describe "GET /cycles" do
       visit "/cycles/1"
       click_link "Edit"
       save_and_open_page
-      page.should have_content("Cycle 1")
+      find_field('cycle_title').value
       fill_in "cycle_title", :with  => "Geek-art 2"
       click_button "Update Cycle"
       page.should have_content("Geek-art 2")
