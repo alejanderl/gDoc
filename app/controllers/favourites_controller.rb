@@ -21,10 +21,9 @@ class FavouritesController < ApplicationController
 
   def destroy
     
-    @favourite = Favourite.where(:favouritable_id => params[:favourite_id]).first
+    @favourite = Favourite.find(params[:favourite_id])
     @object = @favourite.favouritable_type.classify.constantize.find(@favourite.favouritable_id)
-    current_user.favourites.find_by_favouritable_id( params[:favourite_id]).destroy
-
+    @favourite.destroy
     #@favourite2.destroy 
         
 

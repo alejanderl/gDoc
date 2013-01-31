@@ -16,7 +16,9 @@ class User < ActiveRecord::Base
 
 
   
-  ROLES = %w[admin registered editor redactor]
+  ROLES = %w[admin registered editor redactor ]
+  
+  
   
   def roles=(roles)
     self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.sum

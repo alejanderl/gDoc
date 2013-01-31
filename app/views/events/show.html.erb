@@ -1,11 +1,12 @@
 <div  id="single-asset" class="span7 ofsset1">
+  <%= favourite_button(@event) if current_user.present? %>
   <p id="notice" class="badge badge-warning"><%= notice %></p>
   <p>
     <b><%= t"global.event" %></b>
    <h1> <%= @event.title %></h1>
   </p>
   
-  <%= favourite_button(@event) if current_user.present? %>
+  
   
   <p>
     <b><%=  t("form.start_date") %></b>
