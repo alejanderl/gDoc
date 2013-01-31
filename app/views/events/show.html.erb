@@ -1,8 +1,8 @@
 <div  id="single-asset" class="span7 ofsset1">
-  <p id="notice"><%= notice %></p>
+  <p id="notice" class="badge badge-warning"><%= notice %></p>
   <p>
-    <h1><%= t("form.title") %>:</h1>
-    <%= @event.title %>
+    <b><%= t"global.event" %></b>
+   <h1> <%= @event.title %></h1>
   </p>
   
   <%= favourite_button(@event) if current_user.present? %>

@@ -12,19 +12,14 @@ class Permission
     if user
       
     allow "favourites", [:new, :destroy, :create]
-    
-      user_use = User.find(user.id)
-      
-      if user_use.roles.include? "redactor"
-      
-        %w[cycles events photos videos audios documents participants favourites ].each do |controller|
-          allow(controller, [:update, :create, :destroy, :new, :edit])
-        end
+    user_use = User.new(:roles_mask => user.roles_mask)
+    if user_use.roles.include? "redactor"
+       %w[cycles events photos videos audios documents participants favourites ].each do |controller|
+        allow(controller, [:update, :create, :destroy, :new, :edit])
       end
-     allow_all if user_use.roles.include?  "admin"
-
     end
-    
+     allow_all if user_use.roles.include?  "admin"
+     end
   end
   
   def allow_all

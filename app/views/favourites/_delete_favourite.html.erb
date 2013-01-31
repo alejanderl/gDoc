@@ -1,4 +1,5 @@
 
 <div id="<%="#{t.class}-#{t.id}"%>">
-  <%= button_to (t'global.remove_from_favourites'), remove_favourite_path(favourite_id: t.id),:method => :delete, :remote => true %>
+
+  <%= link_to (raw("")), remove_favourite_path(favourite_id: t.id),:method => :delete, :remote => true , :class => "btn btn-medium icon-star btn-success" , :alt => "#{t'global.remove_from_favourites'}", :title => "#{t'global.remove_from_favourites'}"%>
 </div>

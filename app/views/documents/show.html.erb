@@ -1,9 +1,10 @@
 <div  id="single-asset" class="span7 ofsset1">
+<% if !notice.nil? %>
 <p id="notice"><%= notice %></p>
-
+<% end %>
 <p>
   <b><%=  t("metadata.title") %>:</b>  
-  <%= @document.title %>
+  <h1><%= @document.title %></h1>
 </p>
  <%= favourite_button(@document) if current_user.present? %>
  
@@ -32,7 +33,9 @@
   <%= @document.language %>
 </p>
 
+<% if allow? "documents", "edit" %>
 
 <%= link_to t("link.edit"), edit_document_path(@document) %> |
+<% end %>
 <%= link_to t("link.back"), documents_path %>
 </div>

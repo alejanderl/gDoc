@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
   has_many :favourites, :dependent => :destroy
   default_scope  :include => [ :favourites]
   
+  after_create :default_role
+
+
+  
   ROLES = %w[admin registered editor redactor]
   
   def roles=(roles)
@@ -24,6 +28,11 @@ class User < ActiveRecord::Base
   
   def role_symbols
     roles.map(&:to_sym)
+  end
+  
+    private
+  def default_role
+    roles == ["registered"]
   end
   
 end
