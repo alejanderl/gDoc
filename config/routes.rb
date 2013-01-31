@@ -1,20 +1,34 @@
 Gdoc::Application.routes.draw do
+
   match "favourites/" => "favourites#create", :as => :add_favourite , :via => :get
   match "favourites/" => "favourites#destroy", :as => :remove_favourite,  :via => :delete
+
+localized do
+
+  devise_for :users
   
-  scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do   
-    
-    devise_for :users
-    root :to => 'Cycles#index'
-    resources :participants
-    resources :documents
-    resources :people
-    resources :photos
-    resources :videos
-    resources :audios
-    resources :cycles
-    resources :events
-  end
+  root :to => 'Cycles#index'
+  
+  resources :participants
+
+  resources :documents
+
+  resources :people
+
+  resources :photos
+
+  resources :videos
+
+  resources :audios
+
+  resources :cycles
+
+  resources :events
+
+end
+
+Gdoc::Application.routes.translate_from_file("config/locales/routes.yml")
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,27 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:  
+    cycle: "cycle"
+    cycles: "cycles"
+    events: "events"
+    photos: "photos"
+    videos: "videos"
+    documents: "documents"
+    audios: "audios"
+    participants: "participants"
+    edit: "edit"
+    new: "new"
+es:  
+    cycle: "ciclo"
+    cycles: "ciclos"
+    events: "eventos"
+    photos: "fotos"
+    videos: "videos"
+    documents: "documentos"
+    audios: "audios"
+    participants: "participantes"
+    edit: "editar"
+    new: "nuevo"
+
+
