@@ -14,10 +14,13 @@ gem 'rails-erd'
 #To select date from a calender
 gem 'jquery_datepicker'
 
-
 #to add tags
 
 gem 'acts-as-taggable-on'
+
+#To translate the routes when using internationalitation
+gem 'route_translator'
+
 
 
 # Gems used only for assets and not required

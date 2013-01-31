@@ -166,6 +166,7 @@ GEM
       json (~> 1.4)
     ref (1.0.2)
     rmagick (2.13.1)
+    route_translator (2.0.0)
     rspec (2.12.0)
       rspec-core (~> 2.12.0)
       rspec-expectations (~> 2.12.0)
@@ -246,6 +247,7 @@ DEPENDENCIES
   rails-erd
   rb-inotify (~> 0.8.8)
   rmagick
+  route_translator
   rspec-rails
   sass-rails (~> 3.2.3)
   therubyracer
