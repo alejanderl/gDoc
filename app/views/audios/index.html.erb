@@ -1,5 +1,7 @@
 <h1 class="background-title"><%= t("listing.audios") %></h1>
+<% if allow? "audios", "new" %>
 <%= link_to t("title.new_audio"), new_audio_path if current_user.present? %>
+<% end %>
 
 
 

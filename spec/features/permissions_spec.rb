@@ -25,21 +25,18 @@ describe Permission do
     it { should_not allow("events", "update") }
     it { should_not allow("events", "destroy") }
 
-    it { should allow("sessions", "new") }
-    it { should allow("devise/sessions", "create") }
-    it { should_not allow("devise/sessions", "destroy") }
 
-    it { should allow("users", "new") }
-    it { should allow("users", "create") }
-    it { should_not allow("users", "edit") }
-    it { should_not allow("users", "update") }
+    it { should allow("devise/sessions", "create") }
+
+
   end
   
   describe "as admin" do
     subject { Permission.new(User.first) }
     #subject { user_login("admin@example.com", "admin123") }
     
-    it { should allow("anything", "here") }
+    it { should allow("events", "destroy") }
+    it { should allow("events", "create") }
   end
   
   describe "as member" do
@@ -57,9 +54,6 @@ describe Permission do
     it { should allow("devise/sessions", "create") }
     it { should allow("devise/sessions", "destroy") }
 
-    it { should allow("users", "new") }
-    it { should allow("users", "create") }
-    it { should allow("users", "edit") }
-    it { should allow("users", "update") }
+
   end
 end

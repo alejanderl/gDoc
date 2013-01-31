@@ -41,7 +41,8 @@
 </p>
 
 <p>
-  
-<%= link_to t("link.edit"), edit_video_path(@video) %> |
+  <% if allow? "videos", "edit" %>
+    <%= link_to t("link.edit"), edit_video_path(@video) %> |
+  <% end %>
 <%= link_to t("link.back"), videos_path %>
 </div>

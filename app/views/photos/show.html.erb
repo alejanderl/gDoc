@@ -22,7 +22,9 @@
   %>
 </p>
 
-
+<% if allow? "photos", "edit" %>
 <%= link_to t("link.edit"), edit_photo_path(@photo) if current_user.present? %> |
+<% end %>
+
 <%= link_to t("link.back"), :back %>
 </div>

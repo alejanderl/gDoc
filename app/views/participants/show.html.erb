@@ -19,11 +19,13 @@
 
 <p>
   <b><%=  t("misc.content_related") %></b>
-  <% #= @photo.content_related %>
+  <%#= @photo.content_related %>
 </p>
 
 
-<%= link_to t("link.edit"), edit_participant_path(@participant) %> |
+<% if allow? "participants", "edit" %>
+  <%= link_to t("link.edit"), edit_participant_path(@participant) %> |
+<% end %>
 <%= link_to t("link.back"), participants_path %>
 <div class="clearfix"></div>
 </div>

@@ -1,30 +1,50 @@
-class Permission < Struct.new(:user)
+class Permission
   
-  def allow?(controller, action)
-    
-    return true if  action.in?(%w[index show])
-    return true if controller == "devise/sessions"
-    return true if controller == "devise/registrations"
-    return true if controller == "users"
+  def initialize(user)
+    #@user= User.find(user.id)
+     allow :cycles, [:index, :show]
+    %w[cycles events photos videos audios documents participants ].each do |controller|
+    allow(controller, [:index, :show])
+    end
+    allow "devise/sessions", [:new, :destroy, :create]
+    allow "devise/registrations", [:new, :edit, :destroy]
     
     if user
       
-      if user.roles.include? "registered"
-        return true if controller.include? "devise"
-        return false  if  action.in?(%w[edit update destroy])
-      end
+    allow "favourites", [:new, :destroy, :create]
+    
+      user_use = User.find(user.id)
       
-      if user.roles.include? "redactor"
-        return true if  action.in?(%w[edit update destroy])
-      end
+      if user_use.roles.include? "redactor"
       
-     if user.roles.include? "admin"
-        return true  
-     end
-     
+        %w[cycles events photos videos audios documents participants favourites ].each do |controller|
+          allow(controller, [:update, :create, :destroy, :new, :edit])
+        end
+      end
+     allow_all if user_use.roles.include?  "admin"
+
     end
     
-    false
+  end
+  
+  def allow_all
+    @allow_all = true
+  end
+  
+  def allow(controllers, actions)
+    @allowed_actions ||={}
+    Array(controllers).each do |controller|
+      Array(actions).each do |action|
+        @allowed_actions[[controller.to_s, action.to_s]] = true
+      end
+    end
+  end
+  
+  def allow?(controller, action)
+    
+    @allow_all || @allowed_actions[[controller.to_s, action.to_s]]
+    
+    
     
   end
   

@@ -40,8 +40,12 @@
 
 
 
+<% if allow? "audios", "edit" %>
+  <%= link_to t("link.edit"), edit_audio_path(@audio) %> |
+<% end %>
 
-<%= link_to t("link.edit"), edit_audio_path(@audio) %> |
-<%= link_to t("link.back"), audios_path %>
-<%= link_to  t("link.destroy"), @audio, :method => :delete , :data => {:confirm => "Are you sure?" }%>
+  <%= link_to t("link.back"), audios_path %>
+<% if allow? "audios", "edit" %>
+  <%= link_to  t("link.destroy"), @audio, :method => :delete , :data => {:confirm => "Are you sure?" }%>
+<% end %>
 </div>

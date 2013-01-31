@@ -26,7 +26,9 @@
   <%= @cycle.description %>
 </p>
 
+<% if allow? "cycles", "edit" %>
 
 <%= link_to t("link.edit"), edit_cycle_path(@cycle) %> |
+<% end %>
 <%= link_to t("link.back"), cycles_path %>
 </div>

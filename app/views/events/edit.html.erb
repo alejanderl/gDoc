@@ -1,6 +1,8 @@
 <h1><%= t("title.edit_event") %></h1>
 
 <%= render 'form' %>
+<% if allow? "events", "edit" %>
 
 <%= link_to t("link.edit"), @event %> |
+<% end %>
 <%= link_to t("link.back"), events_path %>

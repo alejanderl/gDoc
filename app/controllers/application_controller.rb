@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   
   def authorize
     if !current_permission.allow?(params[:controller], params[:action])
-      redirect_to root_url, alert: "Not authorized.#{params[:controller].to_s} #{params[:action
+      redirect_to root_url, alert: "Not authorized.#{current_user.roles_mask}.#{params[:controller].to_s} #{params[:action
                                                                                         ].to_s},"
     end
     
