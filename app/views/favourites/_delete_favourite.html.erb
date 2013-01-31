@@ -1,5 +1,5 @@
+<% t = t[0] if t[0].present? %>
+<div id="<%="#{t.class}-#{t.id}"%>" class="pull-right span1">
 
-<div id="<%="#{t[0].class}-#{t[0].id}"%>" class="pull-right span1">
-
-  <%= link_to (raw("")), remove_favourite_path(favourite_id: t[0].id),:method => :delete, :remote => true , :class => "btn btn-medium icon-star btn-success" , :alt => "#{t'global.remove_from_favourites'}", :title => "#{t'global.remove_from_favourites'}"%>
+  <%= link_to (raw("")), remove_favourite_path(favourite_id: t.id),:method => :delete, :remote => true , :class => "btn btn-medium icon-star btn-success" , :alt => "#{t'global.remove_from_favourites'}", :title => "#{t'global.remove_from_favourites'}"%>
 </div>
