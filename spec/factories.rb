@@ -35,8 +35,15 @@ def create_sample_documents(attrs = {})
     attrs2[:description] ||= "Description random#{rand(1000)}"
     Document.create!(attrs2)
  end 
+
+def create_sample_photos(attrs = {})
+    attrs2 = attrs.dup
+    attrs2[:title] ||= "Photos random#{rand(1000)}"
+    attrs2[:description] ||= "Description random#{rand(1000)}"
+    Photo.create!(attrs2)
+end 
  
-  def create_sample_videos(attrs = {})
+def create_sample_videos(attrs = {})
     attrs2 = attrs.dup
     attrs2[:title] ||= "Document random#{rand(1000)}"
     attrs2[:description] ||= "Description random#{rand(1000)}"
