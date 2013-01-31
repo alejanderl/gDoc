@@ -2,7 +2,7 @@
 <h1 class="background-title span7"><%= t("listing.videos")  %></h1>
 <% if allow? "videos", "edit" %>
 
-<%= link_to t("title.new_video"), new_video_path if current_user.present? %>
+<%= link_to t("title.new_video"), new_video_path, :class => "btn btn-medium pull-right" if current_user.present? %>
 <% end %>
 
   <% @videos.each do |t|%>

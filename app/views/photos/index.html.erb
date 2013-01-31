@@ -1,7 +1,7 @@
 <h1 class="background-title"><%= t("listing.photos") %></h1>
 
 <% if allow? "photos", "edit" %>
-    <%= link_to t("title.new_photo"), new_photo_path if current_user.present? %>
+    <%= link_to t("title.new_photo"), new_photo_path, :class => "btn btn-medium pull-right" if current_user.present? %>
 <% end %>
 
 

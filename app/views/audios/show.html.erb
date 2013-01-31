@@ -38,14 +38,17 @@
   <%= @audio.language %>
 </p>
 
+<%= link_to t("link.back"), audios_path %>
+</br>
 
 
-<% if allow? "audios", "edit" %>
-  <%= link_to t("link.edit"), edit_audio_path(@audio) %> |
+<div class="btn-group">
+  <% if allow? "audios", "edit" %>
+  <%= link_to t("link.edit"), edit_audio_path(@audio),:class => "btn btn-medium  btn-primary" %> |
 <% end %>
-
-  <%= link_to t("link.back"), audios_path %>
-<% if allow? "audios", "edit" %>
-  <%= link_to  t("link.destroy"), @audio, :method => :delete , :data => {:confirm => "Are you sure?" }%>
+<% if allow? "audios", "destroy" %>
+  <%= link_to  t("link.destroy"), @audio, :method => :delete , :data => {:confirm => "Are you sure?" }, :class => "btn btn-medium btn-warning"%>
 <% end %>
+</div>
+
 </div>

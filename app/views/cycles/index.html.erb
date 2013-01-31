@@ -1,7 +1,7 @@
 <h1 class="background-title"> <%= (t"listing.cycles") %></h1>
 
 <% if allow? "cycles", "edit" %>
-    <%= link_to (t"title.new_cycle"), new_cycle_path if current_user.present? %>
+    <%= link_to (t"title.new_cycle"), new_cycle_path , :class => "btn btn-medium pull-right" if current_user.present? %>
 <% end %>
 
 <% @cycles.each do |t|%>
