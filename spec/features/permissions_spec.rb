@@ -44,15 +44,15 @@ describe Permission do
     #subject { user_login("alejandro@example.com", "alx123") }
     it { should allow("events", "index") }
     it { should allow("events", "show") }
-    it { should_not allow("events", "new") }
-    it { should_not allow("events", "create") }
-    it { should_not allow("events", "edit") }
-    it { should_not allow("events", "update") }
-    it { should_not allow("events", "destroy") }
+    it { should_not allow?("events", "new") }
+    it { should_not allow?("events", "create") }
+    it { should_not allow?("events", "edit") }
+    it { should_not allow?("events", "update") }
+    it { should_not allow?("events", "destroy") }
 
-    it { should allow("devise/registrations", "new") }
-    it { should allow("devise/sessions", "create") }
-    it { should allow("devise/sessions", "destroy") }
+    it { should allow?("devise/registrations", "new") }
+    it { should allow?("devise/sessions", "create") }
+    it { should allow?("devise/sessions", "destroy") }
 
 
   end

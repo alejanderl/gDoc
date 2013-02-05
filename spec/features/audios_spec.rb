@@ -7,7 +7,7 @@ describe "GET /audios" do
     create_sample_users
  end
 
-  it "display cycles" do
+  it "display cycles" do 
     visit audios_path    
     page.should have_content("Cool audio")
     page.should_not have_content("New Audio")
@@ -22,6 +22,7 @@ describe "GET /audios" do
    it "Create audios" do
      user_login("admin@example.com", "admin123")
       visit audios_path
+      save_and_open_page 
       click_link "New Audio"      
       fill_in "audio_title", :with  => "Geek-art audio"
       click_button "Create Audio"

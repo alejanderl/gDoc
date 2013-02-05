@@ -11,6 +11,8 @@ es:
     video: "video"
     add_to_favourites: "añadir a favoritos"
     remove_from_favourites: "borrar de favoritos"
+    password: "contraseńa"
+    your_email: "tu email"
 
   main-menu:
     cycles: "ciclos"

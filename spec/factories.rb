@@ -2,8 +2,8 @@
 #Log in as user
 def user_login (email, password)
   visit "/users/sign_in"
-  fill_in "Email", :with => email
-  fill_in "Password", :with => password
+  fill_in "user_email", :with => email
+  fill_in "user_password", :with => password
   click_button "Sign in"
 end
 
@@ -17,9 +17,14 @@ end
 
 #Sample data
 def create_sample_users
-  User.create(:email => "admin@example.com", :password => "admin123", :password_confirmation => "admin123", :roles_mask => 1)
-  User.create(:email => "alejandro@example.com", :password => "alx123", :password_confirmation => "alx123", :roles_mask => 2)
-  User.create(:email => "carolina@example.com", :password => "caro123", :password_confirmation => "caro123", :roles_mask => 2)
+  User.create(:email => "admin@example.com", :password => "admin123", :password_confirmation => "admin123")
+  
+
+  User.create(:email => "alejandro@example.com", :password => "alx123", :password_confirmation => "alx123")
+  User.create(:email => "carolina@example.com", :password => "caro123", :password_confirmation => "caro123")
+  user = User.find(1)
+  user.roles = ["admin"]
+  user.save
 end
 
 

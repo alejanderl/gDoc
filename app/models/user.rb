@@ -6,13 +6,18 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :roles_mask
+  attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
   
   has_many :favourites, :dependent => :destroy
+   [:videos , :events ,:audios, :cycles, :documents, :photos].each do |element|
+    has_many element ,:through => :favourites
+  end
   default_scope  :include => [ :favourites]
   
-  after_create :default_role
+  validate :email, :uniqueness => true
+  
+  before_create :default_role
 
 
   
@@ -33,8 +38,9 @@ class User < ActiveRecord::Base
   end
   
     private
+    
   def default_role
-    roles == ["registered"]
+    self.roles = ["registered"]
   end
   
 end

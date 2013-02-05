@@ -7,7 +7,7 @@ require 'spec_helper'
     create_sample_users
     create_sample_videos({:title => "Video number 1",:description => "Description video number 1"})
     50.times do
-      create_sample_videos 
+      create_sample_videos  
     end   
   end
     

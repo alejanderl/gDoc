@@ -13,6 +13,9 @@ en:
     video: "video"
     add_to_favourites: "add to favourites"
     remove_from_favourites: "remove from favourites"
+    password: "password"
+    your_email: "your email"
+    sign_in: "Sign in"
     
 
 
