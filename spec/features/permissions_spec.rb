@@ -14,6 +14,15 @@ describe Permission do
     create_sample_users
   end
   
+   describe "as admin" do
+    subject { Permission.new(User.find(1)) }
+    
+    it "allows anything" do
+      should allow(:anything, :here)
+      #should allow_param(:anything, :here)
+    end
+  end
+  
   describe "as guest" do
     subject { Permission.new(nil) }
     
@@ -30,29 +39,22 @@ describe Permission do
 
 
   end
-  
-  describe "as admin" do
-    subject { Permission.new(User.first) }
-    #subject { user_login("admin@example.com", "admin123") }
-    
-    it { should allow("events", "destroy") }
-    it { should allow("events", "create") }
-  end
+
   
   describe "as member" do
     subject { Permission.new(User.last) }
     #subject { user_login("alejandro@example.com", "alx123") }
     it { should allow("events", "index") }
     it { should allow("events", "show") }
-    it { should_not allow?("events", "new") }
-    it { should_not allow?("events", "create") }
-    it { should_not allow?("events", "edit") }
-    it { should_not allow?("events", "update") }
-    it { should_not allow?("events", "destroy") }
+    it { should_not allow("events", "new") }
+    it { should_not allow("events", "create") }
+    it { should_not allow("events", "edit") }
+    it { should_not allow("events", "update") }
+    it { should_not allow("events", "destroy") }
 
-    it { should allow?("devise/registrations", "new") }
-    it { should allow?("devise/sessions", "create") }
-    it { should allow?("devise/sessions", "destroy") }
+    it { should allow("devise/registrations", "new") }
+    it { should allow("devise/sessions", "create") }
+    it { should allow("devise/sessions", "destroy") }
 
 
   end

@@ -8,13 +8,7 @@ class Photo < ActiveRecord::Base
   has_many :favourites, :as => :favouritable, :dependent => :destroy
 
   mount_uploader :image, ImageUploader
-  before_create :assign_user
-  
-  private
-  
-  def assign_user
-    self.user_id = current_user.id
-  end
+
  
 
 end

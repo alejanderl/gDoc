@@ -41,6 +41,7 @@ class ParticipantsController < ApplicationController
   # POST /participants.json
   def create
     @participant = Participant.new(params[:participant])
+    @event.user_id = current_user.id
 
     respond_to do |format|
       if @participant.save

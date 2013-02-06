@@ -18,8 +18,6 @@ end
 #Sample data
 def create_sample_users
   User.create(:email => "admin@example.com", :password => "admin123", :password_confirmation => "admin123")
-  
-
   User.create(:email => "alejandro@example.com", :password => "alx123", :password_confirmation => "alx123")
   User.create(:email => "carolina@example.com", :password => "caro123", :password_confirmation => "caro123")
   user = User.find(1)
@@ -31,6 +29,7 @@ end
 def create_sample_cycles
   Cycle.create(:title => "Cycle 1", :description => "Cycle 1 description", :start_date => "2013-02-10", :end_date =>"2013-02-15 ")
   Cycle.create(:title => "Cycle 2", :description => "Cycle 2 description", :start_date => "2013-02-13", :end_date =>"2013-02-25 ")
+  
   Cycle.create(:title => "Cycle 3", :description => "Cycle 3 description", :start_date => "2013-03-1", :end_date =>"2013-03-15 ")
 end
 

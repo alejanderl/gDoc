@@ -64,6 +64,7 @@ class Permission
       params.permit!
     elsif @allowed_params
       @allowed_params.each do |resource, attributes|
+        
         if params[resource].respond_to? :permit
           params[resource] = params[resource].permit(*attributes)
         end

@@ -27,6 +27,7 @@ class CyclesController < ApplicationController
   # GET /cycles/new.json
   def new
     @cycle = Cycle.new
+    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +44,7 @@ class CyclesController < ApplicationController
   # POST /cycles.json
   def create
     @cycle = Cycle.new(params[:cycle])
-
+    @cycle.user_id = current_user.id
     respond_to do |format|
       if @cycle.save
         format.html { redirect_to @cycle, notice: 'Cycle was successfully created.' }
@@ -81,5 +82,9 @@ class CyclesController < ApplicationController
       format.html { redirect_to cycles_url }
       format.json { head :no_content }
     end
+  end
+  
+  def current_resource
+    @current_resource ||= Cycle.find(params[:id]) if params[:id]
   end
 end
