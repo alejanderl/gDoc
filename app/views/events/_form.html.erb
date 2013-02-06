@@ -17,11 +17,10 @@
     </div>
     <div class="field">  
       <%= f.label t("metadata.start_date") %><br />
-      
       <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %>
     </div>
     <div class="field">
-      <%= f.label :time %><br />
+      <%= f.label t("metadata.time") %><br />
        <%= f.text_field :time , :class => "time-picker" %>
     </div>
     <div class="field">
@@ -29,9 +28,21 @@
       <%= f.text_area :description %>
     </div>
     
-    <div class="actions">
-      <%= f.submit %>
-    </div>
-  <% end %>
+  <div class="field">
+     <% if !@cycles.nil? %>  
+       <%= f.label :cycle_ids %><br />
+       <%= f.select(:cycle_ids, @cycles.collect {|c| [c.title, c.id]}) %>
+     <% end %>
+  </div>
+
+  <div class="field" style="background-color: #E89BB6">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 </div>

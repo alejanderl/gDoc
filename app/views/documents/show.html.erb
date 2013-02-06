@@ -33,8 +33,18 @@
   <%= @document.language %>
 </p>
 
-<% if allow? "documents", "edit" %>
 
+
+
+<p>
+  <b>Tags:</b>
+  <div style="background-color: #E89BB6">
+
+      <%= @document.tag_list {|t| t} %>
+  </div>
+</p>
+
+<% if allow? "documents", "edit" %>
 <%= link_to t("link.edit"), edit_document_path(@document) %> |
 <% end %>
 <%= link_to t("link.back"), documents_path %>

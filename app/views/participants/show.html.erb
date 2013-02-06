@@ -18,14 +18,25 @@
 </p>
 
 <p>
+  <b>Tags:</b>
+  <div style="background-color: #E89BB6">
+      <%=  @participant.tag_list {|t| t} %>
+  </div>
+</p>
+
+<p>
   <b><%=  t("misc.content_related") %></b>
   <%#= @photo.content_related %>
 </p>
 
+<<<<<<< HEAD
 
 <% if allow? "participants", "edit" %>
   <%= link_to t("link.edit"), edit_participant_path(@participant) %> |
 <% end %>
+=======
+<%= link_to t("link.edit"), edit_participant_path(@participant) %> |
+>>>>>>> d6f1668ca0f124124814da0e987a3f1fd25a4b69
 <%= link_to t("link.back"), participants_path %>
 <div class="clearfix"></div>
 </div>

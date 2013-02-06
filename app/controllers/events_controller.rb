@@ -4,7 +4,15 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
-    @events = Event.all
+    if params[:tag]
+      @events = Event.tagged_with(params[:tag])
+    else
+      @events = Event.all
+
+   end
+
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
@@ -26,7 +34,6 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @event }
@@ -36,6 +43,7 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    @cycles = Cycle.all
   end
 
   # POST /events

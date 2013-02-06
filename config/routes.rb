@@ -1,13 +1,11 @@
 Gdoc::Application.routes.draw do
-  
- 
+
+#  get 'tags/:tag', to: 'tags#index', as: :tag  
 
   match "favourites/" => "favourites#create", :as => :add_favourite , :via => :get
   match "favourites/" => "favourites#destroy", :as => :remove_favourite,  :via => :delete
-  
 
-
-scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do   
+localized do
 
   devise_for :users
   
@@ -32,10 +30,7 @@ scope "(:locale)", :locale => /#{I18n.available_locales.join("|")}/ do
 end
 
 
-
-match '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
-
-match '', to: redirect("/#{I18n.default_locale}")
+Gdoc::Application.routes.translate_from_file("config/locales/routes.yml")
 
 
   # The priority is based upon order of creation:

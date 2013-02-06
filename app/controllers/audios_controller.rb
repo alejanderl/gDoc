@@ -1,10 +1,15 @@
 class AudiosController < ApplicationController
   # GET /audios
   # GET /audios.json
-  def index
-    @audios = Audio.all
+  before_filter :authenticate_user!, :except => [:show, :index]
 
-    respond_to do |format|
+  def index
+    if params[:tag]
+      @audio = Audio.tagged_with(params[:tag])
+    else
+      @audios = Audio.all  
+   end
+   respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @audios }
     end

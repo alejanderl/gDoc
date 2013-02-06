@@ -14,8 +14,13 @@ gem 'rails-erd'
 #To select date from a calender
 gem 'jquery_datepicker'
 
+#to add tags
+
+gem 'acts-as-taggable-on'
+
 #To translate the routes when using internationalitation
-#gem 'rails-translate-routes'
+gem 'route_translator'
+
 
 
 # Gems used only for assets and not required
@@ -59,6 +64,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'guard-rspec'
   gem "minitest"
+
 end
 
 # File uploader

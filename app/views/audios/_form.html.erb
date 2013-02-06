@@ -1,5 +1,3 @@
-
-
 <div  id="single-asset" class="span7 ofsset1">
   <%= form_for(@audio) do |f| %>
 
@@ -44,6 +42,10 @@
     <%= t("metadata.language") %><br />
     <%= f.label :language %><br />
     <%= f.text_field :language %>
+  </div>
+  <div class="field" style="background-color: #E89BB6">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
   </div>
 
   <div class="actions">

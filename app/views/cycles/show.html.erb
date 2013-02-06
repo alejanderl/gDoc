@@ -26,9 +26,30 @@
   <%= @cycle.description %>
 </p>
 
-<% if allow? "cycles", "edit" %>
 
+
+
+<p>
+  <b>Tags:</b>
+  <div style="background-color: #E89BB6">
+      <%= @cycle.tag_list {|t| t} %>
+  </div>
+</p>
+
+
+<p>
+  <b>Associated events:</b>
+ <ul>
+  <% @cycle.events.each  do |event|  %>
+    <li><%= link_to event.title, event %></li>
+    <% end %>
+  </ul>
+
+</p>
+
+<% if allow? "cycles", "edit" %>
 <%= link_to t("link.edit"), edit_cycle_path(@cycle) %> |
 <% end %>
 <%= link_to t("link.back"), cycles_path %>
+
 </div>

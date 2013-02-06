@@ -72,10 +72,14 @@ en:
     duration: "Duration"
     language: "Language"
     date: "Date"
-
+    time: "Time"
 
   misc:
     content_related: "Content related"	
     bio: "Biography" 
     name: "Name"
+  
+  
+  user:
+    new_password: "New password"
 

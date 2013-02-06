@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130204232623) do
     t.datetime "updated_at",  :null => false
     t.string   "uid"
     t.integer  "user_id"
+
   end
 
   create_table "audios_events", :id => false, :force => true do |t|
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(:version => 20130204232623) do
     t.datetime "updated_at",  :null => false
     t.string   "uid"
     t.integer  "user_id"
+
   end
 
   create_table "cycles_events", :id => false, :force => true do |t|
@@ -70,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130204232623) do
     t.datetime "updated_at",  :null => false
     t.string   "uid"
     t.integer  "user_id"
+
   end
 
   create_table "documents_events", :id => false, :force => true do |t|
@@ -86,7 +89,7 @@ ActiveRecord::Schema.define(:version => 20130204232623) do
     t.datetime "updated_at",  :null => false
     t.string   "uid"
     t.integer  "user_id"
-  end
+    end
 
   create_table "events_photos", :id => false, :force => true do |t|
     t.integer "event_id"
@@ -112,6 +115,7 @@ ActiveRecord::Schema.define(:version => 20130204232623) do
     t.boolean  "creator"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "uid"
     t.string   "image"
     t.string   "uid"
     t.integer  "user_id"
@@ -136,6 +140,7 @@ ActiveRecord::Schema.define(:version => 20130204232623) do
     t.string   "image"
     t.string   "uid"
     t.integer  "user_id"
+
   end
 
   create_table "taggings", :force => true do |t|
@@ -186,6 +191,7 @@ ActiveRecord::Schema.define(:version => 20130204232623) do
     t.datetime "updated_at",  :null => false
     t.string   "uid"
     t.integer  "user_id"
+
   end
 
 end

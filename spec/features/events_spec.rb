@@ -1,12 +1,11 @@
 require 'spec_helper'
 
   describe "GET /events" do
-  
+
   before do
     create_sample_cycles
     create_sample_users
     create_sample_events
-
   end
     
     it "display events index" do
@@ -17,34 +16,34 @@ require 'spec_helper'
 #      page.should have_content("Cycle")
 
     end
+  
   describe "POST /events" do
     it "Create an event" do
-      
       user_login("admin@example.com", "admin123")
       visit events_path
-#      save_and_open_page
+      save_and_open_page
       click_link "New Event"
-      
+      save_and_open_page
       fill_in "event_title", :with  => "Conference"
       fill_in "event_description", :with  => "Conference about"
-      
-
-#      save_and_open_page
       click_button "Create Event"
       page.should have_content("Event was successfully created.")
-#      save_and_open_page
+
     end
+
+    
     pending it "Associate a cycle to an event" do
 
     end
 
     it "Update an event", :js => true do
+      visit events_path
       user_login("admin@example.com", "admin123")
       visit "/events/1"      
       click_link "Edit"
       fill_in "event_title", :with  => "Show"
       fill_in "event_description", :with  => "A coooool show"
-      
+
  
       page.execute_script("$('.hasDatepicker').trigger('focus')") # activate datetime picker
       page.execute_script "$('a.ui-datepicker-next').trigger('click') " # move one month forward
@@ -59,7 +58,7 @@ require 'spec_helper'
       click_button "Update Event" 
       
       page.should have_content("Event was successfully updated.")
-#     save_and_open_page
+
     end
 
   end

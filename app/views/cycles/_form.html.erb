@@ -25,6 +25,7 @@
 
 
   <div class="field">
+    <%= f.label :end_date %><br />
     <%= f.label t("metadata.end_date") %><br />
     <%= f.datepicker :end_date, :minDate => @cycle.start_date, :dateFormat => "yy-mm-dd" %>
   </div>
@@ -32,6 +33,13 @@
     <%= f.label t("metadata.description") %><br />
     <%= f.text_field :description %>
   </div>
+
+  <div class="field" style="background-color: #E89BB6">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
+
   <div class="field">
     taxonomy
 

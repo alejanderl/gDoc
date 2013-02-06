@@ -1,6 +1,7 @@
 <h1><%= t("listing.events") %></h1>
 <%= link_to t("title.new_event"), new_event_path, :class => "btn btn-medium pull-right" if current_user.present?%>
 
+
 <% @events.each do |t|%>
 
   <div class="box_container full-width span7">
@@ -17,9 +18,17 @@
     <div class="start-end-date">
       <%= t.date %><%= t.time %>
     </div>
+    <div>
+     <% if t.cycles.nil? %>  
+    <td><%= link_to t.cycle.title, t.cycle %></td>
+    <% end %>
   </div>
-  
-  
+   <div style="background-color: #E89BB6">
+    <%= t.tag_list {|t| t} %>
+   </div>
+
+
+  </div>
 <% end %>
 
 

@@ -2,12 +2,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   before_filter :set_locale
+
   before_filter :authorize
   delegate :allow?, to: :current_permission
   helper_method :allow?
   delegate :allow_param?, to: :current_permission
   helper_method :allow_param?
-  
+  before_filter :set_locale_from_url
 
   
   private
@@ -28,6 +29,10 @@ class ApplicationController < ActionController::Base
       redirect_to root_url, alert: "Not authorized."
     end
   end
+
+
+
+
 
 
   def set_locale

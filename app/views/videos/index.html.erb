@@ -25,6 +25,11 @@
       <%#= link_to(image_tag(video.image),photo_url(t.id))  if t.image.present? %>
 
     </div>
+   <div style="background-color: #E89BB6">
+
+      <%= t.tag_list {|t| t} %>
+   </div>
+
   </div>
   
   

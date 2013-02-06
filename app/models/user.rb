@@ -8,12 +8,15 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
+  acts_as_tagger
+
   
   has_many :favourites, :dependent => :destroy
    [:videos , :events ,:audios, :cycles, :documents, :photos].each do |element|
     has_many element ,:through => :favourites
   end
   default_scope  :include => [ :favourites]
+
   
   validate :email, :uniqueness => true
   
@@ -43,4 +46,5 @@ class User < ActiveRecord::Base
     self.roles = ["registered"]
   end
   
+
 end

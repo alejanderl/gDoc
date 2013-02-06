@@ -1,8 +1,10 @@
 
 <h1><%= t("listing.documents") %></h1>
+
 <% if allow? "documents", "edit" %>
     <%= link_to t("title.new_document"), new_document_path, :class => "btn btn-medium pull-right" if current_user.present?%>
 <% end %>
+
 
 
 
@@ -16,6 +18,11 @@
     <div class="name">
       <%= link_to t.title,document_url(t.id) %>
     </div>   
+   <div style="background-color: #E89BB6">
+
+    <%= t.tag_list {|t| t} %>
+   </div>
+
   </div>
   
   

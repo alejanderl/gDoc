@@ -1,5 +1,6 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :image, :date, :description, :format, :license,  :title
+  attr_accessible :image, :date, :description, :format, :license,  :title, :tag_list
+
   validates_presence_of :title
 
   has_and_belongs_to_many :events
@@ -9,6 +10,7 @@ class Photo < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
- 
+  acts_as_taggable
+
 
 end

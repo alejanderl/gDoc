@@ -38,16 +38,25 @@
   <%= @audio.language %>
 </p>
 
+<<<<<<< HEAD
 <%= link_to t("link.back"), audios_path %>
 </br>
+
+<p>
+  <b>Tags:</b>
+  <div style="background-color: #E89BB6">
+      <%= @audio.tag_list {|t| t} %>
+  </div>
+</p>
+
 
 
 <div class="btn-group">
   <% if allow? "audios", "edit" %>
-  <%= link_to t("link.edit"), edit_audio_path(@audio),:class => "btn btn-medium  btn-primary" %> |
+  <%= link_to t("link.edit"), edit_audio_path(@audio),:class => "btn btn-medium " %> |
 <% end %>
 <% if allow? "audios", "destroy" %>
-  <%= link_to  t("link.destroy"), @audio, :method => :delete , :data => {:confirm => "Are you sure?" }, :class => "btn btn-medium btn-warning"%>
+  <%= link_to  t("link.destroy"), @audio, :method => :delete , :data => {:confirm => "Are you sure?" }, :class => "btn btn-medium "%>
 <% end %>
 </div>
 

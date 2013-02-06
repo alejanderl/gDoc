@@ -68,7 +68,7 @@ es:
     duration: "Duración"
     language: "Idioma"
     date: "Fecha"
-
+    time: "Hora"
   misc:
     content_related: "Contenido relacionado"
     bio: "Biografía" 

@@ -1,9 +1,14 @@
 class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
-  def index
-    @videos = Video.all
+  before_filter :authenticate_user!, :except => [:show, :index]
 
+  def index
+    if params[:tag]
+      @videos = Video.tagged_with(params[:tag])
+    else
+      @videos = Video.all
+   end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @videos }

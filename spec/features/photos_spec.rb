@@ -21,7 +21,6 @@ describe "Photos" do
         visit photos_path
 #        save_and_open_page
         click_link "New Photo"
-        
         fill_in "photo_title", :with  => "Nonsense photo"
         click_button "Create Photo"
         page.should have_content("Nonsense photo")

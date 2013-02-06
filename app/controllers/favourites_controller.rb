@@ -7,7 +7,7 @@ class FavouritesController < ApplicationController
     
     respond_to do |format|
       if @favourite.save
-        format.html { redirect_to root_url }
+
         format.js
         format.json { render json: @favourite,     status: :created, location: @favourite}
       else
