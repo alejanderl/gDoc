@@ -15,27 +15,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label t("metadata.title") %><br />
-    <%= f.text_field :title %>
+    <%= f.label t("metadata.title"), :class => "form-title"%>
+    <%= f.text_field :title , :class => "form-title span6"%>
   </div>
-  <div class="field">
-    <%= f.label t("metadata.start_date") %><br />
-    <%= f.datepicker :start_date, :dateFormat => "yy-mm-dd" %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :end_date %><br />
-    <%= f.label t("metadata.end_date") %><br />
-    <%= f.datepicker :end_date, :minDate => @cycle.start_date, :dateFormat => "yy-mm-dd" %>
-  </div>
-  <div class="field">
-    <%= f.label t("metadata.description") %><br />
-    <%= f.text_field :description %>
+    <div class="field">
+    <%= f.label t("metadata.description") %>
+    <%= f.text_area :description, :class=> "span6" %>
   </div>
 
-  <div class="field" style="background-color: #E89BB6">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  <div class="field">
+    <div class="float-left">
+      <%= f.label t("metadata.start_date") %>
+      <%= f.datepicker :start_date, :dateFormat => "yy-mm-dd" %>
+    </div>
+    <div class="float-left offset1">
+      <%= f.label t("metadata.end_date") %>
+      <%= f.datepicker :end_date, :minDate => @cycle.start_date, :dateFormat => "yy-mm-dd"%>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+
+  <div class="field">
+    <%= f.label :tag_list, t("metadata.Tags") %>
     <%= f.text_field :tag_list %>
   </div>
 
