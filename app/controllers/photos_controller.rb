@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
     if params[:tag]
       @photos = Photo.tagged_with(params[:tag])
     else
-      @photos = Photo.all
+      @photos = Photo.order("created_at").page(params[:page]).per(15)
    end
     respond_to do |format|
       format.html # index.html.erb

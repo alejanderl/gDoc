@@ -11,10 +11,10 @@ describe "check users" do
   end
   
   it "anonymus users can't edit" do
-    visit audios_path
-    page.should_not have_content("New Audio")
-    visit "/en/audios/2/edit"
-    page.should have_content("Not authorized")
+   visit audios_path
+   page.should_not have_content("New Audio")
+   page.all(".name")[1].first("a").click
+   page.should_not have_content("Edit")
 
   end
   

@@ -31,6 +31,19 @@ body {
    background:url( image-path('faldon.png'))  repeat-x ;
    margin-bottom:50px;
 }
+.nav-tabs {
+    
+    font-size: 15px;
+    margin: 0 auto;
+    
+}
+
+.navegacion {
+    margin: 0 auto !important;
+    text-align: center;
+    float: none!important;
+
+}
 
 
 .centered {
@@ -279,4 +292,37 @@ overflow: visible !important;
 }
 .float-left {
     float: left;
+}
+
+
+.pagination {
+    
+    width:100%;
+    
+    span {
+	margin:auto;
+    }
+
+    .current {
+	background-color: white;
+	border: 0 solid #CCCCCC;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: -1px 0 0 0 #CCCCCC, 0 -1px 0 0 #CCCCCC;
+	padding: 7px !important;
+	padding-right: 2px !important;
+    }
+    a {
+	border: 0 solid #CCCCCC;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: -1px 0 0 0 #CCCCCC, 0 -1px 0 0 #CCCCCC;
+	padding: 7px !important;
+	background-color:rgba(100,100,100,0.1);
+    }
+    
+    a:hover {
+	background-color:rgba(255,255,255,0.4);
+	text-decoration: none;
+	color:#666;
+    }
+    
 }

@@ -7,7 +7,7 @@ class CyclesController < ApplicationController
     if params[:tag]
       @cycles = Cycle.tagged_with(params[:tag])
     else
-      @cycles = Cycle.all
+      @cycles = Cycle.order("created_at").page(params[:page]).per(15)
    end
     respond_to do |format|
       format.html # index.html.erb

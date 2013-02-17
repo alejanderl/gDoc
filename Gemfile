@@ -84,3 +84,6 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 # Strong parameters for field authorization
 gem 'strong_parameters', github: 'rails/strong_parameters'
+
+#Kaminari for pagination
+gem "kaminari"

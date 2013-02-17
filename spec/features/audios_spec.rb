@@ -22,7 +22,7 @@ describe "GET /audios" do
    it "Create audios" do
      user_login("admin@example.com", "admin123")
       visit audios_path
-      save_and_open_page 
+#      save_and_open_page 
       click_link "New Audio"      
       fill_in "audio_title", :with  => "Geek-art audio"
       click_button "Create Audio"
@@ -50,9 +50,7 @@ describe "GET /audios" do
       page.should have_content("Cool audio") {
           alert = page.driver.browser.switch_to.alert
           click_link('Destroy')
-          save_and_open_page
           alert.accept
-          save_and_open_page
         }
 #        expect { click_link('Destroy') }.to change(Cycle, :count).by(-1)}
 #      save_and_open_page

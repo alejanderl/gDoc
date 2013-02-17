@@ -7,7 +7,7 @@ class DocumentsController < ApplicationController
     if params[:tag]
       @documents = Document.tagged_with(params[:tag])
     else
-      @documents = Document.all  
+      @documents = Document.order("created_at").page(params[:page]).per(15)  
    end
 
    respond_to do |format|

@@ -40,7 +40,7 @@ class ParticipantsController < ApplicationController
 
   # GET /participants/1/edit
   def edit
-    @participant = Participant.find(params[:id])
+    @participant = Participant.order("created_at").page(params[:page]).per(15)
   end
 
   # POST /participants

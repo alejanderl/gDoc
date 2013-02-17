@@ -109,6 +109,9 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery_datepicker (0.4)
     json (1.7.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.1.2)
       addressable (~> 2.3)
     less (2.2.2)
@@ -248,6 +251,7 @@ DEPENDENCIES
   guard-rspec
   jquery-rails
   jquery_datepicker
+  kaminari
   launchy
   less-rails
   minitest

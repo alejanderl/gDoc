@@ -27,6 +27,7 @@ localized do
 
   resources :events
 
+  
 end
 
 

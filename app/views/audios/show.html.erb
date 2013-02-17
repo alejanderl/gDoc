@@ -1,4 +1,6 @@
 <div  id="single-asset" class="span7 ofsset1">
+   <%= favourite_button(@audio) if current_user.present? %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,7 +8,6 @@
   <b><%= t("metadata.title") %>:</b>  
    <%= @audio.title %>
 </p>
- <%= favourite_button(@audio) if current_user.present? %>
 
 <p>
   <b><%=  t("metadata.start_date") %>:</b> 
@@ -38,7 +39,6 @@
   <%= @audio.language %>
 </p>
 
-<<<<<<< HEAD
 <%= link_to t("link.back"), audios_path %>
 </br>
 

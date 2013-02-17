@@ -7,7 +7,7 @@ class VideosController < ApplicationController
     if params[:tag]
       @videos = Video.tagged_with(params[:tag])
     else
-      @videos = Video.all
+      @videos = Video.order("created_at").page(params[:page]).per(15)  
    end
     respond_to do |format|
       format.html # index.html.erb

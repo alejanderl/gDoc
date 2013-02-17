@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     if params[:tag]
       @events = Event.tagged_with(params[:tag])
     else
-      @events = Event.all
+      @events = Event.order("created_at").page(params[:page]).per(15)
 
    end
 

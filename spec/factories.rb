@@ -26,11 +26,15 @@ def create_sample_users
 end
 
 
-def create_sample_cycles
+def create_sample_cycles(attrs = {})
   Cycle.create(:title => "Cycle 1", :description => "Cycle 1 description", :start_date => "2013-02-10", :end_date =>"2013-02-15 ")
   Cycle.create(:title => "Cycle 2", :description => "Cycle 2 description", :start_date => "2013-02-13", :end_date =>"2013-02-25 ")
   
   Cycle.create(:title => "Cycle 3", :description => "Cycle 3 description", :start_date => "2013-03-1", :end_date =>"2013-03-15 ")
+  attrs2 = attrs.dup
+  attrs2[:title] ||= "Cycle random#{rand(1000)}"
+  attrs2[:description] ||= "Description random#{rand(1000)}"
+  Cycle.create!(attrs2)
 end
 
 def create_sample_documents(attrs = {})
@@ -49,8 +53,8 @@ end
  
 def create_sample_videos(attrs = {})
     attrs2 = attrs.dup
-    attrs2[:title] ||= "Document random#{rand(1000)}"
-    attrs2[:description] ||= "Description random#{rand(1000)}"
+    attrs2[:title] ||= "Video random#{rand(1000)}"
+    attrs2[:description] ||= "Description video random#{rand(1000)}"
     Video.create!(attrs2)
 end
 
@@ -73,4 +77,11 @@ end
 def create_sample_audios
   Audio.create(:title => "Cool audio", :description => "Come and see", :date => "2013-02-11", :license => "Creative commons", :format => "mp3", :duration => "1hour", :language => "English")
   Audio.create(:title => "Cool audio ever2 ", :description => "Come and see", :date => "2013-02-11", :license => "Creative commons", :format => "mp3", :duration => "1hour", :language => "English")
+end
+
+def create_sample_participants(attrs = {})
+  attrs2 = attrs.dup
+  attrs2[:name] ||= "Cycle random#{rand(1000)}"
+  attrs2[:bio] ||= "Bio random#{rand(1000)}"
+  Participants.create!(attrs2)
 end

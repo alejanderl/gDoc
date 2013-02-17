@@ -4,7 +4,7 @@
 
 <%= link_to t("title.new_video"), new_video_path, :class => "btn btn-medium pull-right" if current_user.present? %>
 <% end %>
-
+<%= paginate @videos %>
   <% @videos.each do |t|%>
 
 

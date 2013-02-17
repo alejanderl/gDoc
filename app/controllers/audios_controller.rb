@@ -1,13 +1,12 @@
 class AudiosController < ApplicationController
   # GET /audios
   # GET /audios.json
-  before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
     if params[:tag]
       @audio = Audio.tagged_with(params[:tag])
     else
-      @audios = Audio.all  
+      @audios = Audio.order("created_at").page(params[:page]).per(15)
    end
    respond_to do |format|
       format.html # index.html.erb
