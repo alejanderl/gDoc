@@ -46,9 +46,8 @@
 
   
   <div  class="tags">
-    <%=  t("metadata.tags") %><br />
-    <%= f.autocomplete_field :tag_list, autocomplete_tag_name_tags_path, :"data-delimiter" => ', ' %>
-    </div>
+    <%=  tags_autocomplete f %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

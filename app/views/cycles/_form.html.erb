@@ -35,10 +35,9 @@
   </div>
   <div class="clearfix"></div>
 
-  <div class="field">
-    <%= f.label :tag_list, t("metadata.Tags") %>
-    <%= f.text_field :tag_list %>
-  </div>
+    <div  class="tags">
+      <%= tags_autocomplete(f) %>
+    </div>
 
 
   <div class="field">

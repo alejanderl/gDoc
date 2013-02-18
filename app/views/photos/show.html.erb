@@ -1,12 +1,12 @@
 <div  id="single-asset" class="span7 ofsset1">
-  
+  <%= favourite_button(@photo) if current_user.present? %>
+
   <p id="notice"><%= notice %></p>
   
   <p>
   <b><%= t"global.photo" %></b>
   <h1><%= @photo.title %></h1>
   </p>
-  <%= favourite_button(@photo) if current_user.present? %>
   
   <div class="image">
       <%= image_tag @photo.image_url(:thumb) if @photo.image? %>
@@ -24,11 +24,10 @@
   </p>
   
   
-  <% if allow? "photos", "edit" %>
   
-  <%= link_to t("link.edit"), edit_photo_path(@photo) if current_user.present? %> |
-  <% end %>
+  <%= edit_button @photo %> 
   
-  <%= link_to t("link.back"), :back %>
 
 </div>
+  <%= link_to t("link.back"), :back %>
+

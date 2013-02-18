@@ -13,25 +13,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label t("misc.name") %><br />
-    <%= f.text_field :name %>
+    <%= f.label t("misc.name") %>
+    <%= f.text_field :name , :class => "span6 title"%>
   </div>
   <div class="field">
-    <%= f.label t("misc.bio") %><br />
-    <%= f.text_area :bio %>
+    <%= f.label t("misc.bio") %>
+    <%= f.text_area :bio , :class => "span6 bio"%>
   </div>
   <div class="field">
-    <%= f.label :creator %><br />
+    <%= f.label t("metadata.creator") %>
     <%= f.check_box :creator %>
   </div>
       <div class="field">
-    <%= f.label t("metadata.image") %><br />
+    <%= f.label t("metadata.image") %>
     <%= f.file_field :image %>
   </div>
-  <div class="field" style="background-color: #E89BB6">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
+  <div  class="tags">
+    <%=  tags_autocomplete f %>
   </div>
+
 
   <div class="actions">
     <%= f.submit %>

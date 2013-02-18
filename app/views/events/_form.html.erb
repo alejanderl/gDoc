@@ -35,9 +35,8 @@
      <% end %>
   </div>
 
-  <div class="field" style="background-color: #E89BB6">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
+  <div  class="tags">
+    <%=  tags_autocomplete f %>
   </div>
 
   <div class="actions">
