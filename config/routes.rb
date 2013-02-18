@@ -4,6 +4,10 @@ Gdoc::Application.routes.draw do
 
   match "favourites/" => "favourites#create", :as => :add_favourite , :via => :get
   match "favourites/" => "favourites#destroy", :as => :remove_favourite,  :via => :delete
+  
+  resources :tags do
+    get :autocomplete_tag_name, :on => :collection    
+  end
 
 localized do
 
@@ -22,13 +26,14 @@ localized do
   resources :videos
 
   resources :audios
-
+  
   resources :cycles
 
   resources :events
 
   
 end
+
 
 
 Gdoc::Application.routes.translate_from_file("config/locales/routes.yml")

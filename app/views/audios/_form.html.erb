@@ -14,18 +14,19 @@
   <% end %>
 
   <div class="field">
-    <%= t("metadata.title") %>:<br />
-    <%= f.text_field :title %>
+    <%= t("metadata.title") %><br/>
+    <%= f.text_field :title, :class => "span6" %>
+  </div>
+   <div class="field">
+    <%= t("metadata.description") %> <br/>
+    <%= f.text_area :description, :class => "span6" %>
   </div>
   <div class="field">
     <%= t("metadata.start_date") %>  <br />
     <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %>
 
   </div>
-  <div class="field">
-    <%= t("metadata.description") %>  <br />
-    <%= f.text_area :description %>
-  </div>
+ 
   <div class="field">
     <%= t("metadata.license") %><br />
     <%= f.text_field :license %>
@@ -40,13 +41,14 @@
   </div>
   <div class="field">
     <%= t("metadata.language") %><br />
-    <%= f.label :language %><br />
     <%= f.text_field :language %>
   </div>
-  <div class="field" style="background-color: #E89BB6">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
-  </div>
+
+  
+  <div  class="tags">
+    <%=  t("metadata.tags") %><br />
+    <%= f.autocomplete_field :tag_list, autocomplete_tag_name_tags_path, :"data-delimiter" => ', ' %>
+    </div>
 
   <div class="actions">
     <%= f.submit %>

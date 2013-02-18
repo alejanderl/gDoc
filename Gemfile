@@ -87,3 +87,9 @@ gem 'strong_parameters', github: 'rails/strong_parameters'
 
 #Kaminari for pagination
 gem "kaminari"
+
+#Autocomplete
+
+gem 'rails3-jquery-autocomplete'
+
+
