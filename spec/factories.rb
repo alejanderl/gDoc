@@ -81,7 +81,7 @@ end
 
 def create_sample_participants(attrs = {})
   attrs2 = attrs.dup
-  attrs2[:name] ||= "Cycle random#{rand(1000)}"
+  attrs2[:name] ||= "Participant random#{rand(1000)}"
   attrs2[:bio] ||= "Bio random#{rand(1000)}"
-  Participants.create!(attrs2)
+  Participant.create!(attrs2)
 end
