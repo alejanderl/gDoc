@@ -1,13 +1,13 @@
 
 <div  id="single-asset" class="span7 ofsset1">
-  
+<%= favourite_button(@participant) if current_user.present? %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
   <b><%= t"global.participant" %></b>
   <h1><%= @participant.name %></h1>
 </p>
- <%= favourite_button(@participant) if current_user.present? %>
 
 <div class="image">
       <%= image_tag @participant.image_url(:thumb) if @participant.image? %>
@@ -31,10 +31,6 @@
 
 
 
-<% if allow? "participants", "edit" %>
-  <%= link_to t("link.edit"), edit_participant_path(@participant) %> |
-<% end %>
-
-<%= link_to t("link.back"), participants_path %>
+<%= edit_button @participant %>
 <div class="clearfix"></div>
 </div>

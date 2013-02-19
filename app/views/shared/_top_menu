@@ -11,14 +11,13 @@
             <button type="button" class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-th-list"></i> 
             </button>
-            <div id="user-nav" class="span3 nav-collapse ">
+            <div id="user-nav" class="span1 nav-collapse " style="float:right;">
               <%= render "shared/sign_in" %>
-            </div>
-            <div  class="span4 nav-collapse ">
+            
               <%= render "shared/language_selector" %>
             </div>
-            <div class="span8 navegacion">
-              <ul class="nav nav-tabs span8 nav-collapse">
+            <div class="span navegacion">
+              <ul class="nav nav-tabs span7 nav-collapse">
                 <li class=""><%= link_to (t"main-menu.cycles"),cycles_url,:class => "#{'active' if current_page?(cycles_url)}" %></li>
                 <li class=""><%= link_to (t"main-menu.events"),events_url,:class => "#{'active' if current_page?(events_url)}"  %></li>
                 <li class=""><%= link_to (t"main-menu.photos"),photos_url ,:class => "#{'active' if current_page?(photos_url)}" %></li>

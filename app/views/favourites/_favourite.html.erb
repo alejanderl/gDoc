@@ -1,4 +1,4 @@
 <div id="<%="#{t.class}-#{t.id}"%>" class="span1 pull-right">
- <%= link_to (raw("")), add_favourite_path(favouritable_id: t.id,favouritable_type: t.class), :method => :get,remote: true, :class => "btn btn-medium icon-star-empty " , :alt => "#{t'global.add_to_favourites'}", :title => "#{t'global.add_to_favourites'}"%>
+ <%= link_to (raw("")), add_favourite_path(favouritable_id: t.id,favouritable_type: t.class), :method => :get,remote: true, :class => "btn btn-medium icon-star-empty " , :alt => "#{t'global.add_to_favourites'}", :title => "#{t'global.add_to_favourites'}",:data_loading_text =>"Loading..."%>
 </div>
 <div class="clear-fix clear"></div>
