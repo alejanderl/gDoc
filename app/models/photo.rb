@@ -9,7 +9,8 @@ class Photo < ActiveRecord::Base
   has_many :favourites, :as => :favouritable, :dependent => :destroy
 
   mount_uploader :image, ImageUploader
-
+  has_many :taxonomizables, :as => :item, :dependent => :destroy
+  has_many :terms, :through => :taxonomizables
   acts_as_taggable
 
 

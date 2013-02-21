@@ -30,6 +30,8 @@ localized do
   resources :cycles
 
   resources :events
+  
+  resources :taxonomies
 
   
 end

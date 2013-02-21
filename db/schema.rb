@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130204232623) do
+ActiveRecord::Schema.define(:version => 20130219164109) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -106,6 +106,26 @@ ActiveRecord::Schema.define(:version => 20130204232623) do
     t.datetime "updated_at",        :null => false
   end
 
+  create_table "keyword_items", :force => true do |t|
+    t.integer  "tag_id"
+    t.string   "tag_type"
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "keywords", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "participants", :force => true do |t|
     t.string   "name"
     t.text     "bio"
@@ -153,6 +173,39 @@ ActiveRecord::Schema.define(:version => 20130204232623) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "taxonomies", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.string   "vocabulary_name"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "taxonomizables", :force => true do |t|
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "term_id"
+    t.string   "term_type"
+  end
+
+  create_table "taxons", :force => true do |t|
+    t.integer  "term_id"
+    t.integer  "taxonomizable_id"
+    t.string   "taxonomizable_type"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "terms", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.string   "taxonomy_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|

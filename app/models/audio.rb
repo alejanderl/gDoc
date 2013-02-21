@@ -8,7 +8,8 @@ class Audio < ActiveRecord::Base
   has_many :participants, :through => :participates
   acts_as_taggable
   has_many :favourites, :as => :favouritable, :dependent => :destroy
-  
+  has_many :taxonomizables, :as => :item, :dependent => :destroy
+  has_many :terms, :through => :taxonomizables  
   
 
 end

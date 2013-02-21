@@ -5,5 +5,6 @@ class Cycle < ActiveRecord::Base
   validates_presence_of :title
   acts_as_taggable
   has_many :favourites, :as => :favouritable, :dependent => :destroy
-
+  has_many :taxonomizables, :as => :item, :dependent => :destroy
+  has_many :terms, :through => :taxonomizables
 end

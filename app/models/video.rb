@@ -7,6 +7,7 @@ class Video < ActiveRecord::Base
 
   validates_presence_of :title
   has_many :favourites, :as => :favouritable, :dependent => :destroy
-  
+  has_many :taxonomizables, :as => :item, :dependent => :destroy
+  has_many :terms, :through => :taxonomizables
   acts_as_taggable
 end

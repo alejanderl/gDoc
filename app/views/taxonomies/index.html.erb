@@ -1,0 +1,29 @@
+<div  id="single-asset" class="span7 ofsset1">
+  <h1><%= t("misc.list_taxonomies")%></h1>
+  <br/>
+  <% Term::TAXONOMIES.each do |key,value|%>
+    
+    <h2>  <%= value %></h2>
+   <% list = @terms.select {|f| f["taxonomy_name"]== value } %>
+   <ul>
+   <% list.each do |f| %>
+    <li id="term-<%= f.id %>">
+     <%= f.name %>
+     
+  <%= link_to (raw("")), taxonomy_path( f.id),:method => "delete", :remote => true , :class => "btn btn-small icon-minus img-circle btn-destroy" , :alt => "#{t'global.remove_term'}", :title => "#{t'global.remove_term'}"%>
+
+  </li>
+  <%end%>
+    </ul>
+    <%= button_create_term(key, value, @term) %>
+  </div>
+<div class="clearfix"></div>
+
+  <% end %>
+  
+
+  
+
+
+
+</div>
