@@ -9,7 +9,7 @@ class Term < ActiveRecord::Base
   validates :name, :presence => true, :length => { :minimum => 3 }
   validates_uniqueness_of :name, :scope => :taxonomy_name, :case_sensitive => false
 
-  TAXONOMIES = {"tech" => "technology" ,"art" =>"art" ,"otra_lo" => "otra lo"}
+  TAXONOMIES = {"tech" => "technology" ,"art" =>"art" ,"otra_lo" => "otra lo", "prueba2" => "una sfdsdssfvgd _a"}
   
   
   def taxonomy    
@@ -22,7 +22,7 @@ class Term < ActiveRecord::Base
     
      TAXONOMIES.each do |key,value|
       
-      return true if taxonomy_name == value
+      return true if taxonomy_name == key
       
      end
     

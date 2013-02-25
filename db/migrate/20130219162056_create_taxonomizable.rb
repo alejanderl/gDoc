@@ -4,8 +4,6 @@ class CreateTaxonomizable < ActiveRecord::Migration
       t.integer :keyword_id
       t.integer :item_id
       t.string :keyword_type
-      t.string :item_type
-
       t.timestamps
      end
      

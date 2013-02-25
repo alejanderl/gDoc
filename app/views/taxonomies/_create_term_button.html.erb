@@ -4,6 +4,6 @@
   <%= form_for(term,:url => taxonomies_url) do |x| %>    
     <%= x.text_field :name, :style => "margin:0;" %>    
     <%= x.submit "add term", :class => "btn btn-medium btn-edit" %>
-    <%= x.hidden_field :taxonomy_name, :value => value %>
+    <%= x.hidden_field :taxonomy_name, :value => key %>
     
   <% end %>

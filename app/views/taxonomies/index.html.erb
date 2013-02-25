@@ -4,7 +4,7 @@
   <% Term::TAXONOMIES.each do |key,value|%>
     
     <h2>  <%= value %></h2>
-   <% list = @terms.select {|f| f["taxonomy_name"]== value } %>
+   <% list = @terms.select {|f| f["taxonomy_name"]== key } %>
    <ul>
    <% list.each do |f| %>
     <li id="term-<%= f.id %>">
