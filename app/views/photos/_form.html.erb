@@ -16,6 +16,11 @@
       <%= f.label t("metadata.title") %><br />
       <%= f.text_field :title %>
     </div>
+    <div class="field">
+      <%= f.label t("metadata.creator") %><br />
+      <%= f.text_field :creator %>
+    </div>
+
       <div class="field">
         <%= f.label t("metadata.date") %><br />
         <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %> 
@@ -29,6 +34,11 @@
       <%= f.text_field :license %>
     </div>
     <div class="field">
+      <%= f.label t("metadata.terms_of_use") %><br />
+      <%= f.text_field :terms_of_use %>
+    </div>
+
+    <div class="field">
       <%= f.label t("metadata.format") %><br />
       <%= f.text_field :format %>
     </div>
@@ -37,6 +47,11 @@
       <%= f.label t("metadata.image") %><br />
       <%= f.file_field :image %>
     </div>
+    <div class="field">
+      <%= f.label t("metadata.notes") %><br />
+      <%= f.text_field :notes %>
+    </div>
+
 
   <div class="field" style="background-color: #E89BB6">
     <%= f.label :tag_list, "Tags (separated by commas)" %><br />

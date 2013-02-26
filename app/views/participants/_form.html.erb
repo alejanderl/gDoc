@@ -17,6 +17,12 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label t("misc.surname") %><br />
+    <%= f.text_field :surname %>
+  </div>
+
+
+  <div class="field">
     <%= f.label t("misc.bio") %><br />
     <%= f.text_area :bio %>
   </div>
@@ -24,6 +30,16 @@
     <%= f.label :creator %><br />
     <%= f.check_box :creator %>
   </div>
+  <div class="field">
+    <%= f.label t("global.address") %><br />
+    <%= f.text_field :addresses %>
+  </div>
+  <div class="field">
+    <%= f.label t("misc.web") %><br />
+    <%= f.text_field :web %>
+  </div>
+
+
       <div class="field">
     <%= f.label t("metadata.image") %><br />
     <%= f.file_field :image %>

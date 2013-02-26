@@ -2,7 +2,7 @@ class Cycle < ActiveRecord::Base
   attr_accessible :description, :end_date, :start_date, :title, :tag_list
   has_and_belongs_to_many :events 
   has_many :addresses, :as => :addressable
-  validates_presence_of :title
+  validates_presence_of :title, :description
   acts_as_taggable
   has_many :favourites, :as => :favouritable, :dependent => :destroy
   has_many :participates, :as => :participable  

@@ -12,9 +12,33 @@
       <%= image_tag @photo.image_url(:thumb) if @photo.image? %>
     </div>
   <p>
-  <b><%=  t("metadata.description") %>:</b>
-  <%= @photo.description %>
+    <b><%=  t("metadata.creator") %>:</b>
+    <%= @photo.creator %>
   </p>
+
+
+  <p>
+    <b><%=  t("metadata.description") %>:</b>
+    <%= @photo.description %>
+  </p>
+  <p>
+    <b><%= t("metadata.format") %>:</b>
+    <%= @photo.format %>
+  </p>
+
+  <p>
+    <b><%=  t("metadata.license") %>:</b>
+    <%= @photo.license %>
+  </p>
+  <p>
+    <b><%=  t("metadata.terms_of_use") %>:</b>
+    <%= @photo.terms_of_use %>
+  </p>
+  <p>
+    <b><%=  t("metadata.notes") %>:</b>
+    <%= @photo.notes %>
+  </p>
+
   
   <p>
   <b>Tags:</b>

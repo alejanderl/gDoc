@@ -13,22 +13,27 @@
       <%= link_to t.title,video_url(t.id) %>
     </div>
     <div class="favourites">
-    <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
-   <%#= favourite_button(t) if current_user.present? %>
-    
+      <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
+      <%#= favourite_button(t) if current_user.present? %>
     </div>
-    <div class="image">
+    <div class="creator">
+      <%= t.creator  %>
+    </div>
 
+    <div class="description">
+      <%= t.description  %>
+    </div>
+
+    <div class="image">
       *Pending: Lightbox con player de video
-     
+ 
 
       <%#= link_to(image_tag(video.image),photo_url(t.id))  if t.image.present? %>
 
     </div>
-   <div style="background-color: #E89BB6">
-
+    <div style="background-color: #E89BB6">
       <%= t.tag_list {|t| t} %>
-   </div>
+    </div>
 
   </div>
   

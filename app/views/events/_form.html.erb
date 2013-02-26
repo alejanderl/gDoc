@@ -51,37 +51,38 @@
       <%= f.label t("metadata.time") %><br />
        <%= f.text_field :time , :class => "time-picker" %>
     </div>
-  <div class="field">
-    <%= f.label t("metadata.address") %>
-    <%= f.text_field :addresses, :class=> "span6" %>
-  </div>
+
+    <div class="field">
+      <%= f.label t("global.address") %> <br/>
+      <%= f.text_field :addresses, :class=> "span6" %>
+    </div>
 
     <div class="field">
       <%= f.label t("metadata.description") %><br />
       <%= f.text_area :description %>
     </div>
     
-  <div class="field">
+    <div class="field">
      <% if !@cycles.nil? %>  
        <%= f.label :cycle_ids %><br />
        <%= f.select(:cycle_ids, @cycles.collect {|c| [c.title, c.id]}) %>
      <% end %>
-  </div>
+    </div>
 
     <div class="field">
-      <%= f.label t("metadata.notes") %><br />
+      <%= f.label t("global.notes") %><br />
       <%= f.text_area :notes %>
     </div>
 
 
-  <div class="field" style="background-color: #E89BB6">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
-  </div>
+    <div class="field" style="background-color: #E89BB6">
+      <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+      <%= f.text_field :tag_list %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>
 
 </div>

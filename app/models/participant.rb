@@ -6,6 +6,6 @@ class Participant < ActiveRecord::Base
   has_many :favourites, :as => :favouritable, :dependent => :destroy
   before_create :assign_user
   belongs_to :participate, :polymorphic => true
-  
+  has_many :addresses, :as => :addressable
 
 end

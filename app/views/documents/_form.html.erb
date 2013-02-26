@@ -16,6 +16,12 @@
     <%= f.label t("metadata.title") %>
     <%= f.text_field :title %>
   </div>
+
+  <div class="field">
+    <%= f.label t("metadata.creator") %>  
+    <%= f.text_field :creator %>
+  </div>
+
   <div class="field">
 
     <%= f.label t("metadata.date") %>
@@ -32,12 +38,22 @@
     <%= f.text_field :license %>
   </div>
   <div class="field">
+    <%= f.label t("metadata.terms_of_use") %>  
+    <%= f.text_field :terms_of_use %>
+  </div>
+
+
+  <div class="field">
     <%=  f.label t("metadata.format") %> 
     <%= f.text_field :format %>
   </div>
   <div class="field">
     <%=  f.label t("metadata.language") %>
     <%= f.text_field :language %>
+  </div>
+  <div class="field">
+    <%= f.label t("metadata.notes") %>  
+    <%= f.text_field :notes %>
   </div>
 
   <div class="field" style="background-color: #E89BB6">

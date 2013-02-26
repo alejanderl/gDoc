@@ -13,6 +13,8 @@ es:
     remove_from_favourites: "borrar de favoritos"
     password: "contraseńa"
     your_email: "tu email"
+    address: "Dirección"
+    notes: "Notas"
 
   main-menu:
     cycles: "ciclos"
@@ -59,6 +61,9 @@ es:
   
   metadata:
     title: "Título"
+    creator: "Autor"
+    contributor: "Contribuidor"
+    participants: "Participantes"
     start_date: "Día de inicio"
     end_date: "Día de fin"
     description: "Descripción"

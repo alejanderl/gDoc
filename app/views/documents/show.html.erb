@@ -9,6 +9,12 @@
  </p>
   
  <p>
+   <b><%=  t("metadata.creator") %>:</b>
+   <%= @document.creator %>
+ </p>
+
+
+ <p>
    <b><%=  t("metadata.date") %>:</b> 
    <%= @document.date %>
  </p>
@@ -17,20 +23,28 @@
    <b><%=  t("metadata.description") %>:</b>
    <%= @document.description %>
  </p>
- 
+  <p>
+   <b><%=  t("metadata.language") %>:</b>
+   <%= @document.language %>
+ </p>
+
  <p>
    <b><%=  t("metadata.license") %>:</b>
    <%= @document.license %>
  </p>
- 
+  <p>
+   <b><%=  t("metadata.terms_of_use") %>:</b>
+   <%= @document.terms_of_use %>
+ </p>
+
  <p>
    <b><%=  t("metadata.format") %>:</b>
    <%= @document.format %>
  </p>
  
  <p>
-   <b><%=  t("metadata.duration") %>:</b>
-   <%= @document.language %>
+   <b><%=  t("global.notes") %>:</b>
+   <%= @document.notes %>
  </p>
  
  
