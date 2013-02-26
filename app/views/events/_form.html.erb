@@ -15,14 +15,47 @@
       <%= f.label t("metadata.title") %><br />
       <%= f.text_field :title %>
     </div>
+
+    <div class="field">
+      <%= f.label t("metadata.creator") %><br />
+      <%= f.text_field :creator %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label t("metadata.contributor") %><br />
+      <%= f.text_field :contributor %>
+    </div>
+
+    <div class="field">
+      <%= f.label t("metadata.participants") %>
+      <%= f.text_field :participants, :class=> "span6" %>
+    </div>
+
     <div class="field">  
-      <%= f.label t("metadata.start_date") %><br />
+      <%= f.label t("metadata.date") %><br />
       <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %>
     </div>
+
+    <div class="field">  
+      <%= f.label t("metadata.start_date") %><br />
+      <%= f.datepicker :start_date, :dateFormat => "yy-mm-dd" %>
+    </div>
+
+    <div class="field">  
+      <%= f.label t("metadata.end_date") %><br />
+      <%= f.datepicker :end_date, :dateFormat => "yy-mm-dd" %>
+    </div>
+
     <div class="field">
       <%= f.label t("metadata.time") %><br />
        <%= f.text_field :time , :class => "time-picker" %>
     </div>
+  <div class="field">
+    <%= f.label t("metadata.address") %>
+    <%= f.text_field :addresses, :class=> "span6" %>
+  </div>
+
     <div class="field">
       <%= f.label t("metadata.description") %><br />
       <%= f.text_area :description %>
@@ -34,6 +67,12 @@
        <%= f.select(:cycle_ids, @cycles.collect {|c| [c.title, c.id]}) %>
      <% end %>
   </div>
+
+    <div class="field">
+      <%= f.label t("metadata.notes") %><br />
+      <%= f.text_area :notes %>
+    </div>
+
 
   <div class="field" style="background-color: #E89BB6">
     <%= f.label :tag_list, "Tags (separated by commas)" %><br />

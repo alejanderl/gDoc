@@ -12,11 +12,28 @@
     <div class="name">
       <%= link_to t.title,event_url(t.id) %>
     </div>   
+    <div class="creator">
+      <%= t.creator  %>
+    </div>
+    <div class="contributor">
+      <%= t.contributor %>
+    </div>
+
     <div class="description">
       <%= t.description  %>
     </div>
     <div class="start-end-date">
-      <%= t.date %><%= t.time %>
+      <%= t.date %><%= t.time %> (field pendind to delete?)
+    </div>
+
+    <div class="start-date">
+      <%= t.start_date %><%= t.time %>
+    </div>
+    <div class="end-date">
+      <%= t.end_date %><%= t.time %>
+    </div>
+    <div class="notes">
+      <%= t.notes  %>
     </div>
     <div>
      <% if t.cycles.nil? %>  

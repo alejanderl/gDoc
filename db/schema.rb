@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130206182424) do
+ActiveRecord::Schema.define(:version => 20130226114720) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -32,10 +32,12 @@ ActiveRecord::Schema.define(:version => 20130206182424) do
     t.string   "format"
     t.integer  "duration"
     t.string   "language"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "uid"
-    t.integer  "user_id"
+    t.string   "creator"
+    t.string   "terms_of_use"
+    t.string   "notes"
   end
 
   create_table "audios_events", :id => false, :force => true do |t|
@@ -51,7 +53,9 @@ ActiveRecord::Schema.define(:version => 20130206182424) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "uid"
-    t.integer  "user_id"
+    t.string   "creator"
+    t.string   "contributor"
+    t.string   "notes"
   end
 
   create_table "cycles_events", :id => false, :force => true do |t|
@@ -66,10 +70,12 @@ ActiveRecord::Schema.define(:version => 20130206182424) do
     t.string   "license"
     t.string   "format"
     t.string   "language"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "uid"
-    t.integer  "user_id"
+    t.string   "creator"
+    t.string   "terms_of_use"
+    t.string   "notes"
   end
 
   create_table "documents_events", :id => false, :force => true do |t|
@@ -85,7 +91,11 @@ ActiveRecord::Schema.define(:version => 20130206182424) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.string   "uid"
-    t.integer  "user_id"
+    t.string   "creator"
+    t.string   "contributor"
+    t.string   "notes"
+    t.date     "start_date"
+    t.date     "end_date"
   end
 
   create_table "events_photos", :id => false, :force => true do |t|
@@ -134,7 +144,9 @@ ActiveRecord::Schema.define(:version => 20130206182424) do
     t.datetime "updated_at", :null => false
     t.string   "uid"
     t.string   "image"
-    t.integer  "user_id"
+    t.string   "surname"
+    t.string   "language"
+    t.string   "web"
   end
 
   create_table "participates", :force => true do |t|
@@ -151,11 +163,13 @@ ActiveRecord::Schema.define(:version => 20130206182424) do
     t.text     "description"
     t.string   "license"
     t.string   "format"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "image"
     t.string   "uid"
-    t.integer  "user_id"
+    t.string   "creator"
+    t.string   "terms_of_use"
+    t.string   "notes"
   end
 
   create_table "taggings", :force => true do |t|
@@ -227,10 +241,12 @@ ActiveRecord::Schema.define(:version => 20130206182424) do
     t.string   "format"
     t.integer  "duration"
     t.string   "language"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "uid"
-    t.integer  "user_id"
+    t.string   "creator"
+    t.string   "terms_of_use"
+    t.string   "notes"
   end
 
 end
