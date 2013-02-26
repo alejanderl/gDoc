@@ -29,6 +29,11 @@ es:
     back: "Volver"
     show: "Mostrar"
     destroy: "Eliminar"
+    
+  taxonomies:
+    art: "Arte"
+    tech: "Technología"
+    hist: "Historia"
 
 
   button:

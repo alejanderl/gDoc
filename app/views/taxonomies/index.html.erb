@@ -1,29 +1,33 @@
 <div  id="single-asset" class="span7 ofsset1">
   <h1><%= t("misc.list_taxonomies")%></h1>
   <br/>
-  <% Term::TAXONOMIES.each do |key,value|%>
-    
-    <h2>  <%= value %></h2>
-   <% list = @terms.select {|f| f["taxonomy_name"]== key } %>
-   <ul>
-   <% list.each do |f| %>
-    <li id="term-<%= f.id %>">
-     <%= f.name %>
-     
-  <%= link_to (raw("")), taxonomy_path( f.id),:method => "delete", :remote => true , :class => "btn btn-small icon-minus img-circle btn-destroy" , :alt => "#{t'global.remove_term'}", :title => "#{t'global.remove_term'}"%>
-
-  </li>
-  <%end%>
-    </ul>
-    <%= button_create_term(key, value, @term) %>
+  <div class="accordion" id="accordion2">
+   <% Term::TAXONOMIES.each_with_index do |key,index|%>
+   <div class="accordion-group">
+      <div class="accordion-heading">
+        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="<%="#collapse#{index}" %>">
+            <h4><%=  t"taxonomies.#{key}" %></h4>
+        </a>
+      </div>
+      <% list = @terms.select {|f| f["taxonomy_name"]== key } %>
+      <div  id="<%="collapse#{index}" %>" class="accordion-body collapse <%= "in" if index == 0 %>">
+        <div class="accordion-inner">
+          <ul>
+            <% list.each do |f| %>
+            <li id="term-<%= f.id %>">
+              <%= f.name %>
+                <div class="actions">
+                  <%= link_to (raw("")), taxonomy_path( f.id),:method => "delete", :remote => true , :class => "btn btn-small icon-minus img-circle btn-destroy" , :alt => "#{t'global.remove_term'}", :title => "#{t'global.remove_term'}"%>
+                  <%= link_to "",edit_taxonomy_path(f.id), :class => "btn btn-small icon-edit img-circle btn-edit", :remote => true%>
+                  <%= link_to "","javascript:void()", :class => "btn btn-small  icon-arrow-down img-circle btn-edit"%>
+                </div>
+            </li>
+          <%end%>
+         </ul>
+          <%= button_create_term(key, (t"taxonomies.#{key}"), @term) %>
+        </div> 
+      </div> 
+    </div> </div>
+    <% end %>
   </div>
-<div class="clearfix"></div>
-
-  <% end %>
-  
-
-  
-
-
-
 </div>

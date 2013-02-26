@@ -17,7 +17,19 @@ class TaxonomiesController < ApplicationController
   end
 def new
 end
+def show
+end
 
+def edit
+  
+  @term = Term.find(params[:id])
+    respond_to do |format|
+      format.html # index.html.erb
+      format.js
+      format.json { render json: @terms}
+    end
+  
+end
 
 
   def create
@@ -36,6 +48,15 @@ end
   end
   
   def update
+    
+    @term =  Term.find(params[:id])
+    respond_to do |format|
+     if @term.update_attributes(params[:term])
+        format.html {redirect_to(taxonomies_url, notice: t('messages.term_created'))}
+      else
+        format.html {redirect_to(taxonomies_url, notice: t('messages.term_not_created'))}
+     end
+   end
     
   end
   

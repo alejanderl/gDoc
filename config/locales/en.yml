@@ -18,7 +18,11 @@ en:
     sign_in: "Sign in"
     
 
-
+  taxonomies:
+    art: "Art"
+    tech: "Technology"
+    hist: "History"
+    
   main-menu:
     cycles: "cycles"
     events: "events"
