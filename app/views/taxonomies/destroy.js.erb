@@ -1,4 +1,5 @@
-$("#term-<%= @term.id %>").replaceWith("<li style='text-decoration:line-through'><%= @term.name %> </li>");
+$("#term-<%= @term.id %> .action-buttons").first().remove();
 
+$("span#term-<%= @term.id %>").addClass("term-deleted");
 
 

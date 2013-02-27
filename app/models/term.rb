@@ -10,9 +10,10 @@ class Term < ActiveRecord::Base
   validates_uniqueness_of :name, :scope => :taxonomy_name, :case_sensitive => false
 
   TAXONOMIES = ["tech" ,"art","hist"]
-    before_save :set_default_parentID
+  before_save :set_default_parentID
   before_save :get_parents_taxonomy
-
+  before_destroy :relocate_parent
+  
   
   def taxonomy    
     self.taxonomy_name    
@@ -33,6 +34,19 @@ class Term < ActiveRecord::Base
   def set_default_parentID
      self.parent_id = 0 if !self.parent_id.present? 
     
+  end
+  
+  def relocate_parent
+      terms=Term.where(:parent_id => self.id )
+      
+      if terms.length > 0
+        parent_id = Term.find(self.parent_id).id if self.parent_id != 0 
+        terms.each do |x|
+          x.parent_id = parent_id
+          x.save
+        end
+      end
+      
   end
   
   def get_parents_taxonomy

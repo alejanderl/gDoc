@@ -8,7 +8,7 @@ jQuery ->
                                 if $(this).children(".actions-active").length == 0
                                     $(".actions-active").toggle();
                                     $(".actions-active").removeClass("actions-active")
-                                    $(this).children("div").addClass "actions-active"
-                                    $(this).children("div").toggle("fast");
+                                    $(this).children("div.action-buttons").addClass "actions-active"
+                                    $(this).children("div.action-buttons").toggle("fast");
    
     $(".action-buttons").toggle()

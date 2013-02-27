@@ -4,7 +4,7 @@
   <%= form_for(@term,:url => taxonomies_path()) do |x| %>    
     <%= x.text_field :name, :style => "margin:0;" %>
     <%= x.hidden_field :parent_id, :value => @term.parent_id %>
-    <%= x.submit "update term", :class => "btn btn-medium btn-edit", :method => "post" %>
+    <%= x.submit "add term", :class => "btn btn-medium btn-edit", :method => "post" %>
   <% end %>
   </div>
 
