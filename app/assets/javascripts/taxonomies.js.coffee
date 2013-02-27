@@ -3,12 +3,12 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
     
-    $("li[id^=term]").bind 'mouseover', ->
-                                console.log($(this).children("actions-active").length)
+    $("span[id^=term]").bind 'mouseover', ->
+                                console.log($(this).children("actions-active"))
                                 if $(this).children(".actions-active").length == 0
                                     $(".actions-active").toggle();
                                     $(".actions-active").removeClass("actions-active")
-                                    $(this).children().addClass "actions-active"
-                                    $(this).children().toggle("fast");
+                                    $(this).children("div").addClass "actions-active"
+                                    $(this).children("div").toggle("fast");
    
-    $(".actions").toggle()
+    $(".action-buttons").toggle()

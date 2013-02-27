@@ -9,20 +9,15 @@
             <h4><%=  t"taxonomies.#{key}" %></h4>
         </a>
       </div>
-      <% list = @terms.select {|f| f["taxonomy_name"]== key } %>
+      <% @list = @terms.select {|f| f["taxonomy_name"]== key } %>
+      
       <div  id="<%="collapse#{index}" %>" class="accordion-body collapse <%= "in" if index == 0 %>">
         <div class="accordion-inner">
           <ul>
-            <% list.each do |f| %>
-            <li id="term-<%= f.id %>">
-              <%= f.name %>
-                <div class="actions">
-                  <%= link_to (raw("")), taxonomy_path( f.id),:method => "delete", :remote => true , :class => "btn btn-small icon-minus img-circle btn-destroy" , :alt => "#{t'global.remove_term'}", :title => "#{t'global.remove_term'}"%>
-                  <%= link_to "",edit_taxonomy_path(f.id), :class => "btn btn-small icon-edit img-circle btn-edit", :remote => true%>
-                  <%= link_to "","javascript:void()", :class => "btn btn-small  icon-arrow-down img-circle btn-edit"%>
-                </div>
-            </li>
-          <%end%>
+          
+            
+           <%= render "list_elements" , :list => @list %>
+            
          </ul>
           <%= button_create_term(key, (t"taxonomies.#{key}"), @term) %>
         </div> 

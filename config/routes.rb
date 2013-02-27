@@ -15,6 +15,8 @@ localized do
   
   root :to => 'Cycles#index'
   
+  resources :administratives
+  
   resources :participants
 
   resources :documents

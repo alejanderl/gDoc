@@ -4,7 +4,7 @@ class TaxonomiesController < ApplicationController
   def index
    
     @terms = Term.all
-    
+    @terms = @terms.sort_by {|x| x[:parent_id]}
     @term = Term.new
     
 
@@ -16,6 +16,13 @@ class TaxonomiesController < ApplicationController
       
   end
 def new
+  @term = Term.new(:parent_id => params[:parent_id])
+      respond_to do |format|
+      format.html # index.html.erb
+      format.js
+      format.json { render json: @terms}
+    end
+  
 end
 def show
 end

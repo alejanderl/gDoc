@@ -11,7 +11,9 @@
             <button type="button" class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-th-list"></i> 
             </button>
-            <div id="user-nav" class="span1 nav-collapse " style="float:right;">
+            <div id="user-nav" class="span2 nav-collapse " style="float:right;">
+              
+              <%= render "shared/buttons/administrative_button" %>
               <%= render "shared/sign_in" %>
             
               <%= render "shared/language_selector" %>

@@ -6,5 +6,13 @@ module TaxonomiesHelper
     
   end
   
+  def check_sons(id)
+    
+    @terms.select {|x| x[:parent_id]==id}.length >0
+  end
+  
+  def print_sons
+    
+  end
   
 end
