@@ -1,25 +1,29 @@
 
    <% list.each do |f| %>
- <li id="term-<%= f.id %>">
-              <span id="term-<%= f.id %>"><%= f.name %>
+ <li id="term-<%= f.id %>" class="parent-<%= f.parent_id %>">
+             <% if f.parent_id == 0 %>
+             <span class="deploy-button icon-chevron-down btn btn-small" ></span>
+             <% end %>
+             <span id="term-<%= f.id %>" ><%= f.name %>
                 <div class="action-buttons">
                   <%= link_to (raw("")), taxonomy_path( f.id),:method => "delete", :confirm => "Deleting term \"#{f.name}\"?",:remote => true , :class => "btn btn-small icon-minus img-circle btn-destroy" , :alt => "#{t'global.remove_term'}", :title => "#{t'global.remove_term'}"%>
                   <%= link_to "",edit_taxonomy_path(f.id), :class => "btn btn-small icon-edit img-circle btn-edit", :remote => true%>
                   <%= link_to "",new_taxonomy_path(:parent_id => f.id),:class => "btn btn-small  icon-arrow-down img-circle btn-edit",:remote => true  %>
-                </div></span> 
+                </div>
+             </span> 
                 
-                <% if check_sons f.id%>
-                             
-                         <% sublist = @list.select {|x| x[:parent_id]==f.id} %>
-                         
-                  <ul>
-                         
-                         
-                    <%= render "list_elements" ,:list => sublist %>
-                    
-                    <%  @list.reject! {|x| x[:parent_id]==f.id} %>
-                    </ul>
-                  
-                <% end %>
-            </li>
+             <% if check_sons f.id%>
+                          
+                      <% sublist = @list.select {|x| x[:parent_id]==f.id} %>
+                      
+               <ul>
+                      
+                      
+                 <%= render "list_elements" ,:list => sublist %>
+                 
+                 <%  @list.reject! {|x| x[:parent_id]==f.id} %>
+                 </ul>
+               
+             <% end %>
+             </li>
 <%end %>

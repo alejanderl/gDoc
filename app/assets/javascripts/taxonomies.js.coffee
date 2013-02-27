@@ -4,7 +4,7 @@
 jQuery ->
     
     $("span[id^=term]").bind 'mouseover', ->
-                                console.log($(this).children("actions-active"))
+                                
                                 if $(this).children(".actions-active").length == 0
                                     $(".actions-active").toggle();
                                     $(".actions-active").removeClass("actions-active")
@@ -12,3 +12,19 @@ jQuery ->
                                     $(this).children("div.action-buttons").toggle("fast");
    
     $(".action-buttons").toggle()
+    
+    $(".deploy-button").bind 'click', ->
+        button = $(this)
+        $(this).next().next().toggle "fast", ->
+            console.log(button)
+            if $(this).is(":hidden")
+                button.addClass("icon-chevron-right")
+                button.removeClass("icon-chevron-down")
+            else
+                button.removeClass("icon-chevron-right")
+                button.addClass("icon-chevron-down")
+    console.log( $("li.parent-0 ul").prev(".deploy-button"))
+    $(".deploy-button").hide()
+    $("li.parent-0 ul").prev().prev().toggle()
+  
+    

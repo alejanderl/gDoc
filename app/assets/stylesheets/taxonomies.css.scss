@@ -14,3 +14,37 @@
 .term-deleted {
     text-decoration:line-through;
 }
+.taxonomies li span {
+    font-size:14px;
+}
+.deploy-button {
+    border-radius: 50% 50% 50% 50%;
+    margin-left: -25px;
+    position: relative;
+    z-index: 4;
+    padding: 5px;
+
+    }
+.taxonomies ul:first-child li {
+
+  
+    padding:10px 0;
+    
+    & li {
+        padding: 3px 3px 3px 8px ;
+    }
+}
+
+.taxonomies ul ul li{
+    border-left:1px dashed #666;
+    padding-left:10px;
+    padding-top:0;
+    margin-left:0;
+    list-style: none;
+    &:last-child {
+       border-radius:0px 5px 5px 5px;
+       
+
+    }
+  
+}
