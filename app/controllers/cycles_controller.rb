@@ -1,7 +1,7 @@
 class CyclesController < ApplicationController
   # GET /cycles
   # GET /cycles.json
-  
+  include TinyMCE::Rails::Helper  
 
   def index
     if params[:tag]
