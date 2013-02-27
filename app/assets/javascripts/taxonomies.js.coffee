@@ -16,15 +16,15 @@ jQuery ->
     $(".deploy-button").bind 'click', ->
         button = $(this)
         $(this).next().next().toggle "fast", ->
-            console.log(button)
             if $(this).is(":hidden")
                 button.addClass("icon-chevron-right")
                 button.removeClass("icon-chevron-down")
             else
                 button.removeClass("icon-chevron-right")
                 button.addClass("icon-chevron-down")
-    console.log( $("li.parent-0 ul").prev(".deploy-button"))
     $(".deploy-button").hide()
-    $("li.parent-0 ul").prev().prev().toggle()
+    $("li.parent-0 ul").hide()
+    $("li.parent-0 ul ul").show()
+    $("li.parent-0 ul").prev().prev().show()
   
     

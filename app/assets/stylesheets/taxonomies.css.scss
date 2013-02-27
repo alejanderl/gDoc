@@ -32,7 +32,21 @@
     
     & li {
         padding: 3px 3px 3px 8px ;
+        
+        span {
+            border-bottom: 1px dashed #666;
+            font-size: 14px;
+            padding-bottom: 3px;
+            padding-left: 10px;
+            margin-left: -5px;
+        
+            &.has_sons{
+                border: 0;
+            }
+        }
+    
     }
+    
 }
 
 .taxonomies ul ul li{
