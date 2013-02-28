@@ -8,7 +8,7 @@ class ParticipantsController < ApplicationController
     if params[:tag]
       @participants = Participant.tagged_with(params[:tag])
     else
-      @participants = Participant.all
+      @participants = Participant.order("created_at").page(params[:page]).per(15)
    end
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,7 @@ class ParticipantsController < ApplicationController
 
   # GET /participants/1/edit
   def edit
-    @participant = Participant.order("created_at").page(params[:page]).per(15)
+    @participant = Participant.find(params[:id])
   end
 
   # POST /participants

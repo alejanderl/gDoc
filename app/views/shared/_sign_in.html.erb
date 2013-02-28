@@ -4,16 +4,13 @@
   <ul class="nav">
    <% if user_signed_in? %>
          
-          <%= link_to current_user.email,edit_user_registration_path %> 
+          <%= link_to raw('<span class="icon-user"></span>'),edit_user_registration_path, :alt => current_user.email, :title=> current_user.email ,:alt => current_user.email,  :class => "btn user-active "%> 
        
     <% else %>
-      <li class="span1">
-        <%= link_to "Sign up", new_user_registration_path %>
+      <li class="">
+        <%= link_to raw('<span class="icon-user"></span>&nbsp;<span class="icon-pencil "></span>'),  new_user_session_path, :class => "btn btn-edit"%>
      </li>
 
-      <li class="span1">
-        <%= link_to "Sign in", new_user_session_path %>
-      </li>
     <% end %>
   </ul>
  

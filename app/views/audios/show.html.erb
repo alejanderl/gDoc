@@ -51,13 +51,10 @@
 
 
 
-<div class="btn-group">
-  <% if allow? "audios", "edit" %>
-  <%= link_to t("link.edit"), edit_audio_path(@audio),:class => "btn btn-medium " %> |
-<% end %>
-<% if allow? "audios", "destroy" %>
-  <%= link_to  t("link.destroy"), @audio, :method => :delete , :data => {:confirm => "Are you sure?" }, :class => "btn btn-medium "%>
-<% end %>
-</div>
+
+  <%= edit_button @audio %>
+  
+
+
 
 </div>

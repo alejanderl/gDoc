@@ -18,11 +18,9 @@ require 'spec_helper'
   
   end
   
-  it "check the pagination exist" do     
+  it "check the pagination exist" do
     visit videos_path
-    
     page.should have_selector("nav.pagination")
-  
   end
   
 end

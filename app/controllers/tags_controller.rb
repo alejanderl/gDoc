@@ -1,4 +1,9 @@
 class TagsController < ApplicationController
+  
+ 
+  autocomplete :tag, :name, :class_name => 'ActsAsTaggableOn::Tag', :full => true
+
+
   def index
 
 #    @user_tags = current_user.owned_tags

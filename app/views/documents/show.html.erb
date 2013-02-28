@@ -44,8 +44,6 @@
    </div>
  </p>
  
- <% if allow? "documents", "edit" %>
- <%= link_to t("link.edit"), edit_document_path(@document),:class => "btn btn-medium " %> 
- <% end %>
+ <%= edit_button @document %> 
 </div>
  <%= link_to t("link.back"), documents_path %>

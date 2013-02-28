@@ -33,14 +33,13 @@
       <%= f.text_field :format %>
     </div>
       <div class="field">
-        hola
+
       <%= f.label t("metadata.image") %><br />
       <%= f.file_field :image %>
     </div>
 
-  <div class="field" style="background-color: #E89BB6">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
+  <div  class="tags">
+    <%=  tags_autocomplete f %>
   </div>
 
   <div class="actions">

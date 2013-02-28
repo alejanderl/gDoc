@@ -1,0 +1,12 @@
+<% if allow? t.class.to_s.downcase, "edit" %>
+  <div class="clearfix" ></div>
+  <div id="edit-group" style="margin-top:10px;float:right">
+    <%= link_to raw("<span class='icon-edit'></span>"), eval("edit_#{t.class.to_s.downcase}_path(t)"),:class => "btn btn-medium btn-edit" , :title => t("link.edit")%> 
+  
+    <% if allow? t.class.to_s.downcase, "destroy" %>
+       <%= link_to  raw("<span class='icon-remove'></span>"), t, :method => :delete , :data => {:confirm => "Are you sure?" }, :class => "btn btn-medium btn-destroy",:title => t("link.destroy")%>
+    <% end %>
+    
+ </div>
+<% end %>
+  <div class="clearfix" ></div>

@@ -1,5 +1,12 @@
-
-<ul class=" language-selector span4">
+<a href="javascript:void" id="language-selector" class="btn "><span class="icon-flag"></span></a>
+<script>
+  $("#language-selector").click(function(){
+    
+    $(".language-selector").toggle("slow");
+    
+    })
+</script>
+<ul class=" language-selector " style="display:none; position:relative; top:0">
   <li><%= link_to_unless_current (t"language_name", :locale => "en"), locale: "en" %></li>
 
   <li><%= link_to_unless_current (I18n.t(:language_name , :locale => "es") ), locale: "es" %> <li>
