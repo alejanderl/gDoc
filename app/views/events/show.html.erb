@@ -10,11 +10,11 @@
   </p>
   <p>
     <b><%= t"metadata.creator" %></b>
-   <h1> <%= @event.creator %></h1>
+       <%= @event.creator %>
   </p>
   <p>
     <b><%= t"metadata.contributor" %></b>
-   <h1> <%= @event.contributor %></h1>
+    <%= @event.contributor %>
   </p>
 
   <p>
@@ -43,6 +43,7 @@
   <p>
     <b><%=  t("form.description") %>:</b>
     <%= @event.description %>
+
   </p>
 
   <p>

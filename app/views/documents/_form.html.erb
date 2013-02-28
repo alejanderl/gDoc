@@ -31,7 +31,9 @@
   </div>
   <div class="field">
     <%= f.label t("metadata.description") %>  
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :class => "tinymce" %>
+    <%= tinymce %>
+
   </div>
   <div class="field">
     <%=  f.label t("metadata.license") %>
