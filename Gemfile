@@ -21,6 +21,8 @@ gem 'acts-as-taggable-on'
 #To translate the routes when using internationalitation
 gem 'route_translator'
 
+#Adding TinyMCE
+gem 'tinymce-rails'
 
 
 # Gems used only for assets and not required
