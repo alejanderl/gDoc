@@ -16,8 +16,8 @@ en:
     password: "password"
     your_email: "your email"
     sign_in: "Sign in"
-    
-
+    address: "Address"    
+    notes: "Notes"
 
   main-menu:
     cycles: "cycles"
@@ -63,10 +63,14 @@ en:
 
   metadata:
     title: "Title"
+    creator: "Creator"
+    contributor: "Contributor"
+    participants: "Participants"
     start_date: "Start date"
     end_date: "End date"
     description: "Description"
     license: "License"
+    terms_of_use: "Terms of use"
     format: "Format"
     image: "Image"
     duration: "Duration"
@@ -78,8 +82,9 @@ en:
     content_related: "Content related"	
     bio: "Biography" 
     name: "Name"
-  
-  
+    surname: "Surname"
+    web: "Web"
+
   user:
     new_password: "New password"
-
+    

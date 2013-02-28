@@ -12,11 +12,13 @@
       <%#= favourite_button(t) if current_user.present? %>
     </div>
     <div class="name">
-
       <h2> <%= link_to t.title,audio_url(t.id) %></h2>
     </div>
     <div id="audio-player">
       *Pending: This is for the audio player preview
+    </div>
+    <div class="creator">
+      <%= t.creator  %>
     </div>
 
     <div class="description">
@@ -25,6 +27,8 @@
     <div class="start-end-date">
       <%= t.date %>
     </div>
+
+
    <div style="background-color: #E89BB6">
       <%= t.tag_list {|t| t} %>
    </div>

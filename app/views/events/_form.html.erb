@@ -15,33 +15,73 @@
       <%= f.label t("metadata.title") %><br />
       <%= f.text_field :title %>
     </div>
+
+    <div class="field">
+      <%= f.label t("metadata.creator") %><br />
+      <%= f.text_field :creator %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label t("metadata.contributor") %><br />
+      <%= f.text_field :contributor %>
+    </div>
+
+    <div class="field">
+      <%= f.label t("metadata.participants") %>
+
+    </div>
+
     <div class="field">  
-      <%= f.label t("metadata.start_date") %><br />
+      <%= f.label t("metadata.date") %><br />
       <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %>
     </div>
+
+    <div class="field">  
+      <%= f.label t("metadata.start_date") %><br />
+      <%= f.datepicker :start_date, :dateFormat => "yy-mm-dd" %>
+    </div>
+
+    <div class="field">  
+      <%= f.label t("metadata.end_date") %><br />
+      <%= f.datepicker :end_date, :dateFormat => "yy-mm-dd" %>
+    </div>
+
     <div class="field">
       <%= f.label t("metadata.time") %><br />
        <%= f.text_field :time , :class => "time-picker" %>
     </div>
+
+    <div class="field">
+      <%= f.label t("global.address") %> <br/>
+
+    </div>
+
     <div class="field">
       <%= f.label t("metadata.description") %><br />
       <%= f.text_area :description %>
     </div>
     
-  <div class="field">
+    <div class="field">
      <% if !@cycles.nil? %>  
        <%= f.label :cycle_ids %><br />
        <%= f.select(:cycle_ids, @cycles.collect {|c| [c.title, c.id]}) %>
      <% end %>
-  </div>
+    </div>
 
-  <div  class="tags">
-    <%=  tags_autocomplete f %>
-  </div>
+    <div class="field">
+      <%= f.label t("global.notes") %><br />
+      <%= f.text_area :notes %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+     <div  class="tags">
+      <%=  tags_autocomplete f %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>
 
 </div>

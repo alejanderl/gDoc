@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :image, :date, :description, :format, :license,  :title, :tag_list
+  attr_accessible :image, :date, :description, :format, :license,  :title, :tag_list, :terms_of_use, :creator, :notes
 
   validates_presence_of :title
 

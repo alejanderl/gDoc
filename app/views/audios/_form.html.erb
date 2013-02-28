@@ -22,6 +22,11 @@
     <%= f.text_area :description, :class => "span6" %>
   </div>
   <div class="field">
+    <%= t("metadata.creator") %>:<br />
+    <%= f.text_field :creator %>
+  </div>
+
+  <div class="field">
     <%= t("metadata.start_date") %>  <br />
     <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %>
 
@@ -31,6 +36,11 @@
     <%= t("metadata.license") %><br />
     <%= f.text_field :license %>
   </div>
+  <div class="field">
+    <%= t("metadata.terms_of_use") %>:<br />
+    <%= f.text_field :terms_of_use %>
+  </div>
+
   <div class="field">
     <%= t("metadata.format") %> <br />
     <%= f.text_field :format %>
@@ -43,10 +53,12 @@
     <%= t("metadata.language") %><br />
     <%= f.text_field :language %>
   </div>
-
-  
   <div  class="tags">
     <%=  tags_autocomplete f %>
+  <div class="field">
+    <%= t("metadata.notes") %>:<br />
+    <%= f.text_area :notes %>
+  </div>
   </div>
 
   <div class="actions">

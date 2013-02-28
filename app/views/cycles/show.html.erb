@@ -8,6 +8,32 @@
   <h1><%= @cycle.title %></h1>
 
 </p>
+<p>
+  <b><%= t"metadata.creator" %></b>
+  <h1><%= @cycle.creator %></h1>
+</p>
+
+
+<p>
+  <b><%= t"metadata.contributor" %></b>
+  <h1><%= @cycle.contributor %></h1>
+</p>
+
+<p>
+  <b><%=  t("metadata.address") %>:</b>
+
+  <% @cycle.addresses do |a| %>
+
+  <% end %>
+
+</p>
+
+
+<p>
+  <b><%=  t("metadata.description") %>:</b>
+
+  <%= @cycle.description %>
+</p>
 
 
 <p>
@@ -21,12 +47,10 @@
 </p>
 
 <p>
-  <b><%=  t("metadata.description") %>:</b>
+  <b><%=  t("metadata.notes") %>:</b>
 
-  <%= @cycle.description %>
+  <%= @cycle.notes %>
 </p>
-
-
 
 
 <p>
