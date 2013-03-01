@@ -4,6 +4,7 @@ class ModifyTaxonomizable < ActiveRecord::Migration
     remove_column :taxonomizables, :keyword_type
     add_column :taxonomizables, :term_id, :integer
     add_column :taxonomizables, :term_type, :string
+    add_column :taxonomizables, :item_type, :string
   end
 
   def down

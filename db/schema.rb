@@ -181,6 +181,7 @@ ActiveRecord::Schema.define(:version => 20130226114720) do
     t.datetime "updated_at", :null => false
     t.integer  "term_id"
     t.string   "term_type"
+    t.string   "item_type"
   end
 
   create_table "terms", :force => true do |t|
