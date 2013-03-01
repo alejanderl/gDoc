@@ -4,10 +4,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-
   <b><%= t("metadata.title") %>:</b>  
    <%= @audio.title %>
 </p>
+<p>
+  <b><%= t("metadata.creator") %>:</b>  
+   <%= @audio.creator %>
+</p>
+
+  <p>
+   <b><%=  t("metadata.participant") %>:</b>
+      <% @audio.participants do |p| %>
+      <% end %>
+  </p>
 
 <p>
   <b><%=  t("metadata.start_date") %>:</b> 
@@ -23,6 +32,11 @@
   <b><%= t("metadata.license") %>:</b>
   <%= @audio.license %>
 </p>
+<p>
+  <b><%= t("metadata.terms_of_use") %>:</b>  
+   <%= @audio.terms_of_use %>
+</p>
+
 
 <p>
   <b><%= t("metadata.format") %>:</b>
@@ -38,6 +52,11 @@
   <b><%= t("metadata.language") %>:</b>
   <%= @audio.language %>
 </p>
+<p>
+  <b><%= t("metadata.notes") %>:</b>  
+   <%= @audio.notes %>
+</p>
+
 
 <%= link_to t("link.back"), audios_path %>
 </br>

@@ -1,0 +1,7 @@
+class AddCreatorTermsofuseNotesToPhotos < ActiveRecord::Migration
+  def change
+
+
+
+  end
+end

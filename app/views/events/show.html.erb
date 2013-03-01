@@ -8,9 +8,28 @@
     <b><%= t"global.event" %></b>
    <h1> <%= @event.title %></h1>
   </p>
-  
-  
-  
+  <p>
+    <b><%= t"metadata.creator" %></b>
+       <%= @event.creator %>
+  </p>
+  <p>
+    <b><%= t"metadata.contributor" %></b>
+    <%= @event.contributor %>
+  </p>
+
+  <p>
+   <b><%=  t("metadata.participant") %>:</b>
+      <% @event.participants do |p| %>
+      <% end %>
+  </p>
+
+  <p>
+   <b><%=  t("metadata.address") %>:</b>
+      <% @event.addresses do |a| %>
+      <% end %>
+  </p>
+
+ 
   <p>
     <b><%=  t("form.start_date") %></b>
     <%= @event.date %>
@@ -24,7 +43,16 @@
   <p>
     <b><%=  t("form.description") %>:</b>
     <%= @event.description %>
+
   </p>
+
+  <p>
+    <b><%=  t("form.notes") %>:</b>
+    <%= @event.notes %>
+  </p>
+
+
+
 <p>
   <b>Tags:</b>
   <div style="background-color: #E89BB6">

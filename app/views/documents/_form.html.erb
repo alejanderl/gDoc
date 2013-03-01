@@ -16,6 +16,12 @@
     <%= f.label t("metadata.title") %>
     <%= f.text_field :title %>
   </div>
+
+  <div class="field">
+    <%= f.label t("metadata.creator") %>  
+    <%= f.text_field :creator %>
+  </div>
+
   <div class="field">
 
     <%= f.label t("metadata.date") %>
@@ -25,12 +31,20 @@
   </div>
   <div class="field">
     <%= f.label t("metadata.description") %>  
-    <%= f.text_field :description %>
+    <%= f.text_area :description, :class => "tinymce" %>
+    <%= tinymce %>
+
   </div>
   <div class="field">
     <%=  f.label t("metadata.license") %>
     <%= f.text_field :license %>
   </div>
+  <div class="field">
+    <%= f.label t("metadata.terms_of_use") %>  
+    <%= f.text_field :terms_of_use %>
+  </div>
+
+
   <div class="field">
     <%=  f.label t("metadata.format") %> 
     <%= f.text_field :format %>
@@ -39,12 +53,14 @@
     <%=  f.label t("metadata.language") %>
     <%= f.text_field :language %>
   </div>
+  <div class="field">
+    <%= f.label t("global.notes") %>  
+    <%= f.text_field :notes %>
+  </div>
 
   <div  class="tags">
     <%=  tags_autocomplete f %>
   </div>
-
-
   <div class="actions">
     <%= f.submit %>
   </div>

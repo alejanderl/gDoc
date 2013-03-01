@@ -16,14 +16,19 @@ en:
     password: "password"
     your_email: "your email"
     sign_in: "Sign in"
+<<<<<<< HEAD
+    
 
   taxonomies:
     art: "Art"
     tech: "Technology"
     hist: "History"
+    
+=======
     address: "Address"    
     notes: "Notes"
 
+>>>>>>> c63df09f0ef66567622b4921f34414b567cd45be
   main-menu:
     cycles: "cycles"
     events: "events"

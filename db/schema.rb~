@@ -11,91 +11,267 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201010330) do
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20130219164109) do
+=======
+ActiveRecord::Schema.define(:version => 20130226114720) do
+>>>>>>> c63df09f0ef66567622b4921f34414b567cd45be
+
+  create_table "addresses", :force => true do |t|
+    t.string   "address"
+    t.string   "postcode"
+    t.string   "city"
+    t.string   "country"
+    t.integer  "addressable_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "addressable_type"
+  end
 
   create_table "audios", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.string   "description"
+    t.text     "description"
     t.string   "license"
     t.string   "format"
     t.integer  "duration"
     t.string   "language"
-    t.integer  "person_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "uid"
+    t.string   "creator"
+    t.string   "terms_of_use"
+    t.string   "notes"
+  end
+
+  create_table "audios_events", :id => false, :force => true do |t|
+    t.integer "audio_id"
+    t.integer "event_id"
   end
 
   create_table "cycles", :force => true do |t|
     t.string   "title"
     t.date     "start_date"
     t.date     "end_date"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "uid"
+    t.string   "creator"
+    t.string   "contributor"
+    t.string   "notes"
+  end
+
+  create_table "cycles_events", :id => false, :force => true do |t|
+    t.integer "cycle_id"
+    t.integer "event_id"
   end
 
   create_table "documents", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.string   "description"
+    t.text     "description"
     t.string   "license"
     t.string   "format"
     t.string   "language"
-    t.integer  "person_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "uid"
+    t.string   "creator"
+    t.string   "terms_of_use"
+    t.string   "notes"
+  end
+
+  create_table "documents_events", :id => false, :force => true do |t|
+    t.integer "document_id"
+    t.integer "event_id"
   end
 
   create_table "events", :force => true do |t|
     t.string   "title"
     t.date     "date"
     t.time     "time"
-    t.string   "description"
-    t.integer  "person_id"
-    t.integer  "cycle_id"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "uid"
+    t.string   "creator"
+    t.string   "contributor"
+    t.string   "notes"
+    t.date     "start_date"
+    t.date     "end_date"
+  end
+
+  create_table "events_photos", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "photo_id"
+  end
+
+  create_table "events_videos", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "video_id"
+  end
+
+  create_table "favourites", :force => true do |t|
+    t.string   "favouritable_type"
+    t.integer  "favouritable_id"
+    t.integer  "user_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  create_table "keyword_items", :force => true do |t|
+    t.integer  "tag_id"
+    t.string   "tag_type"
+    t.integer  "item_id"
+    t.string   "item_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "keywords", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "depth"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "participants", :force => true do |t|
     t.string   "name"
-    t.string   "bio"
+    t.text     "bio"
     t.boolean  "creator"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "uid"
+    t.string   "image"
+<<<<<<< HEAD
+    t.integer  "user_id"
+=======
+    t.string   "surname"
+    t.string   "language"
+    t.string   "web"
+>>>>>>> c63df09f0ef66567622b4921f34414b567cd45be
   end
 
-  create_table "people", :force => true do |t|
-    t.string   "name"
-    t.string   "bio"
-    t.boolean  "creator"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "participates", :force => true do |t|
+    t.integer  "participant_id"
+    t.integer  "participable_id"
+    t.string   "participable_type"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "photos", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.string   "description"
+    t.text     "description"
     t.string   "license"
     t.string   "format"
-    t.integer  "person_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "image"
+    t.string   "uid"
+    t.string   "creator"
+    t.string   "terms_of_use"
+    t.string   "notes"
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       :limit => 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
+  end
+
+<<<<<<< HEAD
+  create_table "taxonomizables", :force => true do |t|
+    t.integer  "item_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "term_id"
+    t.string   "term_type"
+=======
+  create_table "taxonomies", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "taxons", :force => true do |t|
+    t.integer  "term_id"
+    t.integer  "taxonomizable_id"
+    t.string   "taxonomizable_type"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+>>>>>>> c63df09f0ef66567622b4921f34414b567cd45be
+  end
+
+  create_table "terms", :force => true do |t|
+    t.string   "name"
+    t.integer  "parent_id"
+<<<<<<< HEAD
+    t.string   "taxonomy_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+=======
+    t.integer  "taxonomy_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "terms", ["taxonomy_id"], :name => "index_terms_on_taxonomy_id"
+
+>>>>>>> c63df09f0ef66567622b4921f34414b567cd45be
+  create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
+    t.integer  "roles_mask"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
   create_table "videos", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.string   "description"
+    t.text     "description"
     t.string   "license"
     t.string   "format"
     t.integer  "duration"
     t.string   "language"
-    t.integer  "person_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "uid"
+    t.string   "creator"
+    t.string   "terms_of_use"
+    t.string   "notes"
   end
 
 end

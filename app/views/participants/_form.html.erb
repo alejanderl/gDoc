@@ -14,16 +14,34 @@
 
   <div class="field">
     <%= f.label t("misc.name") %>
-    <%= f.text_field :name , :class => "span6 title"%>
+    <%= f.text_field :name%>
   </div>
   <div class="field">
-    <%= f.label t("misc.bio") %>
-    <%= f.text_area :bio , :class => "span6 bio"%>
+    <%= f.label t("misc.surname") %><br />
+    <%= f.text_field :surname %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label t("misc.bio") %><br />
+    <%= f.text_area :bio, :class => "tinymce" %>
+    <%= tinymce %>
+
   </div>
   <div class="field">
     <%= f.label t("metadata.creator") %>
     <%= f.check_box :creator %>
   </div>
+  <div class="field">
+    <%= f.label t("global.address") %><br />
+
+  </div>
+  <div class="field">
+    <%= f.label t("misc.web") %><br />
+    <%= f.text_field :web %>
+  </div>
+
+
       <div class="field">
     <%= f.label t("metadata.image") %>
     <%= f.file_field :image %>

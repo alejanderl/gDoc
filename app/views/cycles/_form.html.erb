@@ -19,8 +19,22 @@
     <%= f.text_field :title , :class => "form-title span6"%>
   </div>
     <div class="field">
+    <%= f.label t("metadata.creator") %>
+    <%= f.text_field :creator, :class=> "span6" %>
+  </div>
+    <div class="field">
+    <%= f.label t("metadata.contributor") %>
+    <%= f.text_field :contributor, :class=> "span6" %>
+  </div>
+    <div class="field">
     <%= f.label t("metadata.description") %>
-    <%= f.text_area :description, :class=> "span6" %>
+    <%= f.text_area :description, :class => "tinymce" %>
+    <%= tinymce %>
+
+  </div>
+  <div class="field">
+    <%= f.label t("metadata.participants") %>
+
   </div>
 
   <div class="field">
@@ -33,16 +47,20 @@
       <%= f.datepicker :end_date, :minDate => @cycle.start_date, :dateFormat => "yy-mm-dd"%>
     </div>
   </div>
+  <div class="field">
+    <%= f.label t("global.address") %>
+
+  </div>
+
+
   <div class="clearfix"></div>
 
     <div  class="tags">
       <%= tags_autocomplete(f) %>
     </div>
-
-
-  <div class="field">
-    taxonomy
-
+    <div class="field">
+    <%= f.label t("global.notes") %>
+    <%= f.text_area :notes, :class=> "span6" %>
   </div>
 
 
