@@ -62,6 +62,14 @@
     <%= f.label t("global.notes") %>
     <%= f.text_area :notes, :class=> "span6" %>
   </div>
+    
+    <%= render "taxonomies/family_names/family_names", :taxonomy_name => "tech" %>
+    
+    
+    
+    
+    
+    <%= text_field_tag :terms   %>
 
 
   <div class="actions">

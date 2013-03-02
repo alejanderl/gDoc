@@ -9,6 +9,10 @@ Gdoc::Application.routes.draw do
     get :autocomplete_tag_name, :on => :collection    
   end
 
+  match "autocomplete_terms/" => "taxonomies#autocomplete_term_name", :as => :autocomplete_ter_name, :via => :get 
+
+
+
 localized do
 
   devise_for :users
@@ -33,7 +37,9 @@ localized do
 
   resources :events
   
-  resources :taxonomies
+  resources :taxonomies do
+    get :autocomplete_term_name, :on => :collection 
+  end
 
   
 end

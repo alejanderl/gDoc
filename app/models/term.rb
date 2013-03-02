@@ -19,6 +19,10 @@ class Term < ActiveRecord::Base
     self.taxonomy_name    
   end
   
+ def self.get_taxonomy_terms(taxonomy_name)
+   Term.where(:taxonomy_name => taxonomy_name)
+ end
+  
 
   
   def validate_taxonomy?

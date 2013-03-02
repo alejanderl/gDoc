@@ -22,7 +22,7 @@ class CyclesController < ApplicationController
     if params[:tag]
       @cycles = Cycle.tagged_with(params[:tag])
     else
-      @cycle = Cycle.find(params[:id])
+      @cycle = Cycle.find(params[:id], :include => :terms)
   #    @cycles = Cycle.all
    end
 

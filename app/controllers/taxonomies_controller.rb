@@ -1,6 +1,11 @@
 class TaxonomiesController < ApplicationController
   
-
+  autocomplete :term, :name
+  
+  
+ 
+  
+  
   def index
    
     @terms = Term.all

@@ -1,0 +1,25 @@
+<div class="taxonomy-terms">
+<%=  t"taxonomies.#{taxonomy_name}" %>
+
+<%
+taxonomy_terms = Term.get_taxonomy_terms  taxonomy_name
+
+taxonomy_terms.sort_by! {|x| x[:parent_id]}
+
+  %>
+  <div  class="active-taxonomies <%= t"taxonomies.#{taxonomy_name}" %>">vacio</div>
+<a href="javascript:void(0)" class="btn icon-plus-sign open-dialog"><%= t"misc.add" %></a>
+<div class="dialog " style="" >
+
+<ul><% taxonomy_terms.each do |term| %>
+
+  <li class="term-<%= term.id %>" data-id="<%= term.id %>">
+    <a href="javascript:void(0)" class="add-term"><%= term.name %></a>
+    
+  </li>
+
+<% end %>
+</ul>
+</div>
+<%= hidden_field_tag :terms_id %>
+</div>

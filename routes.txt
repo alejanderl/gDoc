@@ -1,82 +1,195 @@
-           add_favourite GET    /favourites(.:format)                    favourites#create
-        remove_favourite DELETE /favourites(.:format)                    favourites#destroy
-        new_user_session GET    /:locale/users/sign_in(.:format)         devise/sessions#new {:locale=>/en|es/}
-            user_session POST   /:locale/users/sign_in(.:format)         devise/sessions#create {:locale=>/en|es/}
-    destroy_user_session DELETE /:locale/users/sign_out(.:format)        devise/sessions#destroy {:locale=>/en|es/}
-           user_password POST   /:locale/users/password(.:format)        devise/passwords#create {:locale=>/en|es/}
-       new_user_password GET    /:locale/users/password/new(.:format)    devise/passwords#new {:locale=>/en|es/}
-      edit_user_password GET    /:locale/users/password/edit(.:format)   devise/passwords#edit {:locale=>/en|es/}
-                         PUT    /:locale/users/password(.:format)        devise/passwords#update {:locale=>/en|es/}
-cancel_user_registration GET    /:locale/users/cancel(.:format)          devise/registrations#cancel {:locale=>/en|es/}
-       user_registration POST   /:locale/users(.:format)                 devise/registrations#create {:locale=>/en|es/}
-   new_user_registration GET    /:locale/users/sign_up(.:format)         devise/registrations#new {:locale=>/en|es/}
-  edit_user_registration GET    /:locale/users/edit(.:format)            devise/registrations#edit {:locale=>/en|es/}
-                         PUT    /:locale/users(.:format)                 devise/registrations#update {:locale=>/en|es/}
-                         DELETE /:locale/users(.:format)                 devise/registrations#destroy {:locale=>/en|es/}
-                    root        /:locale(.:format)                       Cycles#index {:locale=>/en|es/}
-            participants GET    /:locale/participants(.:format)          participants#index {:locale=>/en|es/}
-                         POST   /:locale/participants(.:format)          participants#create {:locale=>/en|es/}
-         new_participant GET    /:locale/participants/new(.:format)      participants#new {:locale=>/en|es/}
-        edit_participant GET    /:locale/participants/:id/edit(.:format) participants#edit {:locale=>/en|es/}
-             participant GET    /:locale/participants/:id(.:format)      participants#show {:locale=>/en|es/}
-                         PUT    /:locale/participants/:id(.:format)      participants#update {:locale=>/en|es/}
-                         DELETE /:locale/participants/:id(.:format)      participants#destroy {:locale=>/en|es/}
-               documents GET    /:locale/documents(.:format)             documents#index {:locale=>/en|es/}
-                         POST   /:locale/documents(.:format)             documents#create {:locale=>/en|es/}
-            new_document GET    /:locale/documents/new(.:format)         documents#new {:locale=>/en|es/}
-           edit_document GET    /:locale/documents/:id/edit(.:format)    documents#edit {:locale=>/en|es/}
-                document GET    /:locale/documents/:id(.:format)         documents#show {:locale=>/en|es/}
-                         PUT    /:locale/documents/:id(.:format)         documents#update {:locale=>/en|es/}
-                         DELETE /:locale/documents/:id(.:format)         documents#destroy {:locale=>/en|es/}
-                  people GET    /:locale/people(.:format)                people#index {:locale=>/en|es/}
-                         POST   /:locale/people(.:format)                people#create {:locale=>/en|es/}
-              new_person GET    /:locale/people/new(.:format)            people#new {:locale=>/en|es/}
-             edit_person GET    /:locale/people/:id/edit(.:format)       people#edit {:locale=>/en|es/}
-                  person GET    /:locale/people/:id(.:format)            people#show {:locale=>/en|es/}
-                         PUT    /:locale/people/:id(.:format)            people#update {:locale=>/en|es/}
-                         DELETE /:locale/people/:id(.:format)            people#destroy {:locale=>/en|es/}
-                  photos GET    /:locale/photos(.:format)                photos#index {:locale=>/en|es/}
-                         POST   /:locale/photos(.:format)                photos#create {:locale=>/en|es/}
-               new_photo GET    /:locale/photos/new(.:format)            photos#new {:locale=>/en|es/}
-              edit_photo GET    /:locale/photos/:id/edit(.:format)       photos#edit {:locale=>/en|es/}
-                   photo GET    /:locale/photos/:id(.:format)            photos#show {:locale=>/en|es/}
-                         PUT    /:locale/photos/:id(.:format)            photos#update {:locale=>/en|es/}
-                         DELETE /:locale/photos/:id(.:format)            photos#destroy {:locale=>/en|es/}
-                  videos GET    /:locale/videos(.:format)                videos#index {:locale=>/en|es/}
-                         POST   /:locale/videos(.:format)                videos#create {:locale=>/en|es/}
-               new_video GET    /:locale/videos/new(.:format)            videos#new {:locale=>/en|es/}
-              edit_video GET    /:locale/videos/:id/edit(.:format)       videos#edit {:locale=>/en|es/}
-                   video GET    /:locale/videos/:id(.:format)            videos#show {:locale=>/en|es/}
-                         PUT    /:locale/videos/:id(.:format)            videos#update {:locale=>/en|es/}
-                         DELETE /:locale/videos/:id(.:format)            videos#destroy {:locale=>/en|es/}
-                  audios GET    /:locale/audios(.:format)                audios#index {:locale=>/en|es/}
-                         POST   /:locale/audios(.:format)                audios#create {:locale=>/en|es/}
-               new_audio GET    /:locale/audios/new(.:format)            audios#new {:locale=>/en|es/}
-              edit_audio GET    /:locale/audios/:id/edit(.:format)       audios#edit {:locale=>/en|es/}
-                   audio GET    /:locale/audios/:id(.:format)            audios#show {:locale=>/en|es/}
-                         PUT    /:locale/audios/:id(.:format)            audios#update {:locale=>/en|es/}
-                         DELETE /:locale/audios/:id(.:format)            audios#destroy {:locale=>/en|es/}
-                  cycles GET    /:locale/cycles(.:format)                cycles#index {:locale=>/en|es/}
-                         POST   /:locale/cycles(.:format)                cycles#create {:locale=>/en|es/}
-               new_cycle GET    /:locale/cycles/new(.:format)            cycles#new {:locale=>/en|es/}
-              edit_cycle GET    /:locale/cycles/:id/edit(.:format)       cycles#edit {:locale=>/en|es/}
-                   cycle GET    /:locale/cycles/:id(.:format)            cycles#show {:locale=>/en|es/}
-                         PUT    /:locale/cycles/:id(.:format)            cycles#update {:locale=>/en|es/}
-                         DELETE /:locale/cycles/:id(.:format)            cycles#destroy {:locale=>/en|es/}
-                  events GET    /:locale/events(.:format)                events#index {:locale=>/en|es/}
-                         POST   /:locale/events(.:format)                events#create {:locale=>/en|es/}
-               new_event GET    /:locale/events/new(.:format)            events#new {:locale=>/en|es/}
-              edit_event GET    /:locale/events/:id/edit(.:format)       events#edit {:locale=>/en|es/}
-                   event GET    /:locale/events/:id(.:format)            events#show {:locale=>/en|es/}
-                         PUT    /:locale/events/:id(.:format)            events#update {:locale=>/en|es/}
-                         DELETE /:locale/events/:id(.:format)            events#destroy {:locale=>/en|es/}
-                                /*path(.:format)                         :controller#:action
-                                /                                        :controller#:action
+                       add_favourite GET    /favourites(.:format)                           favourites#create
+                    remove_favourite DELETE /favourites(.:format)                           favourites#destroy
+          autocomplete_tag_name_tags GET    /tags/autocomplete_tag_name(.:format)           tags#autocomplete_tag_name
+                                tags GET    /tags(.:format)                                 tags#index
+                                     POST   /tags(.:format)                                 tags#create
+                             new_tag GET    /tags/new(.:format)                             tags#new
+                            edit_tag GET    /tags/:id/edit(.:format)                        tags#edit
+                                 tag GET    /tags/:id(.:format)                             tags#show
+                                     PUT    /tags/:id(.:format)                             tags#update
+                                     DELETE /tags/:id(.:format)                             tags#destroy
+                          taxonomies GET    /taxonomies(.:format)                           taxonomies#index
+                                     POST   /taxonomies(.:format)                           taxonomies#create
+                        new_taxonomy GET    /taxonomies/new(.:format)                       taxonomies#new
+                       edit_taxonomy GET    /taxonomies/:id/edit(.:format)                  taxonomies#edit
+                            taxonomy GET    /taxonomies/:id(.:format)                       taxonomies#show
+                                     PUT    /taxonomies/:id(.:format)                       taxonomies#update
+                                     DELETE /taxonomies/:id(.:format)                       taxonomies#destroy
+                 new_user_session_en GET    /users/sign_in(.:format)                        devise/sessions#new {:locale=>"en"}
+                 new_user_session_es GET    /es/users/sign_in(.:format)                     devise/sessions#new {:locale=>"es"}
+                     user_session_en POST   /users/sign_in(.:format)                        devise/sessions#create {:locale=>"en"}
+                     user_session_es POST   /es/users/sign_in(.:format)                     devise/sessions#create {:locale=>"es"}
+             destroy_user_session_en DELETE /users/sign_out(.:format)                       devise/sessions#destroy {:locale=>"en"}
+             destroy_user_session_es DELETE /es/users/sign_out(.:format)                    devise/sessions#destroy {:locale=>"es"}
+                    user_password_en POST   /users/password(.:format)                       devise/passwords#create {:locale=>"en"}
+                    user_password_es POST   /es/users/password(.:format)                    devise/passwords#create {:locale=>"es"}
+                new_user_password_en GET    /users/password/new(.:format)                   devise/passwords#new {:locale=>"en"}
+                new_user_password_es GET    /es/users/password/nuevo(.:format)              devise/passwords#new {:locale=>"es"}
+               edit_user_password_en GET    /users/password/edit(.:format)                  devise/passwords#edit {:locale=>"en"}
+               edit_user_password_es GET    /es/users/password/editar(.:format)             devise/passwords#edit {:locale=>"es"}
+                                     PUT    /users/password(.:format)                       devise/passwords#update {:locale=>"en"}
+                                     PUT    /es/users/password(.:format)                    devise/passwords#update {:locale=>"es"}
+         cancel_user_registration_en GET    /users/cancel(.:format)                         devise/registrations#cancel {:locale=>"en"}
+         cancel_user_registration_es GET    /es/users/cancel(.:format)                      devise/registrations#cancel {:locale=>"es"}
+                user_registration_en POST   /users(.:format)                                devise/registrations#create {:locale=>"en"}
+                user_registration_es POST   /es/users(.:format)                             devise/registrations#create {:locale=>"es"}
+            new_user_registration_en GET    /users/sign_up(.:format)                        devise/registrations#new {:locale=>"en"}
+            new_user_registration_es GET    /es/users/sign_up(.:format)                     devise/registrations#new {:locale=>"es"}
+           edit_user_registration_en GET    /users/edit(.:format)                           devise/registrations#edit {:locale=>"en"}
+           edit_user_registration_es GET    /es/users/editar(.:format)                      devise/registrations#edit {:locale=>"es"}
+                                     PUT    /users(.:format)                                devise/registrations#update {:locale=>"en"}
+                                     PUT    /es/users(.:format)                             devise/registrations#update {:locale=>"es"}
+                                     DELETE /users(.:format)                                devise/registrations#destroy {:locale=>"en"}
+                                     DELETE /es/users(.:format)                             devise/registrations#destroy {:locale=>"es"}
+                             root_en        /                                               Cycles#index {:locale=>"en"}
+                             root_es        /es                                             Cycles#index {:locale=>"es"}
+                  administratives_en GET    /administratives(.:format)                      administratives#index {:locale=>"en"}
+                  administratives_es GET    /es/administratives(.:format)                   administratives#index {:locale=>"es"}
+                                     POST   /administratives(.:format)                      administratives#create {:locale=>"en"}
+                                     POST   /es/administratives(.:format)                   administratives#create {:locale=>"es"}
+               new_administrative_en GET    /administratives/new(.:format)                  administratives#new {:locale=>"en"}
+               new_administrative_es GET    /es/administratives/nuevo(.:format)             administratives#new {:locale=>"es"}
+              edit_administrative_en GET    /administratives/:id/edit(.:format)             administratives#edit {:locale=>"en"}
+              edit_administrative_es GET    /es/administratives/:id/editar(.:format)        administratives#edit {:locale=>"es"}
+                   administrative_en GET    /administratives/:id(.:format)                  administratives#show {:locale=>"en"}
+                   administrative_es GET    /es/administratives/:id(.:format)               administratives#show {:locale=>"es"}
+                                     PUT    /administratives/:id(.:format)                  administratives#update {:locale=>"en"}
+                                     PUT    /es/administratives/:id(.:format)               administratives#update {:locale=>"es"}
+                                     DELETE /administratives/:id(.:format)                  administratives#destroy {:locale=>"en"}
+                                     DELETE /es/administratives/:id(.:format)               administratives#destroy {:locale=>"es"}
+                     participants_en GET    /participants(.:format)                         participants#index {:locale=>"en"}
+                     participants_es GET    /es/participantes(.:format)                     participants#index {:locale=>"es"}
+                                     POST   /participants(.:format)                         participants#create {:locale=>"en"}
+                                     POST   /es/participantes(.:format)                     participants#create {:locale=>"es"}
+                  new_participant_en GET    /participants/new(.:format)                     participants#new {:locale=>"en"}
+                  new_participant_es GET    /es/participantes/nuevo(.:format)               participants#new {:locale=>"es"}
+                 edit_participant_en GET    /participants/:id/edit(.:format)                participants#edit {:locale=>"en"}
+                 edit_participant_es GET    /es/participantes/:id/editar(.:format)          participants#edit {:locale=>"es"}
+                      participant_en GET    /participants/:id(.:format)                     participants#show {:locale=>"en"}
+                      participant_es GET    /es/participantes/:id(.:format)                 participants#show {:locale=>"es"}
+                                     PUT    /participants/:id(.:format)                     participants#update {:locale=>"en"}
+                                     PUT    /es/participantes/:id(.:format)                 participants#update {:locale=>"es"}
+                                     DELETE /participants/:id(.:format)                     participants#destroy {:locale=>"en"}
+                                     DELETE /es/participantes/:id(.:format)                 participants#destroy {:locale=>"es"}
+                        documents_en GET    /documents(.:format)                            documents#index {:locale=>"en"}
+                        documents_es GET    /es/documentos(.:format)                        documents#index {:locale=>"es"}
+                                     POST   /documents(.:format)                            documents#create {:locale=>"en"}
+                                     POST   /es/documentos(.:format)                        documents#create {:locale=>"es"}
+                     new_document_en GET    /documents/new(.:format)                        documents#new {:locale=>"en"}
+                     new_document_es GET    /es/documentos/nuevo(.:format)                  documents#new {:locale=>"es"}
+                    edit_document_en GET    /documents/:id/edit(.:format)                   documents#edit {:locale=>"en"}
+                    edit_document_es GET    /es/documentos/:id/editar(.:format)             documents#edit {:locale=>"es"}
+                         document_en GET    /documents/:id(.:format)                        documents#show {:locale=>"en"}
+                         document_es GET    /es/documentos/:id(.:format)                    documents#show {:locale=>"es"}
+                                     PUT    /documents/:id(.:format)                        documents#update {:locale=>"en"}
+                                     PUT    /es/documentos/:id(.:format)                    documents#update {:locale=>"es"}
+                                     DELETE /documents/:id(.:format)                        documents#destroy {:locale=>"en"}
+                                     DELETE /es/documentos/:id(.:format)                    documents#destroy {:locale=>"es"}
+                           people_en GET    /people(.:format)                               people#index {:locale=>"en"}
+                           people_es GET    /es/people(.:format)                            people#index {:locale=>"es"}
+                                     POST   /people(.:format)                               people#create {:locale=>"en"}
+                                     POST   /es/people(.:format)                            people#create {:locale=>"es"}
+                       new_person_en GET    /people/new(.:format)                           people#new {:locale=>"en"}
+                       new_person_es GET    /es/people/nuevo(.:format)                      people#new {:locale=>"es"}
+                      edit_person_en GET    /people/:id/edit(.:format)                      people#edit {:locale=>"en"}
+                      edit_person_es GET    /es/people/:id/editar(.:format)                 people#edit {:locale=>"es"}
+                           person_en GET    /people/:id(.:format)                           people#show {:locale=>"en"}
+                           person_es GET    /es/people/:id(.:format)                        people#show {:locale=>"es"}
+                                     PUT    /people/:id(.:format)                           people#update {:locale=>"en"}
+                                     PUT    /es/people/:id(.:format)                        people#update {:locale=>"es"}
+                                     DELETE /people/:id(.:format)                           people#destroy {:locale=>"en"}
+                                     DELETE /es/people/:id(.:format)                        people#destroy {:locale=>"es"}
+                           photos_en GET    /photos(.:format)                               photos#index {:locale=>"en"}
+                           photos_es GET    /es/fotos(.:format)                             photos#index {:locale=>"es"}
+                                     POST   /photos(.:format)                               photos#create {:locale=>"en"}
+                                     POST   /es/fotos(.:format)                             photos#create {:locale=>"es"}
+                        new_photo_en GET    /photos/new(.:format)                           photos#new {:locale=>"en"}
+                        new_photo_es GET    /es/fotos/nuevo(.:format)                       photos#new {:locale=>"es"}
+                       edit_photo_en GET    /photos/:id/edit(.:format)                      photos#edit {:locale=>"en"}
+                       edit_photo_es GET    /es/fotos/:id/editar(.:format)                  photos#edit {:locale=>"es"}
+                            photo_en GET    /photos/:id(.:format)                           photos#show {:locale=>"en"}
+                            photo_es GET    /es/fotos/:id(.:format)                         photos#show {:locale=>"es"}
+                                     PUT    /photos/:id(.:format)                           photos#update {:locale=>"en"}
+                                     PUT    /es/fotos/:id(.:format)                         photos#update {:locale=>"es"}
+                                     DELETE /photos/:id(.:format)                           photos#destroy {:locale=>"en"}
+                                     DELETE /es/fotos/:id(.:format)                         photos#destroy {:locale=>"es"}
+                           videos_en GET    /videos(.:format)                               videos#index {:locale=>"en"}
+                           videos_es GET    /es/videos(.:format)                            videos#index {:locale=>"es"}
+                                     POST   /videos(.:format)                               videos#create {:locale=>"en"}
+                                     POST   /es/videos(.:format)                            videos#create {:locale=>"es"}
+                        new_video_en GET    /videos/new(.:format)                           videos#new {:locale=>"en"}
+                        new_video_es GET    /es/videos/nuevo(.:format)                      videos#new {:locale=>"es"}
+                       edit_video_en GET    /videos/:id/edit(.:format)                      videos#edit {:locale=>"en"}
+                       edit_video_es GET    /es/videos/:id/editar(.:format)                 videos#edit {:locale=>"es"}
+                            video_en GET    /videos/:id(.:format)                           videos#show {:locale=>"en"}
+                            video_es GET    /es/videos/:id(.:format)                        videos#show {:locale=>"es"}
+                                     PUT    /videos/:id(.:format)                           videos#update {:locale=>"en"}
+                                     PUT    /es/videos/:id(.:format)                        videos#update {:locale=>"es"}
+                                     DELETE /videos/:id(.:format)                           videos#destroy {:locale=>"en"}
+                                     DELETE /es/videos/:id(.:format)                        videos#destroy {:locale=>"es"}
+                           audios_en GET    /audios(.:format)                               audios#index {:locale=>"en"}
+                           audios_es GET    /es/audios(.:format)                            audios#index {:locale=>"es"}
+                                     POST   /audios(.:format)                               audios#create {:locale=>"en"}
+                                     POST   /es/audios(.:format)                            audios#create {:locale=>"es"}
+                        new_audio_en GET    /audios/new(.:format)                           audios#new {:locale=>"en"}
+                        new_audio_es GET    /es/audios/nuevo(.:format)                      audios#new {:locale=>"es"}
+                       edit_audio_en GET    /audios/:id/edit(.:format)                      audios#edit {:locale=>"en"}
+                       edit_audio_es GET    /es/audios/:id/editar(.:format)                 audios#edit {:locale=>"es"}
+                            audio_en GET    /audios/:id(.:format)                           audios#show {:locale=>"en"}
+                            audio_es GET    /es/audios/:id(.:format)                        audios#show {:locale=>"es"}
+                                     PUT    /audios/:id(.:format)                           audios#update {:locale=>"en"}
+                                     PUT    /es/audios/:id(.:format)                        audios#update {:locale=>"es"}
+                                     DELETE /audios/:id(.:format)                           audios#destroy {:locale=>"en"}
+                                     DELETE /es/audios/:id(.:format)                        audios#destroy {:locale=>"es"}
+                           cycles_en GET    /cycles(.:format)                               cycles#index {:locale=>"en"}
+                           cycles_es GET    /es/ciclos(.:format)                            cycles#index {:locale=>"es"}
+                                     POST   /cycles(.:format)                               cycles#create {:locale=>"en"}
+                                     POST   /es/ciclos(.:format)                            cycles#create {:locale=>"es"}
+                        new_cycle_en GET    /cycles/new(.:format)                           cycles#new {:locale=>"en"}
+                        new_cycle_es GET    /es/ciclos/nuevo(.:format)                      cycles#new {:locale=>"es"}
+                       edit_cycle_en GET    /cycles/:id/edit(.:format)                      cycles#edit {:locale=>"en"}
+                       edit_cycle_es GET    /es/ciclos/:id/editar(.:format)                 cycles#edit {:locale=>"es"}
+                            cycle_en GET    /cycles/:id(.:format)                           cycles#show {:locale=>"en"}
+                            cycle_es GET    /es/ciclos/:id(.:format)                        cycles#show {:locale=>"es"}
+                                     PUT    /cycles/:id(.:format)                           cycles#update {:locale=>"en"}
+                                     PUT    /es/ciclos/:id(.:format)                        cycles#update {:locale=>"es"}
+                                     DELETE /cycles/:id(.:format)                           cycles#destroy {:locale=>"en"}
+                                     DELETE /es/ciclos/:id(.:format)                        cycles#destroy {:locale=>"es"}
+                           events_en GET    /events(.:format)                               events#index {:locale=>"en"}
+                           events_es GET    /es/eventos(.:format)                           events#index {:locale=>"es"}
+                                     POST   /events(.:format)                               events#create {:locale=>"en"}
+                                     POST   /es/eventos(.:format)                           events#create {:locale=>"es"}
+                        new_event_en GET    /events/new(.:format)                           events#new {:locale=>"en"}
+                        new_event_es GET    /es/eventos/nuevo(.:format)                     events#new {:locale=>"es"}
+                       edit_event_en GET    /events/:id/edit(.:format)                      events#edit {:locale=>"en"}
+                       edit_event_es GET    /es/eventos/:id/editar(.:format)                events#edit {:locale=>"es"}
+                            event_en GET    /events/:id(.:format)                           events#show {:locale=>"en"}
+                            event_es GET    /es/eventos/:id(.:format)                       events#show {:locale=>"es"}
+                                     PUT    /events/:id(.:format)                           events#update {:locale=>"en"}
+                                     PUT    /es/eventos/:id(.:format)                       events#update {:locale=>"es"}
+                                     DELETE /events/:id(.:format)                           events#destroy {:locale=>"en"}
+                                     DELETE /es/eventos/:id(.:format)                       events#destroy {:locale=>"es"}
+autocomplete_term_name_taxonomies_en GET    /taxonomies/autocomplete_term_name(.:format)    taxonomies#autocomplete_term_name {:locale=>"en"}
+autocomplete_term_name_taxonomies_es GET    /es/taxonomies/autocomplete_term_name(.:format) taxonomies#autocomplete_term_name {:locale=>"es"}
+                                     GET    /taxonomies(.:format)                           taxonomies#index {:locale=>"en"}
+                                     GET    /es/taxonomies(.:format)                        taxonomies#index {:locale=>"es"}
+                                     POST   /taxonomies(.:format)                           taxonomies#create {:locale=>"en"}
+                                     POST   /es/taxonomies(.:format)                        taxonomies#create {:locale=>"es"}
+                                     GET    /taxonomies/new(.:format)                       taxonomies#new {:locale=>"en"}
+                                     GET    /es/taxonomies/nuevo(.:format)                  taxonomies#new {:locale=>"es"}
+                                     GET    /taxonomies/:id/edit(.:format)                  taxonomies#edit {:locale=>"en"}
+                                     GET    /es/taxonomies/:id/editar(.:format)             taxonomies#edit {:locale=>"es"}
+                                     GET    /taxonomies/:id(.:format)                       taxonomies#show {:locale=>"en"}
+                                     GET    /es/taxonomies/:id(.:format)                    taxonomies#show {:locale=>"es"}
+                                     PUT    /taxonomies/:id(.:format)                       taxonomies#update {:locale=>"en"}
+                                     PUT    /es/taxonomies/:id(.:format)                    taxonomies#update {:locale=>"es"}
+                                     DELETE /taxonomies/:id(.:format)                       taxonomies#destroy {:locale=>"en"}
+                                     DELETE /es/taxonomies/:id(.:format)                    taxonomies#destroy {:locale=>"es"}
 Loaded Suite test,test/functional,test/performance,test/unit/helpers,test/unit,test/integration
 
-Started at 2013-01-28 12:36:47 +0100 w/ seed 23069.
+Started at 2013-03-01 23:26:37 +0100 w/ seed 53398.
 
-Finished in 0.000549 seconds.
+Finished in 0.000663 seconds.
 
 0 tests, 0 passed, 0 failures, 0 errors, 0 skips, 0 assertions
 
