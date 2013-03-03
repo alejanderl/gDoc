@@ -63,13 +63,9 @@
     <%= f.text_area :notes, :class=> "span6" %>
   </div>
     
-    <%= render "taxonomies/family_names/family_names", :taxonomy_name => "tech" %>
+    <%= terms_field_for "tech" %>
     
-    
-    
-    
-    
-    <%= text_field_tag :terms   %>
+    <%= terms_field_for "art" %>
 
 
   <div class="actions">

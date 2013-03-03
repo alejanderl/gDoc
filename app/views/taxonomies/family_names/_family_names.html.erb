@@ -1,25 +1,24 @@
-<div class="taxonomy-terms">
-<%=  t"taxonomies.#{taxonomy_name}" %>
+<div class="taxonomy-terms taxonomy-terms-<%= taxonomy_name %>">
+<h4><%=  t"taxonomies.#{taxonomy_name}" %></h4>
 
-<%
-taxonomy_terms = Term.get_taxonomy_terms  taxonomy_name
 
-taxonomy_terms.sort_by! {|x| x[:parent_id]}
-
-  %>
-  <div  class="active-taxonomies <%= t"taxonomies.#{taxonomy_name}" %>">vacio</div>
-<a href="javascript:void(0)" class="btn icon-plus-sign open-dialog"><%= t"misc.add" %></a>
-<div class="dialog " style="" >
-
+  <div id="terms-names-<%= taxonomy_name%>" class="active-taxonomies <%= t"taxonomies.#{taxonomy_name}" %>"></div>
+<%= hidden_field_tag "terms-id[#{taxonomy_name}]" %>
+<a href="javascript:void(0)" class="btn icon-plus-sign open-dialog" data-taxonomy="<%= taxonomy_name %>"><%= t"misc.add" %></a>
+<div class="dialog dialog-<%= taxonomy_name %>" >
+<% previous ||= taxonomy_terms[0] %>
 <ul><% taxonomy_terms.each do |term| %>
-
-  <li class="term-<%= term.id %>" data-id="<%= term.id %>">
+  <%=(previous.depth-term.depth).times  {  concat "</ul>".html_safe} if previous.depth > term.depth   %>
+  <%= "<ul>".html_safe if previous.depth < term.depth  %>
+  <li class="term-<%= term.id %>" data-id="<%= term.id %>" data-name="<%= term.taxonomy_name %>" data-parent="<%= term.parent_id %>">
     <a href="javascript:void(0)" class="add-term"><%= term.name %></a>
     
   </li>
 
+  <% previous = term %>
+
 <% end %>
 </ul>
 </div>
-<%= hidden_field_tag :terms_id %>
+
 </div>

@@ -15,4 +15,13 @@ module TaxonomiesHelper
     
   end
   
+ 
+  
+  def terms_field_for(taxonomy)
+    
+    taxonomy_terms = OrderedArray.new(Term.get_taxonomy_terms  taxonomy).order
+    render "taxonomies/family_names/family_names", {:taxonomy_terms => taxonomy_terms,:taxonomy_name => taxonomy}
+    
+  end
+  
 end

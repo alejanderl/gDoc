@@ -54,6 +54,14 @@ class CyclesController < ApplicationController
   def create
     @cycle = Cycle.new(params[:cycle])
     @cycle.user_id = current_user.id
+    if params[:terms-id]
+      params[:terms-id].each do |terms_ids|
+        terms_ids.split.each do |term_id|
+          @cycle.terms = Term.find term_id if term_id > 0
+        end
+      end
+      debugger
+    end
     respond_to do |format|
       if @cycle.save
         format.html { redirect_to @cycle, notice: 'Cycle was successfully created.' }

@@ -8,28 +8,28 @@ jQuery ->
      $(".add-term").click ->
           added = $(this).parent()
           added_id = $(this).parent().attr("data-id")
+          added_taxonomy_name = $(this).parent().attr("data-name")
           $(this).addClass("remove-term")
           $(this).removeClass("add-term")
-          
-          $(this).parents(".taxonomy-terms").children(".active-taxonomies").append(added)
+          $("#terms-names-"+added_taxonomy_name).append(added)
+          value = $("#terms-id-"+added_taxonomy_name).val() + "," + added_id
+          $("#terms-id_"+added_taxonomy_name).val(value)
+
           
          
-          
-          
-          
-
     
      $( "div.dialog" ).dialog
           autoOpen: false
           show: 
-               effect: "blind"
+               effect: "fade"
                duration: 1000
-          hide: 
-               effect: "explode",
-               duration: 1000
+         
           
           
      $( ".open-dialog" ).click ->
+          
+          term = $(this).attr("data-taxonomy")
+          $("div.dialog" ).dialog("close");
 
-          $("div.dialog").dialog("open");
+          $("div.dialog-"+term ).dialog("open");
     
