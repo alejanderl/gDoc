@@ -365,3 +365,15 @@ ul.active-list {
 	}
     }
 }
+
+.taxonomy-terms {
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px 10px;
+    box-shadow: 1px 1px 13px -4px #ccc;
+}
+
+.open-dialog {
+    float:right;
+}
