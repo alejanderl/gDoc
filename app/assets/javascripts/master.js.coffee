@@ -11,10 +11,20 @@ jQuery ->
           added_taxonomy_name = $(this).parent().attr("data-name")
           $(this).addClass("remove-term")
           $(this).removeClass("add-term")
-          $("#terms-names-"+added_taxonomy_name).append(added)
-          value = $("#terms-id-"+added_taxonomy_name).val() + "," + added_id
+          $("#terms-names-"+added_taxonomy_name+" ul").append(added)          
+          value = $("#terms-id_"+added_taxonomy_name).val() + "," + added_id
           $("#terms-id_"+added_taxonomy_name).val(value)
-
+     
+     $(".remove-term").bind "mouseover",->
+          $(this).children().show()
+          $(this).parent().addClass("delete-over")
+     
+     $(".remove-term").bind "mouseout",->
+          $(this).children().hide()
+          $(this).parent().removeClass("delete-over")
+          
+     $(".remove-term").click ->
+          
           
          
     
@@ -26,10 +36,8 @@ jQuery ->
          
           
           
-     $( ".open-dialog" ).click ->
-          
+     $( ".open-dialog" ).click ->          
           term = $(this).attr("data-taxonomy")
           $("div.dialog" ).dialog("close");
-
           $("div.dialog-"+term ).dialog("open");
     

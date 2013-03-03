@@ -10,8 +10,20 @@ class ApplicationController < ActionController::Base
   helper_method :allow_param?
   before_filter :set_locale_from_url
   
-  
-
+  def add_terms(taxonomy_array,object)
+        object.terms.destroy_all
+        taxonomy_array.each do |terms_ids|
+          terms_ids = terms_ids[1].split(",")
+          terms_ids.reject! {|x| x=="undefined"}
+          terms_ids.reject! {|x| x==""}
+          terms_ids.each do |term_id|
+            
+            instance_variable_set("@taxonomizable_#{term_id}", object.taxonomizables.build )
+            
+            eval("@taxonomizable_#{term_id}.term_id = term_id")
+        end
+    end
+  end
 
   def sanitize_filename(filename)
     # Split the name when finding a period which is preceded by some

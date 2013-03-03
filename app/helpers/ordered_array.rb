@@ -1,3 +1,4 @@
+# This class order an array with parents -> childs and adds family depth with order method
 class OrderedArray
     
   def initialize(one_list)
