@@ -342,6 +342,9 @@ overflow: visible !important;
 
 ul.active-list {
     margin-bottom:20px;
+    .hidden {
+	opacity:0;
+    }
     li {
     border: 1px solid #999999;
     border-radius: 8px 8px 8px 8px;
@@ -351,7 +354,7 @@ ul.active-list {
     margin: 10px 5px;
     margin-top:20px;
 
-    padding: 3px 33px 4px;
+    padding: 3px 33px 4px 13px;;
 	&.delete-over {
 	    background-color:rgba(255,0,0,0.5)
 	}

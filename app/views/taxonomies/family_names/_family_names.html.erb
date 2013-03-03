@@ -7,7 +7,7 @@
       <% @terms_ids_active ||= "," %>
       <% object.terms.where(:taxonomy_name => taxonomy_name).each do |term| %>
           <li class="term-<%= term.id %>" data-id="<%= term.id %>" data-name="<%= term.taxonomy_name %>" data-parent="<%= term.parent_id %>">
-           <a href="javascript:void(0)" class="remove-term"><span class="term-remove  icon-minus-sign " style="display:none"></span>&nbsp;<%= term.name %></a>
+           <a href="javascript:void(0)" class="remove-term"><span class="term-remove  icon-minus-sign hidden" ></span>&nbsp;<%= term.name %></a>
           </li>
         
         <% @terms_ids_active += ",#{term.id}" %>

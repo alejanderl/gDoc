@@ -11,16 +11,16 @@ jQuery ->
           added_taxonomy_name = $(this).parent().attr("data-name")
           $(this).addClass("remove-term")
           $(this).removeClass("add-term")
-          $("#terms-names-"+added_taxonomy_name+" ul").append(added)          
+          $("#terms-names-"+added_taxonomy_name+" ul div.clearfix").prepend(added)          
           value = $("#terms-id_"+added_taxonomy_name).val() + "," + added_id
           $("#terms-id_"+added_taxonomy_name).val(value)
      
      $(".remove-term").bind "mouseover",->
-          $(this).children().show()
+          $(this).children().removeClass("hidden")
           $(this).parent().addClass("delete-over")
      
      $(".remove-term").bind "mouseout",->
-          $(this).children().hide()
+          $(this).children().addClass("hidden")
           $(this).parent().removeClass("delete-over")
           
      $(".remove-term").click ->

@@ -14,13 +14,12 @@ class ApplicationController < ActionController::Base
         object.terms.destroy_all
         taxonomy_array.each do |terms_ids|
           terms_ids = terms_ids[1].split(",")
+          terms_ids.uniq!
           terms_ids.reject! {|x| x=="undefined"}
           terms_ids.reject! {|x| x==""}
           terms_ids.each do |term_id|
-            
-            instance_variable_set("@taxonomizable_#{term_id}", object.taxonomizables.build )
-            
-            eval("@taxonomizable_#{term_id}.term_id = term_id")
+          instance_variable_set("@taxonomizable_#{term_id}", object.taxonomizables.build )
+          eval("@taxonomizable_#{term_id}.term_id = term_id")
         end
     end
   end

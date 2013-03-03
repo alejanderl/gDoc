@@ -54,7 +54,7 @@ class CyclesController < ApplicationController
   def create
     @cycle = Cycle.new(params[:cycle])
     @cycle.user_id = current_user.id
-    add_terms(params[:term-id],@cycle)
+    add_terms(params["terms-id"],@cycle)
 
     respond_to do |format|
       if @cycle.save
