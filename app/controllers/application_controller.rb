@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale_from_url
   
   def add_terms(taxonomy_array,object)
+    # Check if exist instead of deleting when everything is properly working ;-)
         object.terms.destroy_all
         taxonomy_array.each do |terms_ids|
           terms_ids = terms_ids[1].split(",")
@@ -23,7 +24,8 @@ class ApplicationController < ActionController::Base
         end
     end
   end
-
+  
+  
   def sanitize_filename(filename)
     # Split the name when finding a period which is preceded by some
     # character, and is followed by some character other than a period,

@@ -1,5 +1,5 @@
 # This class order an array with parents -> childs and adds family depth with order method
-class OrderedArray
+class OrderedArray  
     
   def initialize(one_list)
     @the_list ||= []      

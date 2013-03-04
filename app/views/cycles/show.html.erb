@@ -15,8 +15,8 @@
 
 
 <p>
-  <b><%= t"metadata.contributor" %></b>
-  <h1><%= @cycle.contributor %></h1>
+  <span class="contributor"><%= t"metadata.contributor" %></span>
+  <p><%= @cycle.contributor %></p>
 </p>
 
 <p>
@@ -42,12 +42,12 @@
 </p>
 
 <p>
-  <b><%=  t("metadata.end_date") %>:</b>
+  <span class="end-date"><%=  t("metadata.end_date") %>:</span>
   <%= @cycle.end_date %>
 </p>
 
 <p>
-  <b><%=  t("metadata.notes") %>:</b>
+  <span><%=  t("metadata.notes") %>:</span>
 
   <%= @cycle.notes %>
 </p>
@@ -62,8 +62,10 @@
 
 <p>
   <b>Terms:</b>
-  <div style="background-color: #E89BB6">
-      <% @cycle.terms.each {|t| concat t.name} %>
+  <div >
+    <%= print_terms_for("art","tech") %>
+    
+     
   </div>
 </p>
 

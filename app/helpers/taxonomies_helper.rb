@@ -19,4 +19,13 @@ module TaxonomiesHelper
     
   end
   
+  def print_terms_for(*taxonomies)
+    final_render ||= ""
+    taxonomies.each do |taxonomy_arg|
+      terms = @cycle.terms.where(:taxonomy_name =>"tech")
+      final_render += render("taxonomies/family_names/print_terms_for", {:terms => terms,:taxonomy => taxonomy_arg}) if terms.length > 0
+    end
+    final_render.html_safe
+  end
+
 end
