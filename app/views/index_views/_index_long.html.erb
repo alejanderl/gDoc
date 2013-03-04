@@ -1,0 +1,40 @@
+
+<% objects.each do |t|%>
+
+  <div class="box_container  span4">
+    <div class="favourites">
+      <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
+      <%#= favourite_button(t) if current_user.present? %>
+    </div>
+    <div class="name">
+      <%= link_to t.title,t %>
+    </div>   
+    <div class="creator">
+      <%= t.creator  %>
+    </div>
+    <div class="contributor">
+      <%= t.contributor  %>
+    </div>
+
+    <div class="description">
+      <%= t.description.html_safe  %>
+    </div>
+    <div class="start-end-date">
+      <%= t.start_date %>/<%= t.end_date if t.end_date.present? %>
+    </div>
+
+
+
+    <div class="notes">
+      <%= t.notes  %>
+    </div>
+
+
+   <div id="tag-notes">
+    <%= t.tag_list {|t| t} %>
+   </div>
+
+  </div>
+
+<% end %>
+ <%= paginate objects %>
