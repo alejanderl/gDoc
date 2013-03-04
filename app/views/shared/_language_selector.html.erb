@@ -9,7 +9,7 @@
 <ul class=" language-selector " style="display:none; position:relative; top:0">
   <li><%= link_to_unless_current (t"language_name", :locale => "en"), locale: "en" %></li>
 
-  <li><%= link_to_unless_current (I18n.t(:language_name , :locale => "es") ), locale: "es" %> <li>
+  <li><%= link_to_unless_current (I18n.t(:language_name , :locale => "es") ), :locale => "es" , :class => "btn btn-medium"%> <li>
 
   
 </ul>

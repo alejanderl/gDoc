@@ -22,7 +22,7 @@ module TaxonomiesHelper
   def print_terms_for(*taxonomies)
     final_render ||= ""
     taxonomies.each do |taxonomy_arg|
-      terms = @cycle.terms.where(:taxonomy_name =>"tech")
+      terms = @cycle.terms.where(:taxonomy_name => taxonomy_arg)
       final_render += render("taxonomies/family_names/print_terms_for", {:terms => terms,:taxonomy => taxonomy_arg}) if terms.length > 0
     end
     final_render.html_safe

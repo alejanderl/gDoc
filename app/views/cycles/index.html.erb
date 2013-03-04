@@ -4,50 +4,7 @@
     <%= link_to (t"title.new_cycle"), new_cycle_path , :class => "btn btn-medium pull-right" if current_user.present? %>
 <% end %>
 
-<% @cycles.each do |t|%>
-
-  <div class="box_container full-width span7">
-    <div class="favourites">
-      <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
-      <%#= favourite_button(t) if current_user.present? %>
-    </div>
-    <div class="name">
-      <%= link_to t.title,cycle_url(t.id) %>
-    </div>   
-    <div class="creator">
-      <%= t.creator  %>
-    </div>
-    <div class="contributor">
-      <%= t.contributor  %>
-    </div>
-
-    <div class="description">
-      <%= t.description  %>
-    </div>
-    <div class="start-end-date">
-      <%= t.start_date %>
-    </div>
-    <div class="start-date">
-      <%= t.start_date %>
-    </div>
-
-    <div class="end-date">
-      <%= t.end_date %>
-    </div>
-
-    <div class="notes">
-      <%= t.notes  %>
-    </div>
-
-
-   <div style="background-color: #E89BB6">
-    <%= t.tag_list {|t| t} %>
-   </div>
-
-  </div>
-
-<% end %>
- <%= paginate @cycles %>
+<%= render "index_views/index_long",:objects => @cycles %>
 
 
 <br/>
