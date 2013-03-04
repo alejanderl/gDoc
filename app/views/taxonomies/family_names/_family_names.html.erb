@@ -22,8 +22,8 @@
     <ul><% taxonomy_terms.each do |term| %>
         <%=(previous.depth-term.depth).times  {  concat "</ul>".html_safe} if previous.depth > term.depth   %>
         <%= "<ul>".html_safe if previous.depth < term.depth  %>
-        <li class="term-<%= term.id %>" data-id="<%= term.id %>" data-name="<%= term.taxonomy_name %>" data-parent="<%= term.parent_id %>">
-          <a href="javascript:void(0)" class="add-term"><%= term.name %></a>
+        <li class="term-<%= term.id %> add-taxonomy-terms" data-id="<%= term.id %>" data-name="<%= term.taxonomy_name %>" data-parent="<%= term.parent_id %>">
+          <a href="javascript:void(0)" class="add-term"><span class="term-remove  icon-plus-sign hidden" ></span><%= term.name %></a>
         </li>
         <% previous = term %> 
       <% end %>
