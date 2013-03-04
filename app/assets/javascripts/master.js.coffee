@@ -14,9 +14,7 @@ jQuery ->
           $(this).parent().removeClass("add-over")
           $(this).removeClass("add-term")
           the_cloned = added.clone()
-
           $("#terms-names-"+added_taxonomy_name+" ul div.clearfix").prepend(the_cloned)
-          the_cloned.parent.removeClass("")
           $(this).removeClass("add-term")
           $(this).addClass("inactive")
           $(this).parent().addClass("inactive") 
