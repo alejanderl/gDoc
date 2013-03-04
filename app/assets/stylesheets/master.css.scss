@@ -389,3 +389,9 @@ ul.active-list {
 .open-dialog {
     float:right;
 }
+
+.centered h1:first-child {
+    opacity: 0.2;
+    font-weight: 900;
+    position: absolute;
+}

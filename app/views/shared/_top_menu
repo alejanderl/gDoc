@@ -2,24 +2,22 @@
     <div id="nav-no" class=" navbar navbar-fixed-top  nav- navbar-fixed-top">
         <div class="navbar-inner">
           <div class="centered row">
-            <div id="logo" class=" span1">
+            <div id="logo" class=" span">
                 <%= link_to image_tag("rails.png"), "/"%>
             </div>
-            <button type="button" class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse2">
-             <i class="icon-user"></i>
-            </button>
+
             <button type="button" class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse">
                 <i class="icon-th-list"></i> 
             </button>
-            <div id="user-nav" class="span2 nav-collapse " style="float:right;">
+            <div id="user-nav" class="span nav-collapse " style="float:right;">
               
               <%= render "shared/buttons/administrative_button" %>
               <%= render "shared/sign_in" %>
             
               <%= render "shared/language_selector" %>
             </div>
-            <div class="span navegacion">
-              <ul class="nav nav-tabs span7 nav-collapse">
+            <div class="span7 navegacion">
+              <ul class="items nav nav-collapse">
                 <li class=""><%= link_to (t"main-menu.cycles"),cycles_url,:class => "#{'active' if current_page?(cycles_url)}" %></li>
                 <li class=""><%= link_to (t"main-menu.events"),events_url,:class => "#{'active' if current_page?(events_url)}"  %></li>
                 <li class=""><%= link_to (t"main-menu.photos"),photos_url ,:class => "#{'active' if current_page?(photos_url)}" %></li>
@@ -28,6 +26,7 @@
                 <li class=""><%= link_to (t"main-menu.documents"),documents_url,:class => "#{'active' if current_page?(documents_url)}"  %></li>
                 <li class=""><%= link_to (t"main-menu.participants"),participants_url,:class => "#{'active' if current_page?(participants_url)}"  %></li>
                </ul>
+              <div class="clearfix"></div>
             </div>
             
         </div>
