@@ -16,7 +16,7 @@
         <%#= favourite_button(t) if current_user.present? %>        
         </div>    
         <div class="image">
-          <%= link_to(image_tag(t.image_url(:thumb)),t.image_url,:class => "fancybox", :rel => "gallery")  if t.image.present? %>
+          <%= link_to(image_tag(t.image_url(:thumb)),t.image_url,:rel => "lightbox[gallery]")  if t.image.present? %>
         </div>
        <div style="background-color: #E89BB6">
         <%= t.tag_list {|t| t} %>

@@ -1,6 +1,5 @@
 jQuery ->
-     $(".fancybox").fancybox()
-   
+
      $(".date_with_hours_and_minutes").datetimepicker();
      $("#accordion-block").accordion ->
           collapsible: true,
