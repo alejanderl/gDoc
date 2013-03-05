@@ -13,6 +13,7 @@ class ParticipantsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @participants }
+      format.xml #index.xml.builder 
     end
   end
 

@@ -1,5 +1,5 @@
 class Participant < ActiveRecord::Base
-  attr_accessible :bio, :creator, :name, :image, :tag_list
+  attr_accessible :bio, :creator, :name, :image, :tag_list, :surname, :web
   validates_presence_of :name
   validates_uniqueness_of :name
   

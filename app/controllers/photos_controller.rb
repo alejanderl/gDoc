@@ -12,6 +12,7 @@ class PhotosController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @photos }
+      format.xml #index.xml.builder with dublin core attbs
     end
   end
 
