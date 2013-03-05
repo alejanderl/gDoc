@@ -1,4 +1,5 @@
 jQuery ->
+     $(".fancybox").fancybox()
    
      $(".date_with_hours_and_minutes").datetimepicker();
      $("#accordion-block").accordion ->
@@ -65,4 +66,7 @@ jQuery ->
           term = $(this).attr("data-taxonomy")
           $("div.dialog" ).dialog("close");
           $("div.dialog-"+term ).dialog("open");
+          
+ 
+   
     
