@@ -22,6 +22,8 @@ describe "Photos" do
 #        save_and_open_page
         click_link "New Photo"
         fill_in "photo_title", :with  => "Nonsense photo"
+        page.execute_script('$("#cycle_description").tinymce().setContent("Pants are pretty sweet.")')
+
         click_button "Create Photo"
         page.should have_content("Nonsense photo")
         page.should have_content("Photo was successfully created.")

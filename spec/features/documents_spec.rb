@@ -27,7 +27,8 @@ require 'spec_helper'
       fill_in "document_title", :with  => "Document handmande"
       fill_in "document_description", :with  => "Description handmade"
       
-#      save_and_open_page
+      page.execute_script('$("#cycle_description").tinymce().setContent("Pants are pretty sweet.")')
+
       click_button "Create Document"
       page.should have_content("Document was successfully created.")
 #     save_and_open_page
@@ -41,7 +42,7 @@ require 'spec_helper'
       visit documents_path
       page.all(".name")[1].first("a").click
 
-      click_link "Edit"
+      click_link "edit-link"
       fill_in "document_title", :with  => "Modify"
       fill_in "document_description", :with  => "Modified description"
      

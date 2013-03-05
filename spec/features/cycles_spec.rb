@@ -16,7 +16,7 @@ describe "GET /cycles" do
    pending  it "Each cycle shows events associated to it" do
       visit "/cycles/1"
 #      save_and_open_page
-      visit cycles_path
+      visit cycles_path 
       page.should have_content("Event")
 
     end
@@ -29,12 +29,14 @@ describe "GET /cycles" do
   end
 
  
-   it "Create cycles" do
+   it "Create cycles" , :js => true do
       user_login("admin@example.com", "admin123")
       visit cycles_path
 #     save_and_open_page
       click_link "New Cycle"
       fill_in "cycle_title", :with  => "Geek-art"
+      page.execute_script('$("#cycle_description").tinymce().setContent("Pants are pretty sweet.")')
+
       fill_in "cycle_tag_list", :with => "art"
       click_button "Create Cycle"
       page.should have_content("Geek-art")
@@ -42,13 +44,14 @@ describe "GET /cycles" do
 
     end
 
-  it "Update cycles" do
+  it "Update cycles"  do 
       user_login("admin@example.com", "admin123")
       visit "/cycles/1"
-      click_link "Edit"
+      click_link "edit-link"
 #      save_and_open_page
       find_field('cycle_title').value
       fill_in "cycle_title", :with  => "Geek-art 2"
+      save_and_open_page
       click_button "Update Cycle"
       page.should have_content("Geek-art 2")
       page.should have_content("Cycle was successfully updated")
@@ -67,7 +70,7 @@ describe "GET /cycles" do
 
     pending it "Select date from calender / datepicker" do
       visit "/cycles/1"
-      click_link "Edit"
+      click_link "edit-link"
     end
 
     pending "check taxonomy fiedl" do 

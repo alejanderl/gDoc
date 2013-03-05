@@ -39,10 +39,10 @@ require 'spec_helper'
       visit videos_path
       page.all(".name")[1].first("a").click 
 
-      click_link "Edit"
+      click_link "edit-link"
       fill_in "video_title", :with  => "Modify"
       fill_in "video_description", :with  => "Modified description"
-     
+      page.execute_script('$("#cycle_description").tinymce().setContent("Pants are pretty sweet.")')
       click_button "Update Video" 
       page.should have_content("Video was successfully updated.")
 #     save_and_open_page

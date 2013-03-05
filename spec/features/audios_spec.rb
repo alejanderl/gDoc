@@ -25,6 +25,7 @@ describe "GET /audios" do
 #      save_and_open_page 
       click_link "New Audio"      
       fill_in "audio_title", :with  => "Geek-art audio"
+      page.execute_script('$("#cycle_description").tinymce().setContent("Pants are pretty sweet.")')
       click_button "Create Audio"
       page.should have_content("Geek-art audio")
       page.should have_content("Audio was successfully created.")
@@ -34,7 +35,7 @@ describe "GET /audios" do
   it "Update audios" do
       user_login("admin@example.com", "admin123")
       visit "/audios/1"
-      click_link "Edit"
+      click_link "edit-link"
      # save_and_open_page
       fill_in "audio_title", :with  => "Geek-art 2"
       click_button "Update Audio"

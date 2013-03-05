@@ -27,9 +27,9 @@ end
 
 
 def create_sample_cycles(attrs = {})
+
   Cycle.create(:title => "Cycle 1", :description => "Cycle 1 description", :start_date => "2013-02-10", :end_date =>"2013-02-15 ")
   Cycle.create(:title => "Cycle 2", :description => "Cycle 2 description", :start_date => "2013-02-13", :end_date =>"2013-02-25 ")
-  
   Cycle.create(:title => "Cycle 3", :description => "Cycle 3 description", :start_date => "2013-03-1", :end_date =>"2013-03-15 ")
   attrs2 = attrs.dup
   attrs2[:title] ||= "Cycle random#{rand(1000)}"
@@ -80,6 +80,7 @@ def create_sample_audios
 end
 
 def create_sample_participants(attrs = {})
+
   attrs2 = attrs.dup
   attrs2[:name] ||= "Participant random#{rand(1000)}"
   attrs2[:bio] ||= "Bio random#{rand(1000)}"

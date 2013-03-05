@@ -25,6 +25,8 @@ require 'spec_helper'
       click_link "New Event"
       save_and_open_page
       fill_in "event_title", :with  => "Conference"
+      page.execute_script('$("#cycle_description").tinymce().setContent("Description test.")')
+
       fill_in "event_description", :with  => "Conference about"
       click_button "Create Event"
       page.should have_content("Event was successfully created.")
@@ -40,7 +42,7 @@ require 'spec_helper'
       visit events_path
       user_login("admin@example.com", "admin123")
       visit "/events/1"      
-      click_link "Edit"
+      click_link "edit-link"
       fill_in "event_title", :with  => "Show"
       fill_in "event_description", :with  => "A coooool show"
 
