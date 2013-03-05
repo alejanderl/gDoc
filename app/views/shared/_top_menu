@@ -3,7 +3,7 @@
         <div class="navbar-inner">
           <div class="centered row">
             <div id="logo" class=" span">
-                <%= link_to image_tag("rails.png"), "/"%>
+                <%= link_to image_tag("logo_gbd.png"), "/"%>
             </div>
 
             <button type="button" class="btn btn-navbar pull-left" data-toggle="collapse" data-target=".nav-collapse">
