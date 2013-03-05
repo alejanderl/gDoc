@@ -7,6 +7,7 @@ class AudiosController < ApplicationController
     else
       @audios = Audio.order("created_at").page(params[:page]).per(15)
    end
+
    respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @audios }
