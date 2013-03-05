@@ -1,7 +1,7 @@
-
+<div calss="row">
 <% objects.each do |t|%>
 
-  <div class="box_container  span4">
+  <div class="box_container  span8 ">
     <div class="favourites">
       <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
       <%#= favourite_button(t) if current_user.present? %>
@@ -37,4 +37,5 @@
   </div>
 
 <% end %>
+</div>
  <%= paginate objects %>
