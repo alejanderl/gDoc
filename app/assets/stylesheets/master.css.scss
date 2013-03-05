@@ -79,7 +79,7 @@ body {
   
 }
 
-#user_nav {
+#user-nav {
     float:right;
     font-weight: bold;
     color:#fff;
@@ -96,6 +96,11 @@ body {
     img {
 	border-radius:1px;
 	box-shadow:-1px -1px 1px 0px rgba(255,255,255,0.6);
+    }
+    .language-selector  {
+    display:none;
+
+
     }
 }
 #separator {

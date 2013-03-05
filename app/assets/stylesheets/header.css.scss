@@ -29,8 +29,7 @@
 .centered h1:first-child {
     color: rgba(0,0,0,0.1);
     font-weight: 900;
-    position: absolute;
-    top: 10%;
+    position: fixed;
     font-size: 100px;
     z-index: -1;
     font-family: ubuntu, georgia;
