@@ -4,6 +4,8 @@
     <%= link_to (t"title.new_cycle"), new_cycle_path , :class => "btn btn-medium pull-right" if current_user.present? %>
 <% end %>
 
+<%= render 'shared/simple_search' %>
+
 <% @cycles.each do |t|%>
 
   <div class="box_container full-width span7">

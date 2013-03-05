@@ -9,6 +9,10 @@ class CyclesController < ApplicationController
     else
       @cycles = Cycle.order("created_at").page(params[:page]).per(15)
    end
+
+    @search = Cycle.search(params[:q])
+    @cycles = @search.result(:distinct => true).page(params[:page]).per(15)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cycles }
