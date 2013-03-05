@@ -13,6 +13,7 @@ class DocumentsController < ApplicationController
    respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @documents }
+      format.xml #index.xml.builder with dublin core format
     end
   end
 
