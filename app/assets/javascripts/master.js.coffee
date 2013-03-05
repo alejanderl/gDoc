@@ -1,5 +1,6 @@
 jQuery ->
 
+          
      $(".date_with_hours_and_minutes").datetimepicker();
      $("#accordion-block").accordion ->
           collapsible: true,
@@ -51,7 +52,8 @@ jQuery ->
           $("#terms-id_"+added_taxonomy_name).val(value.toString())
           $(this).parent().hide()
           
-         
+     $(".colorbox").colorbox
+          height: "80%"
     
      $( "div.dialog" ).dialog
           autoOpen: false
@@ -65,6 +67,10 @@ jQuery ->
           term = $(this).attr("data-taxonomy")
           $("div.dialog" ).dialog("close");
           $("div.dialog-"+term ).dialog("open");
+     
+
+
+
           
  
    
