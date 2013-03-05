@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-  attr_accessible :cycle_ids, :date, :description, :participant_id, :time, :title, :tag_list
+  attr_accessible :cycle_ids, :date, :description, :participant_id, :time, :title, :tag_list, :creator, :contributor, :start_date, :end_date, :notes
   validates_presence_of :title, :description
   has_and_belongs_to_many :cycles
   has_and_belongs_to_many :videos

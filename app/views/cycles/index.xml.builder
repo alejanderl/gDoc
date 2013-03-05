@@ -5,7 +5,7 @@ xml.metadata('xmlns' => 'http://example.org/myapp/', 'xmlns:xsi' => 'http://www.
      xml.tag!("dc:title",cycle.title)
      xml.tag!("dc:creator",cycle.creator)
      xml.tag!("dc:contributor",cycle.contributor)
-     xml.tag!("dc:description",cycle.description)
+     xml.tag!("dc:description",sanitize(cycle.description))
      xml.tag!("dc:temporal",cycle.start_date)
      xml.tag!("dc:temporal",cycle.end_date)
      xml.tag!("dc:subject") do
