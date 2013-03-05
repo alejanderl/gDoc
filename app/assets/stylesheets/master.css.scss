@@ -19,7 +19,7 @@ h1,h2,h3,h4,h5,h6 {
 body {
     margin: 0;
     background-color:#ddd;
-    background:url( image-path('bg.jpg'))  repeat ;
+    background:url( '/assets/bg.jpg')  repeat ;
      background-color: #FAFAFA;
     background-image: linear-gradient(to bottom, #F2F2F2, #FFFFFF);
 
@@ -65,8 +65,8 @@ body {
     
     }
     img {
-    border-radius: 0 5px 5px;
-    box-shadow: 0px 1px 4px #ccc;
+	border-radius: 0 5px 5px;
+	box-shadow: 0px 1px 4px #ccc;
     }
 }
 #top_menu {
