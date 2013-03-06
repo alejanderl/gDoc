@@ -5,11 +5,13 @@ Gdoc::Application.routes.draw do
   match "favourites/" => "favourites#create", :as => :add_favourite , :via => :get
   match "favourites/" => "favourites#destroy", :as => :remove_favourite,  :via => :delete
   
-  resources :tags do
-    get :autocomplete_tag_name, :on => :collection    
-  end
+#  resources :tags do
+#    get :autocomplete_tag_name, :on => :collection    
+#  end
 
-
+resources :searches do
+    collection { post :search, to: 'search#index' }
+end
 
 
 localized do
