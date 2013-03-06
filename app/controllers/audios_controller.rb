@@ -9,7 +9,7 @@ class AudiosController < ApplicationController
    end
 
     @search = Audio.search(params[:q])
-    @audios = @search.result
+    @audios = @search.result.page(params[:page]).per(15)
     @search.build_condition
 
 

@@ -9,10 +9,6 @@ Gdoc::Application.routes.draw do
 #    get :autocomplete_tag_name, :on => :collection    
 #  end
 
-resources :searches do
-    collection { post :search, to: 'search#index' }
-end
-
 
 localized do
 
