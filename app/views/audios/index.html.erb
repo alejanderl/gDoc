@@ -3,10 +3,9 @@
 <%= link_to t("title.new_audio"), new_audio_path, :class => "btn btn-medium pull-right" if current_user.present? %>
 <% end %>
 
-
-    
-    
-    <%= search_form_for @search do |f| %>
+<div id ="search">  
+ 
+  <%= search_form_for @search do |f| %>
   <%= f.condition_fields do |c| %>
   <div class="field">
     <%= c.attribute_fields do |a| %>
@@ -20,7 +19,7 @@
   <% end %>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
-
+</div>
 
 
 

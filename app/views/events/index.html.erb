@@ -1,6 +1,6 @@
 <h1><%= t("listing.events") %></h1>
 <%= link_to t("title.new_event"), new_event_path, :class => "btn btn-medium pull-right" if current_user.present?%>
-
+<div id ="search">
 
     <%= search_form_for @search do |f| %>
   <%= f.condition_fields do |c| %>
@@ -16,7 +16,7 @@
   <% end %>
   <div class="actions"><%= f.submit "Search" %></div>
 <% end %>
-
+</div>
 
 
 
