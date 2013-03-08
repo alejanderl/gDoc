@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<div  id="single-asset" class="span7 ofsset1">
+
+  <p>
+<b>    <%= t("misc.header") %></b>
+    <%= @appearance.header %>
+  </p>
+  <p>
+<b>    <%= t("misc.storage") %> </b>
+    <%= @appearance.storage%>
+  </p>
+  <p>
+<b>    <%= t("misc.broadcast")%></b>
+    <%= @appearance.broadcast%>
+  </p>
+  <p>
+   <b> <%= t("misc.footer")%></b>
+    <%= @appearance.footer%>
+  </p>
+  <div class="image">
+    <%= image_tag @appearance.image_url(:thumb) if @appearance.image? %>
+  </div>
+  
+<%=edit_button @appearance %>
+</div>

@@ -1,13 +1,19 @@
 Gdoc::Application.routes.draw do
 
+  get "appearance/show"
+
+  get "appearance/edit"
+
+  get "appearance/update"
+
 #  get 'tags/:tag', to: 'tags#index', as: :tag  
 
   match "favourites/" => "favourites#create", :as => :add_favourite , :via => :get
   match "favourites/" => "favourites#destroy", :as => :remove_favourite,  :via => :delete
   
-#  resources :tags do
-#    get :autocomplete_tag_name, :on => :collection    
-#  end
+  resources :tags do
+    get :autocomplete_tag_name, :on => :collection    
+  end
 
 
 localized do
@@ -38,6 +44,7 @@ localized do
     get :autocomplete_term_name, :on => :collection 
   end
 
+    resources :appearance, :only => [:show, :edit, :update]
   
 end
 

@@ -88,6 +88,11 @@ es:
     name: "Nombre"
     surname: "Apellidos"
     web: "Web"
+    logo: "Logo"
+    header: "Cabecera"
+    footer: "Pie de página"
+    broadcast: "Desde donde se emite"
+    storage: "Almacenamiento"
 
   user:
     new_password: "Nueva contraseña"
