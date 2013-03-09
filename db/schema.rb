@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130226114720) do
+ActiveRecord::Schema.define(:version => 20130305203655) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -226,6 +226,7 @@ ActiveRecord::Schema.define(:version => 20130226114720) do
     t.string   "creator"
     t.string   "terms_of_use"
     t.string   "notes"
+    t.string   "video_file"
   end
 
 end

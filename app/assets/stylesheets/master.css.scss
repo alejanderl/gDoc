@@ -358,7 +358,7 @@ ul.active-list {
 }
 .dialog .add-taxonomy-terms {
     @include large_buttons(none);
-    .inactive {
+    &.inactive {
 	pointer-events:none
     }
 }
