@@ -13,73 +13,20 @@ jQuery ->
     
         constructor: (@taxonomy) ->
             @main = "taxonomy-terms-" + @taxonomy
-            @assign_events ->
+            @initialize_events ->
             
             
-        hola: ->
-            alert "hola"
-            
-        assign_events: ->
-            
+
+        initialize_events: ->
             $("div.dialog" ).dialog
                 autoOpen: false
                 show: 
                  effect: "fade"
                  duration: 1000
-            $("span[id^=term]").bind 'mouseover', ->
-               
-                if $(this).children(".actions-active").length == 0
-                    $(".actions-active").toggle();
-                    $(".actions-active").removeClass("actions-active")
-                    $(this).children("div.action-buttons").addClass "actions-active"
-                    $(this).children("div.action-buttons").toggle("fast")
-            $(".add-term").bind "mouseover" ,->
-                $(this).children().removeClass("hidden")
-                $(this).parent().addClass("add-over")
-        
-             $(".add-term").bind "mouseout" ,->
-                $(this).children().addClass("hidden")
-                $(this).parent().removeClass("add-over")
-                  
-             $(".remove-term").bind "mouseover",->
-                $(this).children().removeClass("hidden")
-                $(this).parent().addClass("delete-over")
-                  
-             $(".remove-term").bind "mouseout",->
-                $(this).children().addClass("hidden")
-                $(this).parent().removeClass("delete-over")
-        
-            $(".deploy-button").bind 'click', ->
-               
-                button = $(this)
-                $(this).next().next().toggle "fast", ->
-                    if $(this).is(":hidden")
-                        button.addClass("icon-chevron-right")
-                        button.removeClass("icon-chevron-down")
-                    else
-                        button.removeClass("icon-chevron-right")
-                        button.addClass("icon-chevron-down")
             $(".deploy-button").hide()
             $("li.parent-0 ul").hide()
             $("li.parent-0 ul ul").show()
             $("li.parent-0 ul").prev().prev().show()
-            
-            
-            $(".add-term").click ->
-                taxonomies.add_term(this)
-                  
-            $(".remove-term").click ->
-                added_taxonomy_name = $(this).parent().attr("data-name")
-                remove_id = $(this).parent().attr("data-id")
-                value = $("#terms-id_"+added_taxonomy_name).val().split(",")
-                check_terms added_taxonomy_name
-                value = value
-                console.log( value)
-                console.log( remove_id)
-                value[value.indexOf(remove_id) + ""] = ""
-                $("#terms-id_"+added_taxonomy_name).val(value.toString())
-                $(this).parent().hide()
-                  
             $(".colorbox").colorbox
                 height: "80%"
             $( ".open-dialog" ).click ->          
@@ -89,30 +36,92 @@ jQuery ->
             all_dialogs = $(".dialog")
             for d, i in all_dialogs
                 this.check_terms($(d).attr("data-taxonomy"))
-        remove_term:() ->
+            $(".deploy-button").bind 'click', ->               
+                button = $(this)
+                $(this).next().next().toggle "fast", ->
+                    if $(this).is(":hidden")
+                        button.addClass("icon-chevron-right")
+                        button.removeClass("icon-chevron-down")
+                    else
+                        button.removeClass("icon-chevron-right")
+                        button.addClass("icon-chevron-down")
+            this.assign_events()
+                        
+        assign_events: ->
+            $(".add-term").off ""
+            $(".remove-term").off
+            $(".remove-term").on "click", ->
+                taxonomies.remove_term(this)
+            $(".add-term").on "click", ->
+                $(this).unbind
+                taxonomies.add_term(this)            
+            
+            $("span[id^=term]").bind 'mouseover', ->
+                if $(this).children(".actions-active").length == 0
+                    $(".actions-active").toggle();
+                    $(".actions-active").removeClass("actions-active")
+                    $(this).children("div.action-buttons").addClass "actions-active"
+                    $(this).children("div.action-buttons").toggle("fast")
+                    
+            $(".add-term").bind "mouseover" ,->
+                $(this).children().removeClass("hidden")
+                $(this).parent().addClass("add-over")
+        
+             $(".add-term").live "mouseout" ,->
+                $(this).children().addClass("hidden")
+                $(this).parent().removeClass("add-over")
+                  
+             $(".remove-term").bind "mouseover",->
+                $(this).children().removeClass("hidden")
+                $(this).parent().addClass("delete-over")
+                  
+             $(".remove-term").bind "mouseout",->
+
+                $(this).children().addClass("hidden")
+                $(this).parent().removeClass("delete-over")
+        
+
+                        
+
+
+                  
+            
+                
+                
+        remove_term:(_that) ->
+            added_taxonomy_name = $(_that).parent().attr("data-name")
+            remove_id = $(_that).parent().attr("data-id")
+            value = $("#terms-id_"+added_taxonomy_name).val().split(",")
+            value = value
+            value[value.indexOf(remove_id) + ""] = ""
+            $("#terms-id_"+added_taxonomy_name).val(value.toString())
+            $(_that).parent().hide()
+            this.check_terms added_taxonomy_name
                 
                 
         add_term:(_that) ->
-                console.log(_that)
                 added = $(_that).parent()
                 added_id = $(_that).parent().attr("data-id")
                 added_taxonomy_name = $(_that).parent().attr("data-name")
-                $(_that).addClass("remove-term")
+               
                 $(_that).children().addClass("hidden")
                 $(_that).parent().removeClass("add-over")
                 $(_that).removeClass("add-term")
-                the_cloned = added.clone()
+                the_cloned = added.clone()                
+                the_cloned.children(" a").addClass("remove-term")
+                the_cloned.children("a").children("span").addClass(" icon-minus-sign")
+                the_cloned.children("a").children("span").removeClass(" icon-plus-sign")
                 $("#terms-names-"+added_taxonomy_name+" ul div.clearfix").prepend(the_cloned)
                 $(_that).removeClass("add-term")
                 value = $("#terms-id_"+added_taxonomy_name).val() + "," + added_id
                 $("#terms-id_"+added_taxonomy_name).val(value)
-                console.log added_taxonomy_name
                 this.check_terms(added_taxonomy_name)
-                $(_that).parent().addClass("add-over")
+
                   
         check_terms: (family) ->            
             active_terms = $("#terms-id_" +  family).val().split(",")
             current_list = $(".dialog-" + family + " ul li")
+            this.assign_events ->
             for d, i in current_list
                 id = $(d).attr("data-id")#                
                 if $.inArray(id , active_terms) > 0
@@ -121,7 +130,9 @@ jQuery ->
                     $(d).removeClass("inactive")
                     
                     
-    window.taxonomies = new Taxonomies_Terms("tech")#
+                    
+                    
+    window.taxonomies = new Taxonomies_Terms()#
 
  
       
