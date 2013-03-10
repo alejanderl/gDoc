@@ -1,0 +1,11 @@
+common: &common
+  dev_key: AI39si48jGtcyldutha7xQ8sK_PoXFB-oqAgBCD1yxvrgbRew91Jad5VvUURmabYy1Cu8SMV357K28JFp-s8ThXAqCc3N5IUVg
+  username:  gdd.gestordocumental@gmail.com
+  password:  carolina131213
+  
+test:
+  <<: *common
+development:
+  <<: *common
+production:
+  <<: *common
