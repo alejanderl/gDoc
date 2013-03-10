@@ -25,7 +25,7 @@
 
 <p>
   <b><%=  t("metadata.description") %>:</b>
-  <%= @audio.description %>
+  <%= sanitize @audio.description %>
 </p>
 
 <p>

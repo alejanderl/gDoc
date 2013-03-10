@@ -5,6 +5,8 @@
   user.save
   User.create(:email => "alejandro@example.com", :password => "alx123", :password_confirmation => "alx123")
   User.create(:email => "carolina@example.com", :password => "caro123", :password_confirmation => "caro123")
+
+  Appearance.create(:header =>"Header of the site", :storage => "FTP server", :broadcast =>"Youtube", :footer =>"All content of this site is copyleft")
   
 
   Cycle.create(:title => "Cycle 1", :description => "Cycle 1 description", :start_date => "2013-02-10", :end_date =>"2013-02-15 ")

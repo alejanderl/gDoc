@@ -5,6 +5,29 @@
 <%= link_to t("title.new_video"), new_video_path, :class => "btn btn-medium pull-right" if current_user.present? %>
 <% end %>
 <%= paginate @videos %>
+
+
+<div id ="search">  
+ 
+  <%= search_form_for @search do |f| %>
+  <%= f.condition_fields do |c| %>
+  <div class="field">
+    <%= c.attribute_fields do |a| %>
+      <%= a.attribute_select %>
+    <% end %>
+    <%= c.predicate_select %>
+    <%= c.value_fields do |v| %>
+      <%= v.text_field :value %>
+    <% end %>
+    </div>
+  <% end %>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+</div>
+
+
+
+
   <% @videos.each do |t|%>
 
 
@@ -21,7 +44,7 @@
     </div>
 
     <div class="description">
-      <%= t.description  %>
+      <%= sanitize t.description  %>
     </div>
 
     <div class="image">

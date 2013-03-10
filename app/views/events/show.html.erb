@@ -42,7 +42,7 @@
   
   <p>
     <b><%=  t("form.description") %>:</b>
-    <%= @event.description %>
+    <%= sanitize @event.description %>
 
   </p>
 

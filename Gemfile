@@ -8,6 +8,9 @@ gem 'rails', '3.2.8'
 #gem 'sqlite3'
 gem 'pg'
 
+#gem for advanced searches
+gem 'ransack'
+
 #Draws diagram  from schema.rb
 gem 'rails-erd' 
 
