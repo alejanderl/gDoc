@@ -21,7 +21,7 @@
  
  <p>
    <b><%=  t("metadata.description") %>:</b>
-   <%= @document.description %>
+   <%= sanitize @document.description %>
  </p>
   <p>
    <b><%=  t("metadata.language") %>:</b>

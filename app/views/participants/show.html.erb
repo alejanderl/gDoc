@@ -14,7 +14,7 @@
     </div>
 <p>
   <b><%=  t("misc.bio") %></b>
-  <%= @participant.bio %>
+  <%= sanitize @participant.bio %>
 </p>
 
 <p>

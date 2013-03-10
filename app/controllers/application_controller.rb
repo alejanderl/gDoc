@@ -9,6 +9,12 @@ class ApplicationController < ActionController::Base
   delegate :allow_param?, to: :current_permission
   helper_method :allow_param?
   before_filter :set_locale_from_url
+  before_filter :set_default_appearance
+
+  def set_default_appearance
+    @appearance= Appearance.first
+  end
+
   
   def add_terms(taxonomy_array,object)
     # Check if exist instead of deleting when everything is properly working ;-)

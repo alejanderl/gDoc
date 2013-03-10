@@ -8,16 +8,20 @@ class EventsController < ApplicationController
       @events = Event.tagged_with(params[:tag])
     else
       @events = Event.order("created_at").page(params[:page]).per(15)
-
    end
 
+    @search = Event.search(params[:q])
+    @events = @search.result.page(params[:page]).per(15)
+    @search.build_condition
 
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @events }
+      format.xml #index.xml.builder
     end
   end
+
 
   # GET /events/1
   # GET /events/1.json

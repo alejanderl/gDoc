@@ -1,0 +1,9 @@
+<h1><% t("misc.edit_appearance") %></h1>
+
+<%= render 'form' %>
+
+<% if allow? "appearance", "Back" %>
+   <%= link_to t("link.back"), @appearance %> |
+<% end %>
+
+

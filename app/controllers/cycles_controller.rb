@@ -9,9 +9,14 @@ class CyclesController < ApplicationController
     else
       @cycles = Cycle.order("created_at").page(params[:page]).per(15)
    end
+
+    @search = Cycle.search(params[:q])
+    @cycles = @search.result(:distinct => true).page(params[:page]).per(15)
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @cycles }
+      format.xml #index.xml.builder
     end
   end
 
@@ -71,7 +76,7 @@ class CyclesController < ApplicationController
   # PUT /cycles/1.json
   def update
     @cycle = Cycle.find(params[:id])
-    
+
     add_terms(params["terms-id"],@cycle)
     respond_to do |format|
       if @cycle.update_attributes(params[:cycle])

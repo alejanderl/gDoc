@@ -4,7 +4,15 @@
     <%= link_to (t"title.new_cycle"), new_cycle_path , :class => "btn btn-medium pull-right btn-create-new" %>
 <% end %>
 
+
 <%= render "index_views/index_long",:objects => @cycles %>
+
+<div id ="search">
+<%= render 'shared/simple_search' %>
+</div>
+
+ <%= paginate @cycles %>
+
 
 
 <br/>
