@@ -10,7 +10,8 @@ Gdoc::Application.routes.draw do
 
   match "favourites/" => "favourites#create", :as => :add_favourite , :via => :get
   match "favourites/" => "favourites#destroy", :as => :remove_favourite,  :via => :delete
-  
+  match "upload_youtube/:id" => "videos#upload_youtube", :as => :upload_youtube,  :via => :get
+
   resources :tags do
     get :autocomplete_tag_name, :on => :collection    
   end

@@ -2,9 +2,9 @@
     <div id="nav-no" class=" navbar navbar-fixed-top  nav- navbar-fixed-top">
         <div class="navbar-inner">
           <div class="centered row">
-            <div id="logo" class=" span">
+            <div id="logo" class=" ">
 
-              <%= image_tag @appearance.image_url(:thumb_150) if @appearance.image? %>
+              <%= link_to((image_tag @appearance.image_url(:thumb_150) if @appearance.image?),"/") %>
 
             </div>
           <div id = "siteheader">

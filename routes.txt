@@ -1,5 +1,9 @@
+                     appearance_show GET    /appearance/show(.:format)                      appearance#show
+                     appearance_edit GET    /appearance/edit(.:format)                      appearance#edit
+                   appearance_update GET    /appearance/update(.:format)                    appearance#update
                        add_favourite GET    /favourites(.:format)                           favourites#create
                     remove_favourite DELETE /favourites(.:format)                           favourites#destroy
+                      upload_youtube GET    /upload_youtube/:id(.:format)                   videos#upload_youtube
           autocomplete_tag_name_tags GET    /tags/autocomplete_tag_name(.:format)           tags#autocomplete_tag_name
                                 tags GET    /tags(.:format)                                 tags#index
                                      POST   /tags(.:format)                                 tags#create
@@ -8,13 +12,6 @@
                                  tag GET    /tags/:id(.:format)                             tags#show
                                      PUT    /tags/:id(.:format)                             tags#update
                                      DELETE /tags/:id(.:format)                             tags#destroy
-                          taxonomies GET    /taxonomies(.:format)                           taxonomies#index
-                                     POST   /taxonomies(.:format)                           taxonomies#create
-                        new_taxonomy GET    /taxonomies/new(.:format)                       taxonomies#new
-                       edit_taxonomy GET    /taxonomies/:id/edit(.:format)                  taxonomies#edit
-                            taxonomy GET    /taxonomies/:id(.:format)                       taxonomies#show
-                                     PUT    /taxonomies/:id(.:format)                       taxonomies#update
-                                     DELETE /taxonomies/:id(.:format)                       taxonomies#destroy
                  new_user_session_en GET    /users/sign_in(.:format)                        devise/sessions#new {:locale=>"en"}
                  new_user_session_es GET    /es/users/sign_in(.:format)                     devise/sessions#new {:locale=>"es"}
                      user_session_en POST   /users/sign_in(.:format)                        devise/sessions#create {:locale=>"en"}
@@ -171,25 +168,31 @@
                                      DELETE /es/eventos/:id(.:format)                       events#destroy {:locale=>"es"}
 autocomplete_term_name_taxonomies_en GET    /taxonomies/autocomplete_term_name(.:format)    taxonomies#autocomplete_term_name {:locale=>"en"}
 autocomplete_term_name_taxonomies_es GET    /es/taxonomies/autocomplete_term_name(.:format) taxonomies#autocomplete_term_name {:locale=>"es"}
-                                     GET    /taxonomies(.:format)                           taxonomies#index {:locale=>"en"}
-                                     GET    /es/taxonomies(.:format)                        taxonomies#index {:locale=>"es"}
+                       taxonomies_en GET    /taxonomies(.:format)                           taxonomies#index {:locale=>"en"}
+                       taxonomies_es GET    /es/taxonomies(.:format)                        taxonomies#index {:locale=>"es"}
                                      POST   /taxonomies(.:format)                           taxonomies#create {:locale=>"en"}
                                      POST   /es/taxonomies(.:format)                        taxonomies#create {:locale=>"es"}
-                                     GET    /taxonomies/new(.:format)                       taxonomies#new {:locale=>"en"}
-                                     GET    /es/taxonomies/nuevo(.:format)                  taxonomies#new {:locale=>"es"}
-                                     GET    /taxonomies/:id/edit(.:format)                  taxonomies#edit {:locale=>"en"}
-                                     GET    /es/taxonomies/:id/editar(.:format)             taxonomies#edit {:locale=>"es"}
-                                     GET    /taxonomies/:id(.:format)                       taxonomies#show {:locale=>"en"}
-                                     GET    /es/taxonomies/:id(.:format)                    taxonomies#show {:locale=>"es"}
+                     new_taxonomy_en GET    /taxonomies/new(.:format)                       taxonomies#new {:locale=>"en"}
+                     new_taxonomy_es GET    /es/taxonomies/nuevo(.:format)                  taxonomies#new {:locale=>"es"}
+                    edit_taxonomy_en GET    /taxonomies/:id/edit(.:format)                  taxonomies#edit {:locale=>"en"}
+                    edit_taxonomy_es GET    /es/taxonomies/:id/editar(.:format)             taxonomies#edit {:locale=>"es"}
+                         taxonomy_en GET    /taxonomies/:id(.:format)                       taxonomies#show {:locale=>"en"}
+                         taxonomy_es GET    /es/taxonomies/:id(.:format)                    taxonomies#show {:locale=>"es"}
                                      PUT    /taxonomies/:id(.:format)                       taxonomies#update {:locale=>"en"}
                                      PUT    /es/taxonomies/:id(.:format)                    taxonomies#update {:locale=>"es"}
                                      DELETE /taxonomies/:id(.:format)                       taxonomies#destroy {:locale=>"en"}
                                      DELETE /es/taxonomies/:id(.:format)                    taxonomies#destroy {:locale=>"es"}
+                  edit_appearance_en GET    /appearance/:id/edit(.:format)                  appearance#edit {:locale=>"en"}
+                  edit_appearance_es GET    /es/appearance/:id/editar(.:format)             appearance#edit {:locale=>"es"}
+                       appearance_en GET    /appearance/:id(.:format)                       appearance#show {:locale=>"en"}
+                       appearance_es GET    /es/appearance/:id(.:format)                    appearance#show {:locale=>"es"}
+                                     PUT    /appearance/:id(.:format)                       appearance#update {:locale=>"en"}
+                                     PUT    /es/appearance/:id(.:format)                    appearance#update {:locale=>"es"}
 Loaded Suite test,test/functional,test/performance,test/unit/helpers,test/unit,test/integration
 
-Started at 2013-03-01 23:26:37 +0100 w/ seed 53398.
+Started at 2013-03-10 18:05:34 +0100 w/ seed 64567.
 
-Finished in 0.000663 seconds.
+Finished in 0.000690 seconds.
 
 0 tests, 0 passed, 0 failures, 0 errors, 0 skips, 0 assertions
 

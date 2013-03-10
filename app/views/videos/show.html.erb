@@ -12,11 +12,10 @@
 
 
 <p>
-  <b><%=  t("metadata.start_date") %>:</b>
+  <%=  t("metadata.start_date") %>:
   <%= @video.date %>
 </p>
-
-<p>
+  <%= raw @yt_client.my_video(@video.yt_id).embed_html5 %><p>
   <b><%=  t("metadata.creator") %>:</b>
   <%= @video.creator %>
 </p>

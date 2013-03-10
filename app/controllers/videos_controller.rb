@@ -1,14 +1,31 @@
 class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
-  before_filter :authenticate_user!, :except => [:show, :index]
+  
+  
+  def upload_youtube
+    yt_client
+    video=Video.find params[:id]
+    file = open video.video_file.url
+    my_file.write file.read
+    my_file.close
+    #my_file.write file.read
+    
+    yt_response = @yt_client.video_upload( File.open("tmp/cache/#{video.filename}"), :title => video.name,:description => video.description, :category => 'People',:keywords => video.terms_csv, :dev_tag => 'tagdev')
+    video.yt_id = yt_response.unique_id if yt_response.unique_id.present?
+    if video.save    
+      redirect_to video
+    end
+  end
 
   def index
     if params[:tag]
       @videos = Video.tagged_with(params[:tag])
     else
       @videos = Video.order("created_at").page(params[:page]).per(15)  
-   end
+    end
+    @search = Video.search(params[:q])
+    @videos = @search.result.order("created_at").page(params[:page]).per(15)  
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @videos }
@@ -21,10 +38,10 @@ class VideosController < ApplicationController
   def show
     @video = Video.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @video }
-    end
+  respond_to do |format|
+    format.html # new.html.erb
+    format.json { render json: @video }
+  end
   end
 
   # GET /videos/new
@@ -48,7 +65,7 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(params[:video])
     @video.user_id = current_user.id
-
+    add_terms(params["terms-id"],@video)
     respond_to do |format|
       if @video.save
         format.html { redirect_to @video, notice: 'Video was successfully created.' }
@@ -64,7 +81,7 @@ class VideosController < ApplicationController
   # PUT /videos/1.json
   def update
     @video = Video.find(params[:id])
-
+    add_terms(params["terms-id"],@video)
     respond_to do |format|
       if @video.update_attributes(params[:video])
         format.html { redirect_to @video, notice: 'Video was successfully updated.' }

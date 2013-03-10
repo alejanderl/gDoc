@@ -13,4 +13,14 @@ class Video < ActiveRecord::Base
   has_many :taxonomizables, :as => :item, :dependent => :destroy
   has_many :terms, :through => :taxonomizables
   acts_as_taggable
+  def terms_list
+    term_list = []
+    self.terms.each do |term|
+      term_list << term.name
+    end
+    term_list.join(",")
+  end
+  def filename
+    self.video_file.path.split("/").last
+  end
 end

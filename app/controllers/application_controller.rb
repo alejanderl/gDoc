@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
   helper_method :allow_param?
   before_filter :set_locale_from_url
   before_filter :set_default_appearance
+  before_filter :yt_client
 
   def set_default_appearance
     @appearance= Appearance.first
@@ -47,7 +48,11 @@ class ApplicationController < ActionController::Base
     # Finally, join the parts with a period and return the result
      fn.join '.'
   end
-
+  
+  
+  def yt_client
+    @yt_client ||= YouTubeIt::Client.new(:username => YouTubeITConfig.username , :password => YouTubeITConfig.password , :dev_key => YouTubeITConfig.dev_key)
+  end
     
   private
   

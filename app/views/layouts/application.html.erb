@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Gdoc</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "autocomplete-rails.js"  %>
-  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
- <div class="">
-   <%= render "shared/top_menu" %>
-  </div>
-<div class="centered">
-<%= yield %>
-</div>
-
-  <p class="notice"><%= notice %></p>
-       <% if alert.present?%>
-       <p class="alert"><%= alert %></p>
-       <% end %>
-<div class="clearfix"></div>
-
-<div class ="">
-  <%= render "shared/footer" %>
-</div>
-
-</body>
+  <head>
+    <title>Gdoc</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "autocomplete-rails.js"  %>
+    <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>  
+    <div class="">
+      <%= render "shared/top_menu" %>
+     </div>
+   <div class="centered">
+   <%= yield %>
+   </div>
+   
+     <p class="notice"><%= notice %></p>
+          <% if alert.present?%>
+          <p class="alert"><%= alert %></p>
+          <% end %>
+   <div class="clearfix"></div>
+   
+   <div class ="">
+     <%= render "shared/footer" %>
+   </div>
+  </body>
 </html>
