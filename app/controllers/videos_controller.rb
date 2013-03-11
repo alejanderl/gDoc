@@ -7,11 +7,13 @@ class VideosController < ApplicationController
     yt_client
     video=Video.find params[:id]
     file = open video.video_file.url
+    @yt_client.video_delete(video.yt_id) if video.yt_id.present?
+    my_file = File.open("tmp/cache/#{video.filename}","wb")
     my_file.write file.read
     my_file.close
     #my_file.write file.read
     
-    yt_response = @yt_client.video_upload( File.open("tmp/cache/#{video.filename}"), :title => video.name,:description => video.description, :category => 'People',:keywords => video.terms_csv, :dev_tag => 'tagdev')
+    yt_response = @yt_client.video_upload( File.open("tmp/cache/#{video.filename}"), :title => video.title,:description => video.description, :category => 'People',:keywords => video.terms_csv, :dev_tag => 'tagdev')
     video.yt_id = yt_response.unique_id if yt_response.unique_id.present?
     if video.save    
       redirect_to video
@@ -98,7 +100,7 @@ class VideosController < ApplicationController
   def destroy
     @video = Video.find(params[:id])
     @video.destroy
-
+    @yt_client.video_delete(@video.yt_id) if @video.yt_id.present?
     respond_to do |format|
       format.html { redirect_to videos_url }
       format.json { head :no_content }

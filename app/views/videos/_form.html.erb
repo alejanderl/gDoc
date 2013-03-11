@@ -19,11 +19,18 @@
       <%= t("metadata.creator") %>:<br />
       <%= f.text_field :creator %>
     </div>
-   <div class="field">
-       <%= t("metadata.video") %>:<br />
-       <%= f.file_field :video_file %>
+    <div class="field">
+      <% if @video.yt_id.present? %>
+      
+        <%= render "videos/partials/video_player", :video => @video %>
+      
+      <% else %>
+   
+         <%= t("metadata.video") %>:<br />
+         <%= f.file_field :video_file %>
+  
+       <% end %>
     </div>
-
     
     <div class="field">
       <%= t("metadata.participants") %>:<br />
