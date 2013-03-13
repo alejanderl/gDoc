@@ -4,11 +4,7 @@ class EventsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
-    if params[:tag]
-      @events = Event.tagged_with(params[:tag])
-    else
-      @events = Event.order("created_at").page(params[:page]).per(15)
-   end
+
 
     @search = Event.search(params[:q])
     @events = @search.result.page(params[:page]).per(15)

@@ -12,6 +12,8 @@ class Photo < ActiveRecord::Base
   has_many :taxonomizables, :as => :item, :dependent => :destroy
   has_many :terms, :through => :taxonomizables
   acts_as_taggable
+  
+  default_scope :include => [:terms]
 
 
 end

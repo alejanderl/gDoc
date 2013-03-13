@@ -4,12 +4,11 @@ class DocumentsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
-    if params[:tag]
-      @documents = Document.tagged_with(params[:tag])
-    else
-      @documents = Document.order("created_at").page(params[:page]).per(15)  
-   end
-
+    
+    @search = Document.search(params[:q])
+    @documents = @search.result.page(params[:page]).per(15)
+    @search.build_condition
+    
    respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @documents }

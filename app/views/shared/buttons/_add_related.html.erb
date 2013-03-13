@@ -1,0 +1,8 @@
+<div id="add-related-buttons">
+
+  <%= link_to "new photo", new_photo_url(:type => t.class.to_s.downcase, :id => t.id)%>
+  <%= link_to "new audio", new_audio_url(:type => t.class.to_s.downcase, :id => t.id)%>
+  <%= link_to "new document", new_document_url(:type => t.class.to_s.downcase, :id => t.id)%>
+  <%= link_to "new video", new_video_url(:type => t.class.to_s.downcase, :id => t.id)%>
+
+</div>

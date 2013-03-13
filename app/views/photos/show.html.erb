@@ -9,9 +9,7 @@
   </p>
   
   <div class="image">
-     <%= link_to(image_tag(@photo.image_url(:thumb)),@photo.image_url,:class => "colorbox")  %>
-        
-      
+     <%= link_to(image_tag(@photo.image_url(:thumb)),@photo.image_url,:class => "colorbox") if @photo.image.present? %> 
     </div>
   <p>
     <b><%=  t("metadata.creator") %>:</b>
@@ -50,7 +48,7 @@
   </p>
   
   
-  
+  <% @photo.events.each {|x| concat link_to (raw "<b>#{x.title}</b>"),x} if @photo.events.present? %>
   <%= edit_button @photo %> 
   
 

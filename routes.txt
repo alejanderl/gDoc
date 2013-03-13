@@ -190,9 +190,9 @@ autocomplete_term_name_taxonomies_es GET    /es/taxonomies/autocomplete_term_nam
                                      PUT    /es/appearance/:id(.:format)                    appearance#update {:locale=>"es"}
 Loaded Suite test,test/functional,test/performance,test/unit/helpers,test/unit,test/integration
 
-Started at 2013-03-10 18:05:34 +0100 w/ seed 64567.
+Started at 2013-03-12 18:39:32 +0100 w/ seed 14426.
 
-Finished in 0.000690 seconds.
+Finished in 0.000630 seconds.
 
 0 tests, 0 passed, 0 failures, 0 errors, 0 skips, 0 assertions
 

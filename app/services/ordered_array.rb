@@ -5,7 +5,6 @@ class OrderedArray
     @the_list ||= []      
     one_list.each {|x| @the_list << x }
    @the_list.sort_by! {|x| x[:parent_id]}
-
     @other_list ||= []
     @final_list ||= []
   end

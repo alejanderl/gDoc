@@ -4,11 +4,11 @@ class PhotosController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
-    if params[:tag]
-      @photos = Photo.tagged_with(params[:tag])
-    else
-      @photos = Photo.order("created_at").page(params[:page]).per(15)
-   end
+    
+    @search = Photo.search(params[:q])
+    @photos = @search.result.page(params[:page]).per(15)
+    @search.build_condition
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @photos }
@@ -19,7 +19,8 @@ class PhotosController < ApplicationController
   # GET /photos/1
   # GET /photos/1.json
   def show
-    @photo = Photo.find(params[:id])
+    
+    @photo = Photo.find(params[:id],:include =>[:events])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -31,6 +32,8 @@ class PhotosController < ApplicationController
   # GET /photos/new.json
   def new
     @photo = Photo.new
+    
+    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,9 +49,9 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(params[:photo])
+    @photo = Photo.new(params[:photo],params[:related_object])
     @photo.user_id = current_user.id
-
+    related_object(@photo,params)
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }

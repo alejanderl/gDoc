@@ -15,7 +15,16 @@
   <%=  t("metadata.start_date") %>:
   <%= @video.date %>
 </p>
-  <%= raw @yt_client.my_video(@video.yt_id).embed_html5 %><p>
+   <%=
+      
+      begin
+        raw @yt_client.my_video(@video.yt_id).embed_html5
+
+    rescue
+      puts "S #{$!}"
+    ensure 
+      
+    end %><p>
   <b><%=  t("metadata.creator") %>:</b>
   <%= @video.creator %>
 </p>
