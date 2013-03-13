@@ -1,8 +1,9 @@
-<div id="add-related-buttons">
-
-  <%= link_to "new photo", new_photo_url(:type => t.class.to_s.downcase, :id => t.id)%>
-  <%= link_to "new audio", new_audio_url(:type => t.class.to_s.downcase, :id => t.id)%>
-  <%= link_to "new document", new_document_url(:type => t.class.to_s.downcase, :id => t.id)%>
-  <%= link_to "new video", new_video_url(:type => t.class.to_s.downcase, :id => t.id)%>
-
+<div id="add-related" ><span class="add-related-deploy btn btn-medium btn-edit" title="<%= t"button.add_related_content"%>" alt="<%= t"button.add_related_content"%>"><span class=" icon-plus">&nbsp;</span><span class=" icon-magnet"></span></span>
+  <div id="add-related-buttons">
+    <% the_class =" btn btn-large"%>
+    <%= link_to (raw '<span class=" icon-plus"></span>&nbsp;photo'), new_photo_url(:type => t.class.to_s.downcase, :id => t.id), :class => the_class%>
+    <%= link_to (raw '<span class=" icon-plus"></span>&nbsp;audio'), new_audio_url(:type => t.class.to_s.downcase, :id => t.id),:class => the_class%>
+    <%= link_to (raw '<span class=" icon-plus"></span>&nbsp;document'), new_document_url(:type => t.class.to_s.downcase, :id => t.id),:class => the_class%>
+    <%= link_to (raw '<span class=" icon-plus"></span>&nbsp;video'), new_video_url(:type => t.class.to_s.downcase, :id => t.id),:class => the_class%>
+  </div>
 </div>

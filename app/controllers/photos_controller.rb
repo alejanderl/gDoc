@@ -51,7 +51,9 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(params[:photo],params[:related_object])
     @photo.user_id = current_user.id
-    related_object(@photo,params)
+    
+    is_related_to(@photo,params)
+    
     respond_to do |format|
       if @photo.save
         format.html { redirect_to @photo, notice: 'Photo was successfully created.' }

@@ -48,6 +48,7 @@ class DocumentsController < ApplicationController
   def create
     @document = Document.new(params[:document])
     @document.user_id = current_user.id
+    is_related_to(@document,params)
     respond_to do |format|
       if @document.save
         format.html { redirect_to @document, notice: 'Document was successfully created.' }

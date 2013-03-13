@@ -59,6 +59,7 @@ class CyclesController < ApplicationController
   def create
     @cycle = Cycle.new(params[:cycle])
     @cycle.user_id = current_user.id
+    is_related_to(@cycle,params)
     add_terms(params["terms-id"],@cycle)
 
     respond_to do |format|

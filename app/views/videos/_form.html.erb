@@ -80,7 +80,8 @@
     <%= f.label :tag_list, "Tags (separated by commas)" %><br />
     <%= f.text_field :tag_list %>
   </div>
-
+  <%= hidden_field_tag "related_object[id]", params[:id] %>
+  <%= hidden_field_tag "related_object[type]", params[:type] %>
   <div class="actions">
     <%= f.submit %>
   </div>

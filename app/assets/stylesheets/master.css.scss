@@ -318,9 +318,40 @@ overflow: visible !important;
     background-image: none;
     
 }
-.btn-edit:hover {
+.btn-edit {
+    &:hover, &.active {
     background-color:#0088cc;
     color:#fff;
     background-image:none;
+    }
+    
 }
 
+
+
+//#-------------------------------------------#
+#add-related {
+    
+    &.active {
+	border:1px dotted #ccc;
+	box-shadow: 1px 1px 3px #ccc;
+	padding:10px;
+	border-radius:10px;
+	display:inline-block;
+    }
+    
+    
+    div#add-related-buttons{
+	
+	display:none;
+	a {
+	    color:#666;
+	    margin-top:10px;
+	    &:hover {
+		color: #39f;
+		
+	    }
+	}
+	
+    }
+}

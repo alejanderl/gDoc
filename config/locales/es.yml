@@ -39,6 +39,7 @@ es:
 
 
   button:
+    add_related_content: "Ańadir contenido relacionado"
 
   title:
    new_cycle: "Nuevo ciclo"

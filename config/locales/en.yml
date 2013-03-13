@@ -40,6 +40,7 @@ en:
     destroy: "Destroy"
 
   button:
+    add_related_content: "Add related content"
 
   title:
    new_cycle: "New Cycle"

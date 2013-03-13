@@ -91,5 +91,9 @@ class ApplicationController < ActionController::Base
   def default_url_options(options = {})
     {locale: I18n.locale}
   end
+  
+  def is_related_to(object,params)
+    eval("object.#{params[:related_object][:type].pluralize}  <<  #{params[:related_object][:type].capitalize}.find(#{params[:related_object][:id]})") if params[:related_object].present?
+  end
 
 end

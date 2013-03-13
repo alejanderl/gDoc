@@ -24,7 +24,6 @@ class BroadcastVideoUploader
   def upload_file_youtube(file)
 
     yt_client ||= YouTubeIt::Client.new(:username => YouTubeITConfig.username , :password => YouTubeITConfig.password , :dev_key => YouTubeITConfig.dev_key)
-    
 
     begin      
       yt_client.video_delete(@video.yt_id) if @video.yt_id.present?

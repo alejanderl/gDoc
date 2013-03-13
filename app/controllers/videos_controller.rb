@@ -62,7 +62,7 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(params[:video])
     @video.user_id = current_user.id
-    add_terms(params["terms-id"],@video)
+    is_related_to(@video,params)
     respond_to do |format|
       if @video.save
         format.html { redirect_to @video, notice: 'Video was successfully created.' }
