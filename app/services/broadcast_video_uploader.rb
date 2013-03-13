@@ -11,7 +11,7 @@ class BroadcastVideoUploader
     
     begin
       file = open witch_file.video_file.url
-      my_file = File.open("tmp/cache/files_temp/#{witch_file.filename}","wb")
+      my_file = File.open("public/#{witch_file.filename}","wb")
       my_file.write file.read
       my_file.close
       self.upload_file_youtube(my_file)
@@ -29,7 +29,7 @@ class BroadcastVideoUploader
     begin      
       yt_client.video_delete(@video.yt_id) if @video.yt_id.present?
       @video.yt_id=""
-      yt_response = yt_client.video_upload( File.open("tmp/cache/files_temp/#{@video.filename}"), :title => @video.title,:description => @video.description, :category => 'People',:keywords => @video.terms_csv, :dev_tag => 'tagdev')     
+      yt_response = yt_client.video_upload( File.open("public/#{@video.filename}"), :title => @video.title,:description => @video.description, :category => 'People',:keywords => @video.terms_csv, :dev_tag => 'tagdev')     
      @video.yt_id = yt_response.unique_id if yt_response.unique_id.present?
     rescue
     end
