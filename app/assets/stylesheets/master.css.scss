@@ -178,15 +178,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', end
     
     .name {
 	
-        font-family: Cabin;
+	background-color: white;
+	border: 0 none;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 1px 1px -1px #CCCCCC;
+	font-family: Cabin;
+	font-size: 21px;
 	font-weight: 500;
 	line-height: 80%;
-        font-size:21px;
-        font-shadow: 0px 0px 1px 0px #0ff;
-        margin-bottom:10px;
-	
+	margin: 0 0 20px;
+	padding: 10px 20px;
+	    
         & a {
-            color:#555;
+            color:#333;
             text-decoration: none;
             &:hover {
                 background-color:transparent;
