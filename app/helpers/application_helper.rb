@@ -7,7 +7,11 @@ module ApplicationHelper
   end
   
   def related_events_cycles object
-    render "shared/related_objects"
+    render "shared/related_objects", t: => object
+  end
+  
+  def related_objects_min(t)
+    render "shared/related_objects/related_objects_min", :object => t if t.terms.first.present?
   end
 
 end

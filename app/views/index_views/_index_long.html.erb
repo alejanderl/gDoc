@@ -9,25 +9,28 @@
     <div class="name">
       <%= link_to t.title,t %>
     </div>   
-    <div class="creator">
-      <%= t.creator  %>
-    </div>
-    <div class="contributor">
-      <%= t.contributor  %>
-    </div>
+
 
     <div class="description">
       <%= t.description.html_safe  %>
+      
+      <div class="creator">
+       <%= t.creator  %>
+      </div>
+      <div class="contributor">
+        <%= t.contributor  %>
+      </div>
+      
     </div>
+    
+        <%= terms_list(t) %>
+        <%= related_objects_min(t) %>
     <div class="start-end-date">
       <%= t.start_date %>/<%= t.end_date if t.end_date.present? %>
     </div>
 
 
 
-    <div class="notes">
-      <%= t.notes  %>
-    </div>
 
 
    <div id="tag-notes">

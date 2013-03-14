@@ -27,5 +27,10 @@ module TaxonomiesHelper
     end
     final_render.html_safe
   end
+  
+  def terms_list(object)
+    render "taxonomies/terms_list", :var => object
+    
+  end
 
 end

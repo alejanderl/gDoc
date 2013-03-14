@@ -9,7 +9,20 @@ jQuery ->
           $(this).toggleClass "active"
           $(this).parent("#add-related ").toggleClass "active"
           $(this).nextAll("div#add-related-buttons").toggle ->
+               
+               
+     $('.box_container .description').expander 
+          slicePoint:       200
+          expandPrefix:     ' '
+          expandText:       '...<br/>[...]'
+          collapseTimer:    0
+          userCollapseText: '[^]'
 
-     return
+     
+     
+     
+
+     
+     undefined
    
     

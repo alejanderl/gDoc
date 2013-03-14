@@ -16,6 +16,7 @@ en:
     password: "password"
     your_email: "your email"
     sign_in: "Sign in"
+    terms: "terms"
 
   taxonomies:
     art: "Art"
