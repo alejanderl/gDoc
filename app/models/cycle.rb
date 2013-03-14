@@ -11,5 +11,26 @@ class Cycle < ActiveRecord::Base
 
   has_many :participates, :as => :participable  
   has_many :participants, :through => :participates
+  
+  def videos
+    videos = []
+    self.events.each {|x| videos += x.videos}
+    videos    
+  end
+    def audios
+    audios = []
+    self.events.each {|x| audios += x.audios}
+    audios    
+  end
+  def photos
+    photos = []
+    self.events.each {|x| photos += x.photos}
+    photos    
+  end
+  def documents
+    documents = []
+    self.events.each {|x| documents += x.documents}
+    documents    
+  end  
 
 end

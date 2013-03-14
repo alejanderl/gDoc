@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  
+ 
 
   attr_accessible :cycle_ids, :date, :description, :participant_id, :time, :title, :tag_list, :creator, :contributor, :start_date, :end_date, :notes
   validates_presence_of :title, :description
@@ -16,5 +18,12 @@ class Event < ActiveRecord::Base
   
   has_many :taxonomizables, :as => :item, :dependent => :destroy
   has_many :terms, :through => :taxonomizables
+  
+  default_scope includes(:audios, :videos, :documents, :photos, :cycles)
+  
+  def related_objects
+   
+    
+  end
 
 end

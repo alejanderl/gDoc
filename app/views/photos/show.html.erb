@@ -47,8 +47,7 @@
   </div>
   </p>
   
-  
-  <% @photo.events.each {|x| concat link_to (raw "<b>#{x.title}</b>"),x} if @photo.events.present? %>
+  <%= related_parent(@photo) %>
   <%= edit_button @photo %> 
   
 

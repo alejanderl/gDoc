@@ -67,7 +67,7 @@
   <b><%=  t("metadata.notes") %>:</b>
   <%= @video.notes %>
 </p>
-
+ <%= related_parent(@video) %>
 <p>
   <%= link_to (t"misc.youtube_publish"), upload_youtube_url(@video) ,:class => "btn btn-medium"%>
   <%= edit_button @video %>
