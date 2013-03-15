@@ -8,6 +8,13 @@
   <h1><%= @cycle.title %></h1>
 
 </p>
+<div class="description">
+<p>
+  <em><%=  t("metadata.description") %>:</em>
+
+  <%= raw @cycle.description %>
+</p>   
+</div>
 <p>
   <b><%= t"metadata.creator" %></b>
   <h1><%= @cycle.creator %></h1>
@@ -29,11 +36,7 @@
 </p>
 
 
-<p>
-  <b><%=  t("metadata.description") %>:</b>
 
-  <%= raw @cycle.description %>
-</p>
 
 
 <p>
@@ -68,7 +71,7 @@
      
   </div>
 </p>
-
+ <%= render "events/partials/media_list", :t => @cycle %>
 
 <p>
   <b>Associated events:</b>

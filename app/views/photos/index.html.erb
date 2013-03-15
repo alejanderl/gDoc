@@ -24,9 +24,9 @@
 
 
 
-<div id="masonry-container">
+<div id="masonry-container" class="transitions-enabled  clearfix">
     <% @photos.each do |t|%>   
-      <div class="box_container span2">
+      <div class="box_container span2 col1 box">
        
         <div class="favourites">
         <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>

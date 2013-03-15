@@ -101,4 +101,5 @@ gem 'rails3-jquery-autocomplete'
 # dealing with youtube API
 gem "youtube_it", "~> 2.1.13"
 
-
+# Masonry / Isotipe
+#gem 'masonry-rails'

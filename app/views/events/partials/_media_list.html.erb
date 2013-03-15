@@ -1,0 +1,23 @@
+  <div class="tabbable media-objects"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <%= "<li class='active'><a href='#tab1' data-toggle='tab'>#{ t "global.photos" }</a></li>".html_safe if t.photos.count != 0 %>
+    <%= "<li><a href='#tab2' data-toggle='tab'>#{t"global.videos"}</a></li>".html_safe if t.videos.count != 0  %>
+    <%= "<li><a href='#tab3' data-toggle='tab'>#{t"global.audios"}</a></li>".html_safe if t.audios.count != 0 %>
+    <%= "<li><a href='#tab4' data-toggle='tab'>#{t"global.documents"} </a></li>".html_safe if t.documents.count != 0 %>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active photos" id="tab1">
+        <%= render "photos/partials/short_list", :photos => t.photos if t.photos.count != 0 %>
+    </div>
+    <div class="tab-pane videos" id="tab2">
+      <%= render "videos/partials/short_list", :videos => t.videos  if t.videos.count != 0 %>
+    </div>
+    <div class="tab-pane audios" id="tab3">
+      <%= render "audios/partials/short_list", :audios => t.audios  if t.audios.count != 0 %>
+    </div>
+    <div class="tab-pane documents" id="tab4">
+      <%= render "documents/partials/short_list", :documents => t.documents  if t.documents.count != 0 %>
+    </div>
+  </div>
+</div>
+  

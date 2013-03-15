@@ -8,6 +8,13 @@
     <b><%= t"global.event" %></b>
    <h1> <%= @event.title %></h1>
   </p>
+  <div class="description">
+    <p>
+      <em><%=  t("form.description") %>:</em>
+      <%= sanitize @event.description %>
+      
+    </p>
+  </div>
   <p>
     <b><%= t"metadata.creator" %></b>
        <%= @event.creator %>
@@ -40,11 +47,7 @@
     <%= @event.time.strftime('%H:%M') if !@event.time.nil? %>
   </p>
   
-  <p>
-    <b><%=  t("form.description") %>:</b>
-    <%= sanitize @event.description %>
 
-  </p>
 
   <p>
     <b><%=  t("form.notes") %>:</b>
@@ -70,29 +73,7 @@
   </p>
   
   
-  <div class="tabbable"> <!-- Only required for left/right tabs -->
-  <ul class="nav nav-tabs">
-    <%= "<li class='active'><a href='#tab1' data-toggle='tab'>#{ t "global.photos" }</a></li>".html_safe if @event.photos.count != 0 %>
-    <%= "<li><a href='#tab2' data-toggle='tab'>#{t"global.videos"}</a></li>".html_safe if @event.videos.count != 0  %>
-    <%= "<li><a href='#tab3' data-toggle='tab'>#{t"global.audios"}</a></li>".html_safe if @event.audios.count != 0 %>
-    <%= "<li><a href='#tab4' data-toggle='tab'>#{t"global.documents"} </a></li>".html_safe if @event.documents.count != 0 %>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane active" id="tab1">
-        <%= render "photos/partials/short_list", :photos => @event.photos if @event.photos.count != 0 %>
-    </div>
-    <div class="tab-pane" id="tab2">
-      <%= render "videos/partials/short_list", :videos => @event.videos  if @event.videos.count != 0 %>
-    </div>
-    <div class="tab-pane" id="tab3">
-      <%= render "audios/partials/short_list", :audios => @event.audios  if @event.audios.count != 0 %>
-    </div>
-    <div class="tab-pane" id="tab4">
-      <%= render "documents/partials/short_list", :documents => @event.documents  if @event.documents.count != 0 %>
-    </div>
-  </div>
-</div>
-  
+ <%= render "events/partials/media_list", :t => @event %>
   
   
 
