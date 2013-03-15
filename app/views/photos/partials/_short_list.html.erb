@@ -1,0 +1,13 @@
+<div class="photo-thumbnail">
+<ul>
+<% photos.each do  |t|%>
+<li>
+<%= link_to t.title, t %>
+<div class="image">
+  <%= link_to(image_tag(t.image_url(:thumb_150)),t.image_url,:class => "colorbox", :rel => "gallery", :title => t.title , :alt => t.title )  if t.image.present? %>
+</div>
+</li>
+<% end %>
+</ul>
+<div class="clearfix"></div>
+</div>
