@@ -39,19 +39,16 @@
     <div id="audio-player">
       *Pending: This is for the audio player preview
     </div>
-    <div class="creator">
-      <%= t.creator  %>
-    </div>
 
-    <div class="description">
-      <%= sanitize t.description  %>
-    </div>
+
+
     <div class="start-end-date">
+      
       <%= t.date %>
     </div>
 
 
-   <div style="background-color: #E89BB6">
+   <div >
       <%= t.tag_list {|t| t} %>
    </div>
 

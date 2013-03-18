@@ -4,7 +4,7 @@
   <p id="notice"><%= notice %></p>
   
   <p>
-  <b><%= t"global.photo" %></b>
+  <span><%= t"global.photo" %></span>
   <h1><%= @photo.title %></h1>
   </p>
   
@@ -12,37 +12,39 @@
      <%= link_to(image_tag(@photo.image_url(:thumb)),@photo.image_url,:class => "colorbox") if @photo.image.present? %> 
     </div>
   <p>
-    <b><%=  t("metadata.creator") %>:</b>
+      
+    <span class="field-title"><%=  t("metadata.description") %>:</span>
+    <%= sanitize @photo.description %>
+  </p>
+  <p>
+   <span class="field-title">Cycle:</span><%=  t("metadata.creator") %>:</span>
     <%= @photo.creator %>
   </p>
 
 
+
   <p>
-    <b><%=  t("metadata.description") %>:</b>
-    <%= sanitize @photo.description %>
-  </p>
-  <p>
-    <b><%= t("metadata.format") %>:</b>
+    <span class="field-title"><%= t("metadata.format") %>:</span>
     <%= @photo.format %>
   </p>
 
   <p>
-    <b><%=  t("metadata.license") %>:</b>
+    <span  class="field-title"><%=  t("metadata.license") %>:</span>
     <%= @photo.license %>
   </p>
   <p>
-    <b><%=  t("metadata.terms_of_use") %>:</b>
+    <span  class="field-title"><%=  t("metadata.terms_of_use") %>:</span>
     <%= @photo.terms_of_use %>
   </p>
   <p>
-    <b><%=  t("metadata.notes") %>:</b>
+    <span class="field-title"><%=  t("metadata.notes") %>:</span>
     <%= @photo.notes %>
   </p>
 
   
   <p>
-  <b>Tags:</b>
-  <div style="background-color: #E89BB6">
+  <span class="field-title">Tags:</span>
+  <div >
       <%= @photo.tag_list {|t| t} %>
   </div>
   </p>

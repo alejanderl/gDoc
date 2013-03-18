@@ -18,23 +18,25 @@
     <%= f.label t("metadata.title"), :class => "form-title"%>
     <%= f.text_field :title , :class => "form-title span6"%>
   </div>
-    <div class="field">
+
+  <div class="field">
+    <%= f.label t("metadata.description") %>
+    <%= f.text_area :description, :class => "tinymce span6" %>
+    <%= tinymce %>
+  </div>
+  
+  <div class="field">
     <%= f.label t("metadata.creator") %>
     <%= f.text_field :creator, :class=> "span6" %>
   </div>
-    <div class="field">
+  
+  <div class="field">
     <%= f.label t("metadata.contributor") %>
     <%= f.text_field :contributor, :class=> "span6" %>
   </div>
-    <div class="field">
-    <%= f.label t("metadata.description") %>
-    <%= f.text_area :description, :class => "tinymce" %>
-    <%= tinymce %>
-
-  </div>
+  
   <div class="field">
     <%= f.label t("metadata.participants") %>
-
   </div>
 
   <div class="field">
@@ -49,24 +51,27 @@
   </div>
   <div class="field">
     <%= f.label t("global.address") %>
-
   </div>
 
 
   <div class="clearfix"></div>
 
-    <div  class="tags">
-      <%= tags_autocomplete(f) %>
-    </div>
+  <div  class="tags">
+    <%= tags_autocomplete(f) %>
+  </div>
 
-    
-    <%= terms_field_for "tech", @cycle %>
-    
-    <%= terms_field_for "art", @cycle %>
+  
+  <%= terms_field_for "tech", @cycle %>
+  
+  <%= terms_field_for "art", @cycle %> 
 
   <div class="field">
-    <%= f.label t("global.notes") %>
-    <%= f.text_area :notes, :class=> "span6" %>
+    <a type="button" class="field-title " data-toggle="collapse" data-target="#notes">
+     <%= f.label t("global.add_notes") %>
+    </a>
+    <div id="notes" class="collapse ">
+      <%= f.text_area :notes, :class=> "span6" %>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit :class => "btn btn-large btn-primary" %>

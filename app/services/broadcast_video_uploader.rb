@@ -4,7 +4,12 @@ class BroadcastVideoUploader
     
     @video = video_with_file
     get_file(@video)
+    @yt_client ||= YouTubeIt::Client.new(:username => YouTubeITConfig.username , :password => YouTubeITConfig.password , :dev_key => YouTubeITConfig.dev_key)
     
+  end
+  
+  def delete_file
+    @yt_client.delete
   end
   
   def get_file(witch_file)
@@ -23,12 +28,10 @@ class BroadcastVideoUploader
     
   def upload_file_youtube(file)
 
-    yt_client ||= YouTubeIt::Client.new(:username => YouTubeITConfig.username , :password => YouTubeITConfig.password , :dev_key => YouTubeITConfig.dev_key)
-
     begin      
-      yt_client.video_delete(@video.yt_id) if @video.yt_id.present?
+      @yt_client.video_delete(@video.yt_id) if @video.yt_id.present?
       @video.yt_id=""
-      yt_response = yt_client.video_upload( File.open("public/#{@video.filename}"), :title => @video.title,:description => @video.description, :category => 'People',:keywords => @video.terms_csv, :dev_tag => 'tagdev')     
+      yt_response = @yt_client.video_upload( File.open("public/#{@video.filename}"), :title => @video.title,:description => @video.description, :category => 'People',:keywords => @video.terms_csv, :dev_tag => 'tagdev')     
      @video.yt_id = yt_response.unique_id if yt_response.unique_id.present?
     rescue
     end

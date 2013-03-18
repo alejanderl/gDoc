@@ -51,6 +51,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     @event.user_id = current_user.id
+    add_terms(params["terms-id"],@event)
     is_related_to(@event,params)
     respond_to do |format|
       if @event.save
@@ -67,7 +68,7 @@ class EventsController < ApplicationController
   # PUT /events/1.json
   def update
     @event = Event.find(params[:id])
-
+    add_terms(params["terms-id"],@event)
     respond_to do |format|
       if @event.update_attributes(params[:event])
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }

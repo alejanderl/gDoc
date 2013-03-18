@@ -5,7 +5,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b><%= t"global.participant" %></b>
+  <span class="field-title"><%= t"global.participant" %></span>
   <h1><%= @participant.name %></h1>
 </p>
 
@@ -13,19 +13,19 @@
       <%= image_tag @participant.image_url(:thumb) if @participant.image? %>
     </div>
 <p>
-  <b><%=  t("misc.bio") %></b>
+  <span class="field-title"><%=  t("misc.bio") %></span>
   <%= sanitize @participant.bio %>
 </p>
 
 <p>
-  <b>Tags:</b>
-  <div style="background-color: #E89BB6">
+  <span class="field-title">Tags:</span>
+  <div>
       <%=  @participant.tag_list {|t| t} %>
   </div>
 </p>
 
 <p>
-  <b><%=  t("misc.content_related") %></b>
+  <span class="field-title"><%=  t("misc.content_related") %></span>
   <%#= @photo.content_related %>
 </p>
 

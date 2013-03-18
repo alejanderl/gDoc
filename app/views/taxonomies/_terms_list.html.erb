@@ -1,8 +1,11 @@
-<div class="terms_list">
-  <h6><%= t"global.terms" %></h6>
+<%  if var.terms.count != 0   %>
+<div class="terms-list">
+<em class="field-title"><%= t"global.terms" %>:</em>
   <ul class= "terms">
+    
   <% var.terms.each {|x| concat "<li>#{x.name}</li>".html_safe}%>
    <div class= "clearfix"></div>
   </ul>
  
 </div>
+<% end %>

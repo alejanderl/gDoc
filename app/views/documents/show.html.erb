@@ -8,42 +8,43 @@
    <h1><%= @document.title %></h1>
  </p>
   
- <p>
-   <b><%=  t("metadata.creator") %>:</b>
-   <%= @document.creator %>
- </p>
+
 
 
  <p>
-   <b><%=  t("metadata.date") %>:</b> 
+   <span class="field-title"><%=  t("metadata.date") %>:</span> 
    <%= @document.date %>
  </p>
  
  <p>
-   <b><%=  t("metadata.description") %>:</b>
+   <span class="field-title"><%=  t("metadata.description") %>:</span>
    <%= sanitize @document.description %>
  </p>
   <p>
-   <b><%=  t("metadata.language") %>:</b>
+   <span class="field-title"><%=  t("metadata.creator") %>:</span>
+   <%= @document.creator %>
+ </p>
+  <p>
+   <span class="field-title"><%=  t("metadata.language") %>:</span>
    <%= @document.language %>
  </p>
 
  <p>
-   <b><%=  t("metadata.license") %>:</b>
+   <span class="field-title"><%=  t("metadata.license") %>:</span>
    <%= @document.license %>
  </p>
   <p>
-   <b><%=  t("metadata.terms_of_use") %>:</b>
+   <span class="field-title"><%=  t("metadata.terms_of_use") %>:</span>
    <%= @document.terms_of_use %>
  </p>
 
  <p>
-   <b><%=  t("metadata.format") %>:</b>
+   <span class="field-title"><%=  t("metadata.format") %>:</span>
    <%= @document.format %>
  </p>
  
  <p>
-   <b><%=  t("global.notes") %>:</b>
+   <span class="field-title"><%=  t("global.notes") %>:</span>
    <%= @document.notes %>
  </p>
  
@@ -51,8 +52,8 @@
  
  
  <p>
-   <b>Tags:</b>
-   <div style="background-color: #E89BB6">
+   <span class="field-title">Tags:</span>
+   <div >
  
        <%= @document.tag_list {|t| t} %>
    </div>

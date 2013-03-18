@@ -76,7 +76,9 @@
       <%= f.text_area :notes %>
     </div>
 
-
+    <%= terms_field_for "tech", @event %>
+    
+    <%= terms_field_for "art", @event %>
      <div  class="tags">
       <%=  tags_autocomplete f %>
     </div>

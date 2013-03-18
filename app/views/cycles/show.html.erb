@@ -1,88 +1,76 @@
 <div  id="single-asset" class="span7 ofsset1">
-   <%= favourite_button(@cycle) if current_user.present? %>
-  <p id="notice"><%= notice %></p>
+      <%= favourite_button(@cycle) if current_user.present? %>
+     <p id="notice"><%= notice %></p>
+   
+   <p>
+     <span><%= t"global.cycle" %></span>
+     <h1><%= @cycle.title %></h1>
+   </p>
+   <div class="description">
+      <p>
+        <span class="field-title"><%=  t("metadata.description") %>:</span>
+        <%= raw @cycle.description %>
+      </p>   
+   </div>
+   
+   <% if @cycle.creator.present? %>
+      <p>
+        <span class="field-title"><%= t"metadata.creator" %></span>
+        <%= @cycle.creator %>
+      </p>
+   <% end %>
 
-<p>
-
-  <b><%= t"global.cycle" %></b>
-  <h1><%= @cycle.title %></h1>
-
-</p>
-<div class="description">
-<p>
-  <em><%=  t("metadata.description") %>:</em>
-
-  <%= raw @cycle.description %>
-</p>   
-</div>
-<p>
-  <b><%= t"metadata.creator" %></b>
-  <h1><%= @cycle.creator %></h1>
-</p>
-
-
-<p>
-  <span class="contributor"><%= t"metadata.contributor" %></span>
-  <p><%= @cycle.contributor %></p>
-</p>
-
-<p>
-  <b><%=  t("metadata.address") %>:</b>
-
-  <% @cycle.addresses do |a| %>
-
-  <% end %>
-
-</p>
-
-
-
-
-
-<p>
-  <b><%=  t("metadata.start_date") %>:</b>
-  <%= @cycle.start_date %>
-</p>
-
-<p>
-  <span class="end-date"><%=  t("metadata.end_date") %>:</span>
-  <%= @cycle.end_date %>
-</p>
-
-<p>
-  <span><%=  t("metadata.notes") %>:</span>
-
-  <%= @cycle.notes %>
-</p>
+   <% if @cycle.contributor.present? %>
+      <p>
+        <span class="field-title"><%= t"metadata.contributor" %></span>
+        <p><%= @cycle.contributor %></p>
+      </p>
+   <% end %>
+   <p>
+     <span class="field-title"><%=  t("metadata.address") %>:</span>  
+     <% @cycle.addresses do |a| %> 
+     <% end %>   
+   </p>
+   
+   <% if @cycle.start_date.present? %>
+      <p>
+        <span class="field-title"><%=  t("metadata.date") %>:</span>
+        <%= @cycle.start_date %> <%= " / #{@cycle.end_date}" if @cycle.end_date.present? %>
+      </p>     
+   <%end%>
 
 
-<p>
-  <b>Tags:</b>
-  <div style="background-color: #E89BB6">
-      <%= @cycle.tag_list {|t| t} %>
-  </div>
-</p>
+   <% if @cycle.notes.present? %>
+      <p>
+        <span><%=  t("metadata.notes") %>:</span>
+       <%= @cycle.notes %>
+      </p>
+   <% end %>
+   
+   <% if @cycle.tag_list.count > 0 %>   
+      <p>
+        <span class="field-title">Tags:</span>
+         <%= @cycle.tag_list {|t| t} %>
+      </p>
+   <%end%>
 
-<p>
-  <b>Terms:</b>
-  <div >
-    <%= print_terms_for("art","tech") %>
-    
-     
-  </div>
-</p>
- <%= render "events/partials/media_list", :t => @cycle %>
-
-<p>
-  <b>Associated events:</b>
- <ul>
-  <% @cycle.events.each  do |event|  %>
-    <li><%= link_to event.title, event %></li>
-    <% end %>
-  </ul>
-
-</p>
-
+   <p>
+     <span class="field-title">Terms:</span>
+       <%= print_terms_for(@cycle,"art","tech") %>
+   </p>
+   
+   <%= render "events/partials/media_list", :t => @cycle %>
+   <% if @cycle.events.count > 0 %>
+      <p>
+        <span class="field-title">Associated events:</span>
+       <ul>
+        <% @cycle.events.each  do |event|  %>
+          <li><%= link_to event.title, event %></li>
+          <% end %>
+        </ul>
+      
+      </p>
+   <% end %>
   <%= edit_button @cycle %>
 </div>
 <%= link_to t("link.back"), cycles_path %>

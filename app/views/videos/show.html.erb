@@ -5,7 +5,7 @@
 <p>
 
 
-  <b><%= t"global.video" %></b>
+  <span><%= t"global.video" %></span>
   <h1><%= @video.title %></h1>
 
 </p>
@@ -26,14 +26,14 @@
       
     end %><p>
   <p>
-  <b><%=  t("metadata.description") %>:</b>
+  <span><%=  t("metadata.description") %>:</span>
   <%= sanitize @video.description %>
 </p>
-  <b><%=  t("metadata.creator") %>:</b>
+  <span><%=  t("metadata.creator") %>:</span>
   <%= @video.creator %>
 </p>
   <p>
-   <b><%=  t("metadata.participants") %>:</b>
+   <span><%=  t("metadata.participants") %>:</span>
       <% @video.participants do |p| %>
       <% end %>
   </p>
@@ -42,30 +42,30 @@
 
 
 <p>
-  <b><%= t("metadata.license") %>:</b>
+  <span><%= t("metadata.license") %>:</span>
   <%= @video.license %>
 </p>
 <p>
-  <b><%=  t("metadata.terms_of_use") %>:</b>
+  <span><%=  t("metadata.terms_of_use") %>:</span>
   <%= @video.terms_of_use %>
 </p>
 
 <p>
-  <b><%=  t("metadata.format") %>:</b>
+  <span><%=  t("metadata.format") %>:</span>
   <%= @video.format %>
 </p>
 
 <p>
-  <b><%=  t("metadata.duration") %>:</b>
+  <span><%=  t("metadata.duration") %>:</span>
   <%= @video.duration %>
 </p>
 
 <p>
-  <b><%=  t("metadata.language") %>:</b>
+  <span><%=  t("metadata.language") %>:</span>
   <%= @video.language %>
 </p>
 <p>
-  <b><%=  t("metadata.notes") %>:</b>
+  <span><%=  t("metadata.notes") %>:</span>
   <%= @video.notes %>
 </p>
  <%= related_parent(@video) %>

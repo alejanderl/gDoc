@@ -25,11 +25,11 @@ $transition_style : linear;
 }
 
 @mixin description {
-	padding:20px;
+	padding:20px 10% 20px 5%;
 	background-color:rgba(255,255,255,0.6);
 	border-radius:5px;
 	box-shadow:0 1px 2px -1px rgba(0,0,0,0.2);
-	margin: 0 10% 0 5%;
+
 }
 
 .globalWide {
@@ -200,21 +200,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', end
     border: 3px solid rgba(155,155,155,0.5);
     box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     
-    ul.terms {
-        margin:0 10px;
-        display: block;
-        border:1px dotted #ccc;
-        border-radius:5px;
-        li {
-            float:left;
-            padding: 10px 5px;
-            list-style: none;
-            border-radius: 5px;
-            background-color:rgba(255,255,255,0.7);
-            margin:5px 3px;
-            
-        }
-    }
+    
     
     .name {
         
@@ -418,4 +404,22 @@ overflow: visible !important;
 }
 #video-container .box_container img {
     width: 250px;
+}
+.start-end-date em {
+    color:#ccc;
+}
+.field-title {
+    color:#ccc;
+}
+
+// ----- Related media ------//
+.related-media {
+    ul {
+	list-style: none;
+	margin:0;
+	li {
+	    margin :3px;
+	    float:left;
+	}
+    }
 }

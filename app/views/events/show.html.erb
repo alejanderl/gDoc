@@ -5,74 +5,84 @@
   <%= favourite_button(@event) if current_user.present? %>
   <p id="notice" class="badge badge-warning"><%= notice %></p>
   <p>
-    <b><%= t"global.event" %></b>
-   <h1> <%= @event.title %></h1>
+    <span><%= t"global.event" %></span>
+    <h1> <%= @event.title %></h1>
   </p>
   <div class="description">
     <p>
-      <em><%=  t("form.description") %>:</em>
-      <%= sanitize @event.description %>
-      
+      <em class="field-title"><%=  t("form.description") %>:</em>
+      <%= sanitize @event.description %> 
     </p>
   </div>
-  <p>
-    <b><%= t"metadata.creator" %></b>
-       <%= @event.creator %>
-  </p>
-  <p>
-    <b><%= t"metadata.contributor" %></b>
-    <%= @event.contributor %>
-  </p>
+  <% if @event.creator.present? %>
+    <p>
+      <span class="field-title"><%= t"metadata.creator" %></span>
+      <%= @event.creator %>
+    </p>
+  <% end %>
 
-  <p>
-   <b><%=  t("metadata.participant") %>:</b>
+  <% if @event.participants.present? %>
+    <p>
+      <span class="field-title"><%= t"metadata.contributor" %></span>
+      <%= @event.contributor %>
+    </p>
+  <% end %>
+  
+  <% if @event.participants.count > 0 %>
+    <p>
+     <span class="field-title"><%=  t("metadata.participant") %>:</span>
       <% @event.participants do |p| %>
       <% end %>
-  </p>
+    </p>
+  <% end %>
 
   <p>
-   <b><%=  t("metadata.address") %>:</b>
+   <span class="field-title"><%=  t("metadata.address") %>:</span>
       <% @event.addresses do |a| %>
       <% end %>
   </p>
 
- 
+  <% if @event.date.present? %>
+    <p>
+      <span class="field-title"><%=  t("form.date") %> :</span>
+      <%= @event.date %>  <%= " - #{@event.time.strftime('%H:%M')}" if !@event.time.nil? %>
+    </p>
+    
+    <p>
+     
+     
+    </p>
+  <% end %>
+
+  <% if @event.notes.present? %>
+    <p>
+      <span class="field-title"><%=  t("form.notes") %>:</span>
+      <%= @event.notes %>
+    </p>
+  <% end %>
+
+
+  <% if @event.tags.present? %>
+    <p>
+      <span class="field-title"><%=  t("form.tags") %>:</span>
+      <div >
+          <%= @event.tag_list {|t| t} %>
+      </div>
+    </p>
+  <% end %>
+
   <p>
-    <b><%=  t("form.start_date") %></b>
-    <%= @event.date %>
-  </p>
-  
-  <p>
-    <b>Time:</b>
-    <%= @event.time.strftime('%H:%M') if !@event.time.nil? %>
-  </p>
-  
-
-
-  <p>
-    <b><%=  t("form.notes") %>:</b>
-    <%= @event.notes %>
-  </p>
-
-
-
-<p>
-  <b>Tags:</b>
-  <div >
-      <%= @event.tag_list {|t| t} %>
-  </div>
-</p>
-
-  <p>
-   <b>Cycle:</b>
-     <% if @event.cycles.present? %>  
+    
+     <% if @event.cycles.present? %>
+      <span class="field-title">Cycle:</span>
        <%  @event.cycles.each do |c|  %>
           <td><%= link_to c.title, c %></td>
        <% end %>
     <% end %>
   </p>
   
-  
+ <%= print_terms_for(@event,"art","tech") %>
+
  <%= render "events/partials/media_list", :t => @event %>
   
   

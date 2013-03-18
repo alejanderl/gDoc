@@ -8,26 +8,28 @@
     </div>
     <div class="name">
       <%= link_to t.title,t %>
-    </div>   
+    </div>
+    <% if t.class.to_s == "Cycle" %>
+      <div class="start-end-date">
+       <em><%= t"global.date" %>: </em><%= t.start_date %> / <%= t.end_date if t.end_date.present? %>
+      </div>
+   <% end %>
+    <% if t.class.to_s == "Event" && t.date.present? %>
+      <div class="start-end-date">
+        <span class="field-title"><%=  t("form.date") %> :</span>
+        <%= t.date %>  <%= " - #{t.time.strftime('%H:%M')}" if !t.time.nil? %>
+      </div>
+  <% end %>
 
 
     <div class="description">
       <%= t.description.html_safe  %>
-      
-      <div class="creator">
-       <%= t.creator  %>
-      </div>
-      <div class="contributor">
-        <%= t.contributor  %>
-      </div>
-      
     </div>
     
     <%= terms_list(t) %>
+    
     <%= related_objects_min(t) %>
-    <div class="start-end-date">
-      <%= t.start_date %>/<%= t.end_date if t.end_date.present? %>
-    </div>
+
 
 
 

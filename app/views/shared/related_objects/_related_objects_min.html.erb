@@ -1,13 +1,20 @@
+<% i=0  
+  %w[videos audios photos documents].each {|x| i += 1 if  eval("object.#{x}.count !=0 ")}
+
+   if i > 0 %>
+
 <div class="related-media">
-  <h6><%= t"global.related_media"%>:</h6>
+  <em class="field-title"><%=  t'global.related_media'%>:</em>
+  
+
   <ul>
     
-    <%= "<li><span class='btn btn-medium'>#{object.videos.count}#{t"main-menu.videos"} </li>".html_safe if object.videos.count != 0  %>
-    <%= "<li><span class='btn btn-medium'>#{object.audios.count}#{t"main-menu.audios"} </li>".html_safe if object.audios.count != 0  %>
-    <%= "<li><span class='btn btn-medium'>#{object.documents.count}#{t"main-menu.documents"} </li>".html_safe if object.documents.count  != 0 %>
-    <%= "<li><span class='btn btn-medium'>#{object.photos.count}#{t"main-menu.photos"} </li>".html_safe if object.photos.count != 0 %>
+    <%= "<li><span class='btn btn-medium'>#{object.videos.count} #{t"main-menu.videos"} </li>".html_safe if object.videos.count != 0  %>
+    <%= "<li><span class='btn btn-medium'>#{object.audios.count} #{t"main-menu.audios"} </li>".html_safe if object.audios.count != 0  %>
+    <%= "<li><span class='btn btn-medium'>#{object.documents.count} #{t"main-menu.documents"} </li>".html_safe if object.documents.count  != 0 %>
+    <%= "<li><span class='btn btn-medium'>#{object.photos.count} #{t"main-menu.photos"} </li>".html_safe if object.photos.count != 0 %>
  <div class="clear-fix"></div>
   </ul>
   
   
-</div>
+</div><% end %>

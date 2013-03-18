@@ -24,34 +24,6 @@
 </div>
 
 
-
-<% @documents.each do |t|%>
-
-  <div class="box_container full-width span7">
-    <div class="favourites">
-      <%#= link_to "add to favourites",add_favourite_path(t.class,t.id), :remote => true %>
-      <%#= favourite_button(t) if current_user.present? %>
-    </div>
-    <div class="name">
-      <%= link_to t.title,document_url(t.id) %>
-    </div>   
-
-    <div class="creator">
-      <%= t.creator  %>
-    </div>
-
-    <div class="description">
-      <%= sanitize t.description  %>
-    </div>
-
-   <div style="background-color: #E89BB6">
-
-    <%= t.tag_list {|t| t} %>
-   </div>
-
-  </div>
-  
-
-<% end %>
+<%= render "index_views/index_long",:objects => @documents %>
 <%= paginate @documents %>
 

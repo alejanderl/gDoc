@@ -16,6 +16,7 @@ es:
     address: "Dirección"
     notes: "Notas"
     terms: "Términos"
+    add_notes: "Ańadir notas"
 
   main-menu:
     cycles: "ciclos"
