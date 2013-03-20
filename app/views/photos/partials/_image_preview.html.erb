@@ -1,0 +1,15 @@
+<div class="field-dotted">
+  <% if object.image.present? %>
+    <%= image_tag object.image_url :thumb,:id => "image-#{object.id}", :class => "image-thumb" %>
+    <span id="remove-image"  class="btn btn-delete icon-remove btn-destroy" title="<%= t"button.remove_image" %>"></span>
+  <% end %>
+  
+  <div class="field" <%= "style=display:none" if object.image.present? %> >
+  
+  
+    <%= f.label t("metadata.image") %><br />
+    <%= f.file_field :image %>
+    
+  </div>
+  <div class="clearfix"></div>
+</div>

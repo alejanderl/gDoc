@@ -12,10 +12,17 @@
       </div>
     <% end %>
 
-    <div class="field">
-      <%= f.label t("metadata.title") %><br />
-      <%= f.text_field :title %>
-    </div>
+  <div class="field">
+    <%= f.label t("metadata.title"), :class => "form-title"%>
+    <%= f.text_field :title , :class => "form-title span6"%>
+  </div>
+  <%= image_preview @photo, f%>
+ <div class="field">
+    <%= f.label t("metadata.description") %>
+    <%= f.text_area :description, :class => "tinymce span6" %>
+    <%= tinymce %>
+  </div>
+
     <div class="field">
       <%= f.label t("metadata.creator") %><br />
       <%= f.text_field :creator %>
@@ -25,12 +32,7 @@
         <%= f.label t("metadata.date") %><br />
         <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %> 
       </div> 
-    <div class="field">
-      <%= f.label t("metadata.description") %><br />
-      <%= f.text_area :description, :class => "tinymce" %>
-      <%= tinymce %>
 
-    </div>
     <div class="field">
       <%= f.label t("metadata.license") %><br />
       <%= f.text_field :license %>
@@ -44,11 +46,9 @@
       <%= f.label t("metadata.format") %><br />
       <%= f.text_field :format %>
     </div>
-      <div class="field">
+    
 
-      <%= f.label t("metadata.image") %><br />
-      <%= f.file_field :image %>
-    </div>
+
     <div class="field">
       <%= f.label t("metadata.notes") %><br />
       <%= f.text_field :notes %>

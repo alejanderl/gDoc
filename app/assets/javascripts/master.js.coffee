@@ -20,7 +20,12 @@ jQuery ->
 
      
      
-     
+     $('#remove-image').on "click", ->
+
+          $(this).prev().toggle ->
+          $(this).toggle ->
+          $(this).next(".field").toggle ->
+          
 
      
      undefined

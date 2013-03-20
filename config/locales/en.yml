@@ -43,6 +43,7 @@ en:
 
   button:
     add_related_content: "Add related content"
+    remove_image: "Remove picture"
 
   title:
    new_cycle: "New Cycle"

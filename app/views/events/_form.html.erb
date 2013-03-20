@@ -11,10 +11,15 @@
         </ul>
       </div>
     <% end %>  
-    <div class="field">
-      <%= f.label t("metadata.title") %><br />
-      <%= f.text_field :title %>
-    </div>
+  <div class="field">
+    <%= f.label t("metadata.title"), :class => "form-title"%>
+    <%= f.text_field :title , :class => "form-title span6"%>
+  </div>
+  <div class="field">
+    <%= f.label t("metadata.description") %>
+    <%= f.text_area :description, :class => "tinymce span6" %>
+    <%= tinymce %>
+  </div>
 
     <div class="field">
       <%= f.label t("metadata.creator") %><br />
@@ -26,22 +31,17 @@
       <%= f.label t("metadata.contributor") %><br />
       <%= f.text_field :contributor %>
     </div>
-
     <div class="field">
       <%= f.label t("metadata.participants") %>
-
     </div>
-
     <div class="field">  
       <%= f.label t("metadata.date") %><br />
       <%= f.datepicker :date, :dateFormat => "yy-mm-dd" %>
     </div>
-
     <div class="field">  
       <%= f.label t("metadata.start_date") %><br />
       <%= f.datepicker :start_date, :dateFormat => "yy-mm-dd" %>
     </div>
-
     <div class="field">  
       <%= f.label t("metadata.end_date") %><br />
       <%= f.datepicker :end_date, :dateFormat => "yy-mm-dd" %>
@@ -57,12 +57,7 @@
 
     </div>
 
-    <div class="field">
-      <%= f.label t("metadata.description") %><br />
-      <%= f.text_area :description, :class => "tinymce" %>
-      <%= tinymce %>
 
-    </div>
     
     <div class="field">
      <% if !@cycles.nil? %>  

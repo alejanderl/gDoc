@@ -26,6 +26,10 @@ es:
     documents: "documentos"
     audios: "audios"
     participants: "participantes"
+    
+  button:
+    add_related_content: "Ańadir contenido relacionado"
+    remove_image: "Borrar imagen"
 
 
   link:
