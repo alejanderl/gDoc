@@ -7,7 +7,7 @@ describe "GET /audios" do
     create_sample_users
  end
 
-  it "display audios" do 
+  it "display cycles" do 
     visit audios_path    
     page.should have_content("Cool audio")
     page.should_not have_content("New Audio")

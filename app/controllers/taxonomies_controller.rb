@@ -8,8 +8,8 @@ class TaxonomiesController < ApplicationController
   
   def index
    
-    @terms = Term.all
-    @terms = @terms.sort_by {|x| x[:parent_id]}
+    @terms = Term.all.order("parent_id asc, name asc")
+   # @terms = @terms.sort_by {|x| x[:parent_id]}
     @term = Term.new
     
 
