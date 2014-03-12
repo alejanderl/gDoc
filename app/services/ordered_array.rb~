@@ -42,7 +42,6 @@ class OrderedArray
         index_of = parent_array.index term.parent_id
         parent_array = parent_array[0..index_of]
       end
-	
       term[:depth] = parent_array.index term.parent_id
       previous = term
     end   
